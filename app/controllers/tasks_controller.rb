@@ -11,7 +11,7 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.where(task_id: @task)
+    @comments = Comment.where(task_id: @task).order("created_at DESC")
   end
 
 
@@ -30,26 +30,22 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(params[:task])
 
-    respond_to do |format|
       if @task.save
-        format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
+        redirect_to tasks_path, notice: 'Task was successfully created.'
       else
-        format.html { render action: "new" }
+        render action: "new"
       end
-    end
   end
 
 
   def update
     @task = Task.find(params[:id])
 
-    respond_to do |format|
       if @task.update_attributes(params[:task])
-        format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }
+        redirect_to tasks_path, notice: 'Task was successfully updated.'
       else
-        format.html { render action: "edit" }
+        render action: "edit"
       end
-    end
   end
 
 
@@ -58,8 +54,6 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
 
-    respond_to do |format|
-      format.html { redirect_to tasks_url }
-    end
+    redirect_to tasks_url
   end
 end
