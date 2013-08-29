@@ -1,0 +1,21 @@
+.entry{
+  @include media($breakpoint-ipad){
+    padding: 5%;
+    margin-bottom: 0;
+   }
+}
+
+.tags{
+  @include media($breakpoint-ipad){
+    padding: 0 2%;
+    margin: 0;
+    background: $tan !important;
+    font-size: 1em !important;
+    text-align: right;
+  }
+}
+
+
+.destroy{
+  a{color: $grey;}
+}

@@ -4,7 +4,6 @@
   @include outer-container();
   padding: 0 $page-gutter;
   @include media($breakpoint-desktop){
-    @include shift(3.2);
  }
 }
 
@@ -16,8 +15,7 @@
 
 .l-primary-content{
   @include media($breakpoint-ipad){
-    @include span-columns(4);
-    margin: 5% 0;
+    margin: 0;
   }
 }
 
@@ -31,7 +29,7 @@
     border-left: 1px dashed $grey;
     padding-left: 4%;
     padding-top: 0;
-    @include span-columns(8);
+    @include span-columns(12);
     p{
       font-size: .9em;
       line-height: 25px;

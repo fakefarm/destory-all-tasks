@@ -1,0 +1,12 @@
+.tasks.summary{
+  a{
+    color: $grey;
+  }
+}
+.home-button{
+  @include btn($grey, red);
+}
+
+.feature{
+  color: $burnt;
+}
