@@ -1,0 +1,21 @@
+.logo{
+
+  @include clearfix();
+  padding-bottom: 3%;
+
+  img {
+    @include span-columns(3);
+    padding: 0 2%;
+
+    @include media($breakpoint-ipad){
+      @include span-columns(3);
+      padding: 0 3% 0 0;
+    }
+  }
+  p.tagline{
+    @include media($breakpoint-ipad){
+      font-size: 2em;
+      margin: .8em 0 0 0;
+    }
+  }
+}

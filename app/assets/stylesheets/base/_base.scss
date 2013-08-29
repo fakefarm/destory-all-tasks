@@ -1,0 +1,102 @@
+body#application{
+  background: $tan;
+  @include media($breakpoint-ipad){ @include  bg-full-size("bg.png") }
+}
+
+body#printers{
+ background: url("grey_wash.png");
+}
+
+h1, h2, h3, h4, h5{
+  margin: 0;
+  color: $steele;
+}
+
+h1 {}
+h2 {}
+h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+h4, li {
+  font-size: 2em;
+  font-weight: 300;
+  font-family: $serif;
+}
+
+li{
+  list-style: none;
+}
+
+header{
+
+}
+
+table{
+  width: 95%;
+}
+
+
+a{
+  color: white;
+  text-decoration: none;
+  font-family: $serif;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+
+// Basic Elements
+
+* {
+  -webkit-font-smoothing: antialiased !important;
+  font-size: 100%;
+  font-family: $sans;
+  color: $steele;
+
+}
+
+html body {
+  padding-left: 0; // IE
+  padding-right: 0; // IE
+}
+
+
+body {
+  font-family: $typeface-sans;
+  text-shadow: 1px 1px 1px transparent;
+}
+
+a {
+  @include transition(all 0.2s ease-in-out);
+}
+
+p, a, h1, h2, h3, h4, h5, label {
+  font-family: inherit;
+}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+p {}
+
+hr {}
+
+hr {
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1em 0;
+  height: 0;
+}

@@ -1,0 +1,47 @@
+!!! 5
+/[if lt IE 9] <html class="ie8 old-ie" lang="en">
+<!--[if gte IE 9]><!-->
+%html{ lang: "en" }
+  <!--<![endif]-->
+
+  %head
+    = display_meta_tags
+    %meta(charset="utf-8")
+    %meta{name: "author", content: "Dave Woodall"}
+    %meta{:'http-equiv' => "X-UA-Compatible", content: "chrome=1"}
+    %meta{name: "viewport", content: "initial-scale=1.0, user-scalable=no, maximum-scale=1.0"}
+    %meta{name: "apple-mobile-web-app-capable", content: "yes"}
+    %meta{name: "apple-mobile-web-app-status-bar-style", content:"black"}
+
+
+    %script{:src => "http://use.typekit.net/iyd5ccb.js", :type => "text/javascript"}
+    :javascript
+      try{Typekit.load();}catch(e){}
+
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body#application
+    /[if lt IE 9]
+      #outdated-browser.outdated-browser
+        %p
+          %a.close-btn{ href: "#", data: {behavior: "close:outdatedBrowser"} } x
+          You are using an outdated browser. Please
+          %a{ href: "http://browsehappy.com/", target: '_blank' } upgrade your browser
+          or
+          %a{ href: "http://www.google.com/chromeframe/?redirect=true", target: '_blank' } activate Google Chrome Frame
+          to improve your experience.
+
+
+
+
+    #l-constrained
+      %header#l-header
+      .l-main
+        = yield
+
+      %footer#l-footer
+        = render '/layouts/shared/footer'
+        = render '/layouts/shared/analytics'
+        = render '/layouts/shared/browser_width'

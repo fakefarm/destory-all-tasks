@@ -1,0 +1,29 @@
+@mixin text-head{
+  font-family: $sans;
+  font-size: 2.5em;
+  color: $steele;
+  @include media($breakpoint-ipad){
+  font-size: 4em;
+  font-weight: 800;
+  }
+}
+
+@mixin text-tag{
+  font-size: 1.3em;
+  font-weight: 800;
+  color: $grey;
+  font-family: $sans;
+  font-weight: 300;
+  a {
+    color: $blue !important;
+  }
+  @include media($breakpoint-ipad){
+    font-size: 2em;
+  }
+}
+
+@mixin text-catch{}
+
+@mixin text-copy{}
+
+@mixin text-caption{}

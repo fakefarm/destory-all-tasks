@@ -1,0 +1,39 @@
+// General Containers
+
+#l-constrained {
+  @include outer-container();
+  padding: 0 $page-gutter;
+  @include media($breakpoint-desktop){
+    @include shift(3.2);
+ }
+}
+
+#l-printer-wrapper { @include outer-container(); }
+
+.l-main{
+  @include row();
+}
+
+.l-primary-content{
+  @include media($breakpoint-ipad){ @include span-columns(6); }
+}
+
+.l-sidebar {
+  border-top: 1px dashed $grey;
+  padding: 5% 0;
+  margin: 5% 0;
+
+  @include media($breakpoint-ipad) {
+    border-top: none;
+    border-left: 1px dashed $grey;
+    padding-left: 4%;
+    padding-top: 2%;
+    @include span-columns(6);
+    p{
+      font-size: .9em;
+      line-height: 25px;
+    }
+  }
+}
+
+

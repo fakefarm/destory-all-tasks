@@ -1,0 +1,140 @@
+// Tables
+
+
+table caption {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-left: 0.5em;
+  color: #666;
+}
+
+th,
+td {
+  border-bottom: 1px solid #eeeeee;
+  padding: 0.75em 0.5em;
+  text-align: left;
+}
+
+table.simple td,
+table.simple th {
+  border: none;
+  padding: 0.75em 0.7em 0.75em 0;
+}
+
+table.bordered td,
+table.bordered th {
+  border: 1px solid #ddd;
+}
+
+table.stroked td,
+table.stroked th {
+  border-bottom: 1px solid #eee;
+}
+
+table.striped tbody tr:nth-child(odd) td {
+  background-color: #f8f8f8;
+}
+
+table.hovered tbody tr:hover td,
+table.hovered thead tr:hover th {
+  background-color: #f6f6f6;
+}
+
+.thead-gray td,
+.thead-gray th {
+  background-color: #f0f0f0;
+}
+
+.thead-black td,
+.thead-black th {
+  font-weight: normal;
+  color: #f6f6f6;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #222;
+}
+
+table.bordered .thead-black td,
+table.bordered .thead-black th {
+  border: 1px solid #444;
+}
+
+
+// _TODO - refactor
+
+// .table-header{
+//   border-top: 1px solid #e4e4e4;
+//   margin-top: 2%;
+//   overflow: auto;
+// }
+
+// h2.ink-type{
+//   font-size: 2.3em;
+// }
+
+// h3.pallet-type{
+//  font-size: 1.5em;
+// }
+
+// tr:hover{
+//   td{
+//     background: #ffff66;
+//   }
+// }
+
+// td, th{
+//   padding: 1%;
+// }
+
+// td{
+//   border-right: 1px solid #e4e4e4;
+//   text-align: center;
+//   &:last-child{
+//     border-right: none;
+//   }
+// }
+
+// .qty-range{
+//   background: #e6e6e6;
+//   color: #0080ff;
+//   font-style: italic;
+// }
+// .button{
+//   @include button;
+//   margin-top: 3% 0;
+//   a{
+//     color: white;
+//     text-decoration: none;
+//     font-size: 1.5em;
+//   }
+// }
+
+
+// table.new-print-price{
+//   input{
+//     width: 70px;
+//   }
+//   tr:hover{
+//     background: none;
+//   }
+// }
+
+// .two-grid{
+//   @include row();
+//   .cities{
+//     @include span-columns(5);
+//   }
+//   .quote{
+//     @include span-columns(6);
+//     background: $money;
+//     border: 1px solid $green;
+//     margin: 5% 0;
+//     padding: 5%;
+//     text-align: center;
+//     a{
+//       font-family: $sans;
+//       font-weight: bold;
+//       font-size: 2em;
+//       color: $green;
+//     }
+//   }
+// }

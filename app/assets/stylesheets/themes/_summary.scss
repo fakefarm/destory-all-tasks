@@ -1,0 +1,43 @@
+.summary {
+  @include span-columns(10);
+  @include white-round-box;
+  h1{ @include text-head; }
+  h2{ @include text-tag; }
+  p{
+    font-size: 2em;
+    background: white;
+  }
+  li{
+    @include text-head;
+    color: white;
+    @include media($breakpoint-ipad) {
+      padding: 0;
+      margin: 0;
+    }
+    a{
+      display: block;
+      border-radius: 4px;
+      padding: 4%;
+      margin: 1% 0;
+      border: 2px solid rgba(255,255,255,.6);
+      width: 100%;
+      background: $burnt;
+
+      @include media($breakpoint-ipad){
+        padding: .8% 2%;
+        margin: 4% 0;
+        background: none;
+
+      }
+
+      @include media($breakpoint-desktop){
+        width: 70%;
+      }
+
+      &:hover{
+        text-decoration: none;
+        background: $blackey;
+      }
+    }
+  }
+}

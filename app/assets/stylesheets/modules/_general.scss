@@ -1,0 +1,21 @@
+// Catch all file when you don't know where to put styling, at first.
+// It should be refactored as needed.
+
+.air{
+  margin: 2% 0;
+}
+
+
+.wrap{
+  margin: 3% 0;
+}
+
+.sign-in{
+  @include white-round-box;
+  h2{
+    font-size: 3em;
+  }
+  @include media($breakpoint-ipad){
+    @include span-columns(8);
+   }
+}
