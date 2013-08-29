@@ -1,15 +1,17 @@
-%h1 Listing tasks
+.l-primary-content
+  = render 'form'
 
-%table
-  %tr
-    %th Item
-    %th
-
-  - @tasks.each do |task|
+.l-sidebar
+  %table
     %tr
-      %td= link_to task.item, edit_task_path(task)
-      %td= link_to 'Destroy', task, :method => :delete
+      %th
+      %th
+      %th
 
-%br
+    - @tasks.each do |task|
+      %tr
+        %td= link_to task.item, edit_task_path(task)
+        %td
+          = 'feature' if task.feature == true
+        %td= link_to 'Destroy', task, :method => :delete
 
-= render 'form'
