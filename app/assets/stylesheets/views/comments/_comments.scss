@@ -1,17 +1,38 @@
-.entry{
-  @include media($breakpoint-ipad){
-    padding: 5%;
-    margin-bottom: 0;
-   }
+article{
+  margin: 3% 0;
+  padding: 3% 0;
+  border-top: 1px dashed $grey;
+
 }
 
-.tags{
+.entry p{
   @include media($breakpoint-ipad){
-    padding: 0 2%;
+    font-size: 1.2em !important;
+    padding: 3%;
+    margin: 0;
+    line-height: 30px;
+  }
+}
+
+.entry h1{
+  font-size: 2em;
+  color: $grey;
+  padding: 2% 0 0 0;
+  margin: 0;
+  border-bottom: 1px solid $grey;
+}
+.entry h2{
+  margin-top: 2%;
+}
+
+.tags p{
+  @include media($breakpoint-ipad){
+    padding: 1%;
     margin: 0;
     background: $tan !important;
     font-size: 1em !important;
     text-align: right;
+
   }
 }
 
