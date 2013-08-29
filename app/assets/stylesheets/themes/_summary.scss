@@ -1,5 +1,5 @@
 .summary {
-  @include span-columns(10);
+  @include span-columns(12);
   @include white-round-box;
   h1{ @include text-head; }
   h2{ @include text-tag; }
@@ -31,7 +31,7 @@
       }
 
       @include media($breakpoint-desktop){
-        width: 70%;
+
       }
 
       &:hover{

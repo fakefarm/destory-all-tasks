@@ -4,8 +4,8 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.find(:all, order: 'tags')
     @task = Task.new
-    @page_title = "#{@tasks.count} tasks to destroy!"
-
+    @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
+    @counter = TaskCounter.all
   end
 
 
@@ -57,7 +57,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-
+    TaskCounter.create(quantity: 1)
     redirect_to tasks_url
   end
 end

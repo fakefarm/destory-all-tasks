@@ -29,3 +29,9 @@
     @include btn($burnt, black);
   }
 }
+
+.counter{
+  text-align: right;
+  color: white;
+  margin-top: 2%;
+}

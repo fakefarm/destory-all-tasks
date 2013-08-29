@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @task = @comment.task_id
       if @comment.save
-        redirect_to task_path(@task), notice: 'Comment was successfully created.'
+        redirect_to task_path(@task), notice: 'Comment created.'
       else
         render action: "new"
       end
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     if @comment.update_attributes(params[:comment])
-      redirect_to @comment, notice: 'Comment was successfully updated.'
+      redirect_to @comment, notice: 'Comment updated.'
     else
       render action: "edit"
     end

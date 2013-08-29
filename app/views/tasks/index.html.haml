@@ -1,21 +1,26 @@
+.counter= "#{pluralize(@counter.count, "task")} destroyed!"
 .summary.tasks
   .l-primary-content
     = render 'form'
 
   .l-sidebar
-    %table
-      %tr
-        %th
-        %th
-        %th
-        %th
-
-      - @tasks.each do |task|
+    - if @tasks.count == 0
+      %h1 You. Are. A. Machine.
+    - else
+      %table
         %tr
-          %td
-            = link_to task.item, task_path(task)
-            = task.comments.count if task.comments.count > 0
-          %td.feature= 'feature' if task.feature == true
-          %td= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
-          %td= task.tags
+          %th
+          %th
+          %th
+          %th
+
+        - @tasks.each do |task|
+          %tr
+            %td
+              = link_to task.item, task_path(task)
+              = task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)', edit_task_path(task))
+
+            %td
+            %td= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
+            %td= task.tags
 

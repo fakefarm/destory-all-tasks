@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829161350) do
+ActiveRecord::Schema.define(:version => 20130829214242) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -156,6 +156,12 @@ ActiveRecord::Schema.define(:version => 20130829161350) do
     t.integer  "garment_price"
   end
 
+  create_table "task_counters", :force => true do |t|
+    t.integer  "quantity"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tasks", :force => true do |t|
     t.string   "item"
     t.boolean  "completed"
@@ -163,6 +169,7 @@ ActiveRecord::Schema.define(:version => 20130829161350) do
     t.datetime "updated_at", :null => false
     t.boolean  "feature"
     t.string   "tags"
+    t.boolean  "deleted"
   end
 
   create_table "users", :force => true do |t|
