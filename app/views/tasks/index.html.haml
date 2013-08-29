@@ -1,17 +1,21 @@
-.l-primary-content
-  = render 'form'
+.summary.tasks
+  .l-primary-content
+    = render 'form'
 
-.l-sidebar
-  %table
-    %tr
-      %th
-      %th
-      %th
-
-    - @tasks.each do |task|
+  .l-sidebar
+    %table
       %tr
-        %td= link_to task.item, edit_task_path(task)
-        %td
-          = 'feature' if task.feature == true
-        %td= link_to 'Destroy', task, :method => :delete
+        %th
+        %th
+        %th
+        %th
+
+      - @tasks.each do |task|
+        %tr
+          %td
+            = link_to task.item, task_path(task)
+            = task.comments.count if task.comments.count > 0
+          %td.feature= 'feature' if task.feature == true
+          %td= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
+          %td= task.tags
 

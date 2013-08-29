@@ -2,32 +2,22 @@ class TasksController < ApplicationController
 
 
   def index
-    @tasks = Task.all
+    @tasks = Task.find(:all, order: 'tags')
     @task = Task.new
-
-    respond_to do |format|
-      format.html
-    end
   end
 
 
 
   def show
     @task = Task.find(params[:id])
-
-    respond_to do |format|
-      format.html
-    end
+    @comment = Comment.new
+    @comments = Comment.where(task_id: @task)
   end
 
 
 
   def new
     @task = Task.new
-
-    respond_to do |format|
-      format.html
-    end
   end
 
 

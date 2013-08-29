@@ -1,12 +1,13 @@
-%p#notice= notice
+.summary
+  .home-button= link_to 'tasks', tasks_path
+  .home-button= link_to 'edit', edit_task_path(@task)
+  %p#notice= notice
 
-%p
-  %b Item:
-  = @task.item
-%p
-  %b Completed:
-  = @task.completed
+  %h1= @task.item
 
-= link_to 'Edit', edit_task_path(@task)
-\|
-= link_to 'Back', tasks_path
+  = render 'comments/form'
+
+  - @comments.each do |comment|
+    %p.entry= comment.entry
+    %p.tags= comment.tags
+    .destroy=link_to 'destroy', comment, method: :delete

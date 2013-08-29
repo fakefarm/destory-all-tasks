@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Entry:
+  = @comment.entry
+%p
+  %b Tags:
+  = @comment.tags
+
+= link_to 'Edit', edit_comment_path(@comment)
+\|
+= link_to 'Back', comments_path

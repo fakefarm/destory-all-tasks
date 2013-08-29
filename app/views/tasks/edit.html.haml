@@ -1,7 +1,9 @@
-%h1 Editing task
+.summary
+  .home-button= link_to 'List', tasks_path
+  .home-button= link_to 'Back', task_path(@task)
 
-= render 'form'
+  %h1= @task.item
 
-= link_to 'Show', @task
-\|
-= link_to 'Back', tasks_path
+  = render 'form'
+
+

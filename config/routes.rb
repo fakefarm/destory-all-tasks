@@ -1,5 +1,8 @@
 Screenprintly::Application.routes.draw do
 
+  resources :comments
+
+
 root :to => 'tasks#index'
 resources :tasks
 
