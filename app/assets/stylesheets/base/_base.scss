@@ -1,6 +1,5 @@
 body#application{
   background: $tan;
-  @include media($breakpoint-ipad){ @include  bg-full-size("bg.png") }
 }
 
 body#printers{

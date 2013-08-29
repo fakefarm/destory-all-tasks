@@ -1,23 +1,7 @@
 Screenprintly::Application.routes.draw do
 
-  resources :quotes
-
-  get "finishing_services/new"
-
-  root :to => 'pages#index'
-  resources :cities, only: [:index, :new, :create]
-  resources :cities, path: "/screen-printers-in", except: [:index, :new, :create]
-
-  resources :printers do
-    resources :garment_prices
-    resources :print_prices
-    resources :printer_features
-    resources :finishing_services
-
-    resources :garment_selectors do
-      resources :confirmations
-    end
-  end
+root :to => 'tasks#index'
+resources :tasks
 
 
   # The priority is based upon order of creation:
