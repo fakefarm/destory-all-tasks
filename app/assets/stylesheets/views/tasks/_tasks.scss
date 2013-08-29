@@ -5,7 +5,13 @@
 }
 .home-button{
   @include btn($grey, red);
+  &.destroy{
+    background: $burnt;
+    float: right;
+  }
 }
+
+
 
 .feature{
   color: $burnt;

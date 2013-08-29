@@ -1,6 +1,7 @@
 .summary
   .home-button= link_to 'tasks', tasks_path
   .home-button= link_to 'edit', edit_task_path(@task)
+  .home-button.destroy= link_to 'destroy', @task, method: :delete
   %p#notice= notice
 
   %h1= @task.item
@@ -12,3 +13,4 @@
       .entry= markdown(comment.entry)
       .tags= markdown(comment.tags)
       .destroy=link_to 'destroy', comment, method: :delete
+
