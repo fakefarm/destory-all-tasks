@@ -4,14 +4,17 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.find(:all, order: 'tags')
     @task = Task.new
+    @page_title = "#{@tasks.count} tasks to destroy!"
+
   end
 
 
 
   def show
-    @task = Task.find(params[:id])
-    @comment = Comment.new
-    @comments = Comment.where(task_id: @task).order("created_at DESC")
+    @task       = Task.find(params[:id])
+    @comment    = Comment.new
+    @comments   = Comment.where(task_id: @task).order("created_at DESC")
+    @page_title = @task.item
   end
 
 
@@ -23,6 +26,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @page_title = @task.item
   end
 
 
