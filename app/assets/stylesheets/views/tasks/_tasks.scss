@@ -16,3 +16,16 @@
 .feature{
   color: $burnt;
 }
+
+#task_item{
+  padding: 10px;
+  font-size: 3em;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+.actions{
+  input{
+    @include btn($burnt, black);
+  }
+}
