@@ -1,28 +1,30 @@
 article{
-  margin: 3% 0;
-  padding: 3% 0;
+  margin: 5% 0;
+  padding: 1% 0;
   border-top: 1px dashed $grey;
-
+  background: white;
 }
 
 .entry p{
   @include media($breakpoint-ipad){
-    font-size: 1.2em !important;
-    padding: 3%;
+    font-size: 1em !important;
+    padding: 1%;
     margin: 0;
-    line-height: 30px;
+    line-height: 20px;
   }
 }
 
-.entry h1{
-  font-size: 2em;
-  color: $grey;
-  padding: 2% 0 0 0;
+.entry h1,
+.entry h2,
+.entry h3{
+  font-size: 1.5em;
+  color: black;
+  padding: 2% 0 0 2%;
   margin: 0;
-  border-bottom: 1px solid $grey;
 }
-.entry h2{
-  margin-top: 2%;
+
+.entry a{
+  color: $blue;
 }
 
 .tags p{
@@ -38,5 +40,10 @@ article{
 
 
 .destroy{
-  a{color: $grey;}
+  a{
+    color: $red;
+    margin-top: .5%;
+    padding: 1%;
+    float: right;
+  }
 }

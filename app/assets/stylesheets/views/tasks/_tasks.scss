@@ -1,9 +1,12 @@
 .highlight{
   background: $yellow;
 }
+.snooze{
+  background: $light-grey;
+}
 .tasks.summary{
   a{
-    color: $grey;
+    color: black;
   }
 }
 .home-button{
@@ -11,6 +14,7 @@
   &.destroy{
     background: $burnt;
     float: right;
+    a{ color: white;}
   }
 }
 
@@ -41,4 +45,8 @@
 
 .highlight {
   background: $yellow;
+}
+
+.tasks.summary td.destroy a{
+  color: $pink;
 }

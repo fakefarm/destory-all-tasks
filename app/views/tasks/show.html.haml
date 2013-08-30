@@ -8,8 +8,6 @@
 
   = render 'comments/form'
 
-  %p#notice= notice
-
   - @comments.each do |comment|
     %article
       .entry= markdown(comment.entry)
