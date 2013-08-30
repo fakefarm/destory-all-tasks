@@ -16,6 +16,3 @@
 //= require_tree .
 
 
-$(document).ready(function(){
-  $( ".tasks.summary a:contains('@')" ).addClass("highlight");
-});
