@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 gem 'neat'
 gem 'pg'
 gem "haml-rails"
-gem 'meta-tags', require: 'meta_tags'
+gem 'meta-tags'
 gem 'thin'
 gem 'clearance', '1.0.0.rc7'
 gem 'redcarpet', '1.17.2'
