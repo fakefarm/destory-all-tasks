@@ -1,12 +1,14 @@
 .summary
-  .home-button= link_to 'tasks', tasks_path
+  %h1= @task.item
+  %hr
+  .home-button= link_to 'all tasks', tasks_path
   .home-button= link_to 'edit', edit_task_path(@task)
   .home-button.destroy= link_to 'destroy', @task, method: :delete
-  %p#notice= notice
 
-  %h1= @task.item
 
   = render 'comments/form'
+
+  %p#notice= notice
 
   - @comments.each do |comment|
     %article
