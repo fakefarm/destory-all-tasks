@@ -6,6 +6,7 @@ article{
 }
 
 .entry p{
+  img{width: 75%; }
   @include media($breakpoint-ipad){
     font-size: 1em !important;
     padding: 1%;
