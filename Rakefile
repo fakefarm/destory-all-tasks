@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Screenprintly::Application.load_tasks
+DestroyAllTasks::Application.load_tasks

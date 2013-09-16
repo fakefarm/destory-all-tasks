@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
-  include Clearance::Controller
   protect_from_forgery
-  http_basic_authenticate_with name: ENV['USER'], password: ENV['PASSWORD']
+
+private
+
+  def current_user # Doing railscast, but I think this overrides clearance.
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  helper_method :current_user
 end

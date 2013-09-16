@@ -6,9 +6,9 @@ gem 'pg'
 gem "haml-rails"
 gem 'meta-tags', :require => 'meta_tags'
 gem 'thin'
-gem 'clearance', '1.0.0.rc7'
 gem 'redcarpet', '1.17.2'
-gem 'simplecov', :require => false, :group => :test
+gem 'omniauth-facebook'
+
 
 group :development, :test do
   gem 'sqlite3'
@@ -27,6 +27,7 @@ group :development do
 end
 
 group :test do
+  gem 'simplecov', :require => false, :group => :test
   gem 'faker', '~> 1.1.2'
   gem 'capybara', '~> 2.0.2'
   gem 'database_cleaner', '~> 0.9.1'
@@ -46,6 +47,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "koala"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

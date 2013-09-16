@@ -1,9 +1,12 @@
-Screenprintly::Application.routes.draw do
-
-  resources :comments
-
+DestroyAllTasks::Application.routes.draw do
 
 root :to => 'tasks#index'
+
+match 'auth/:provider/callback', to: 'sessions#create'
+match 'auth/failure', to: redirect('/')
+match 'signout', to: 'sessions#destroy', as: 'signout'
+
+resources :comments
 resources :tasks
 
 

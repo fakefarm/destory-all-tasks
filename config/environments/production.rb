@@ -1,7 +1,4 @@
-Screenprintly::Application.configure do
-
-  # Clearance gem
-  config.action_mailer.default_url_options = { :host => 'http://www.screenprintly.com' }
+DestroyAllTasks::Application.configure do
 
 
   # Settings specified here will take precedence over those in config/application.rb
