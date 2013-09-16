@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-Screenprintly::Application.config.session_store :cookie_store, key: '_screenprintly_session'
+DestroyAllTasks::Application.config.session_store :cookie_store
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-# Screenprintly::Application.config.session_store :active_record_store
+# DestroyAllTasks::Application.config.session_store :active_record_store

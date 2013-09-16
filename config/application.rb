@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Screenprintly
+module DestroyAllTasks
   class Application < Rails::Application
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
