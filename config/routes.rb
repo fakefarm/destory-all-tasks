@@ -7,7 +7,10 @@ match 'auth/failure', to: redirect('/')
 match 'signout', to: 'sessions#destroy', as: 'signout'
 
 resources :comments
-resources :tasks
+resources :tasks do
+  collection { post :sort }
+end
+
 
 
   # The priority is based upon order of creation:

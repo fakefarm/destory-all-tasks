@@ -90,6 +90,9 @@ GEM
     jquery-rails (3.0.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.4)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.8.0)
     jwt (0.1.8)
       multi_json (>= 1.5)
@@ -186,6 +189,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    simple_position (0.1.0)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -231,6 +235,7 @@ DEPENDENCIES
   faker (~> 1.1.2)
   haml-rails
   jquery-rails
+  jquery-ui-rails
   koala
   launchy (~> 2.2.0)
   letter_opener
@@ -244,6 +249,7 @@ DEPENDENCIES
   redcarpet (= 1.17.2)
   rspec-rails (~> 2.13.0)
   sass-rails (~> 3.2.3)
+  simple_position
   simplecov
   sqlite3
   thin
