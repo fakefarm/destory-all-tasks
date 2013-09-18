@@ -7,15 +7,11 @@
     - if @tasks.count == 0
       %h1= message
     - else
-      %table{:id => 'sortable', :data => {:update_url => "#{ sort_tasks_url }" }}
-        %tr
-          %th
-          %th
-          %th
-          %th
+      %table{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
         %tbody
           - @tasks.each do |task|
-            %tr{ :id => "task_#{task.id}"}
+            %tr{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+              %td{ data: { behavior: 'sortable-handle' } } &times;
               %td
                 = link_to task.item, task_path(task)
                 = task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)', edit_task_path(task))

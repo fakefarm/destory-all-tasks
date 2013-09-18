@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
 
   include SimplePosition
-  default_scope order(:position).reverse_order
+  default_scope order(:position)
 
   attr_accessible :completed, :item, :tags, :feature, :position
 

@@ -1,24 +1,35 @@
-  var fixHelperModified = function(e, tr) {    // what is the e for?
-    var $originals = tr.children();
-    var $helper = tr.clone();                  // what's a way to pry into code like this to understand what's happening?
-    $helper.children().each(function(index)
-    {
-      $(this).width($originals.eq(index).width())
-    });
-    return $helper;
-  };
+var fixHelperModified = function(e, tr) {
+  var $originals = tr.children();
+  var $helper    = tr.clone();
+  $helper.children().each(function(index) {
+    $(this).width($originals.eq(index).width());
+  });
+  return $helper;
+};
 
-$(document).ready(function(){
+$(document).ready(function() {
+
   $( "td:contains('@')" ).parent().addClass("highlight");
   $( "td:contains('zzz')" ).parent().addClass("snooze");
 
-  $("#sortable tbody").sortable({
+  var $selector = $("[data-behavior='sortable']");
+  $selector.sortable({
     helper: fixHelperModified,
-    axis: 'y',
-    update: function(){
-      $.post($(this).data('update-url'), $(this).sortable('serialize')) // I have no idea what this code is doing.
-    }                                                                   // Goal is to fire task#sort but doesn't seem to
-                                                                        // be calling that method
-  }).disableSelection();  // What does this do? I didn't find it on Jquery ui
-});
+    axis:   'y',
+    cursor: 'move',
+    items:  '[data-behavior="sortable-item"]',
+    handle: '[data-behavior="sortable-handle"]',
+    update: function() {
+      var formData = $selector.sortable('serialize');
+      formData    += '&' + $('meta[name=csrf-param]').attr('content') + '=';
+      formData    += encodeURIComponent($('meta[name=csrf-token]').attr('content'));
+      $.ajax({
+        type:     'POST',
+        data:     formData,
+        dataType: 'script',
+        url:      $selector.data('update-url')
+      });
+    }
+  }).disableSelection();
 
+});

@@ -50,7 +50,7 @@ class TasksController < ApplicationController
   end
 
   def sort
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     params[:task].each_with_index do |id, index|
       Task.update_all({position: index + 1}, {id: id})
     end
