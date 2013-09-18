@@ -11,6 +11,7 @@ $(document).ready(function() {
 
   $( "td:contains('@')" ).parent().addClass("highlight");
   $( "td:contains('zzz')" ).parent().addClass("snooze");
+  $( "td:contains('!')" ).parent().addClass("urgent");
 
   var $selector = $("[data-behavior='sortable']");
   $selector.sortable({

@@ -4,11 +4,15 @@
 .snooze{
   background: $light-grey;
 }
+.urgent{
+  background: $warning;
+}
 .tasks.summary{
   a{
     color: black;
   }
 }
+
 .home-button{
   @include btn($grey, red);
   &.destroy{
@@ -18,22 +22,16 @@
   }
 }
 
-.handler{
-  color: $green;
-  font-size: bold;
+.feature{
+  color: $burnt;
 }
 
 td span.task-name a{
-  font-size: 2em;
+  font-size: 1.6em;
 }
 
 td span.task-edit a{
   color: $grey !important;
-}
-
-
-.feature{
-  color: $burnt;
 }
 
 #task_item{
