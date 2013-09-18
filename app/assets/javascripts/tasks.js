@@ -18,7 +18,7 @@ $(document).ready(function() {
     axis:   'y',
     cursor: 'move',
     items:  '[data-behavior="sortable-item"]',
-    handle: '[data-behavior="sortable-handle"]',
+
     update: function() {
       var formData = $selector.sortable('serialize');
       formData    += '&' + $('meta[name=csrf-param]').attr('content') + '=';
