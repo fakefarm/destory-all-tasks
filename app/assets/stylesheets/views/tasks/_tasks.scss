@@ -18,6 +18,18 @@
   }
 }
 
+.handler{
+  color: $green;
+  font-size: bold;
+}
+
+td span.task-name a{
+  font-size: 2em;
+}
+
+td span.task-edit a{
+  color: $grey !important;
+}
 
 
 .feature{
