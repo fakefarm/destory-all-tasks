@@ -14,5 +14,5 @@
 
               %td.punt= render 'layouts/shared/punt_return', task: task
               %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
-              %td#task-tag= task.tags
+              %td.return-time= distance_of_time_in_words_to_now(task.due_date)
 
