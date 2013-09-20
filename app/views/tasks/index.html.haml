@@ -19,7 +19,7 @@
                   %span.task-name= link_to task.item, task_path(task)
                   %span.task-edit= task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)', edit_task_path(task))
 
-                %td.punt#punt= render 'layouts/shared/punt', task: task
+                %td.punt= render 'layouts/shared/punt', task: task
                 %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
                 %td#task-tag= task.tags
 
