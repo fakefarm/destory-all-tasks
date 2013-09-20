@@ -6,9 +6,11 @@ match 'auth/:provider/callback', to: 'sessions#create'
 match 'auth/failure', to: redirect('/')
 match 'signout', to: 'sessions#destroy', as: 'signout'
 
+
 resources :comments
 resources :tasks do
   collection { post :sort }
+  collection { get :punted }
 end
 
 

@@ -1,0 +1,17 @@
+=link_to "tasks", root_path
+.summary.tasks
+  .l-sidebar
+    - if @tasks.count == 0
+      %h1 Even your closets are clean!
+    - else
+      %table{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+        %tbody
+          - @tasks.each do |task|
+            %tr{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+              %td
+                %span.task-name= link_to task.item, task_path(task)
+                %span.task-edit= task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)', edit_task_path(task))
+
+              %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
+              %td#task-tag= task.tags
+

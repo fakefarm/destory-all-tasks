@@ -2,9 +2,16 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.find(:all, order: 'position')
+    @punts = Task.where('due_date > ?', Time.now)
+    @punt_count = @punts.count
+
     @task = Task.new
     @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
     @counter = TaskCounter.all
+  end
+
+  def punted
+    @tasks = Task.where('due_date > ?', Time.now)
   end
 
   def show

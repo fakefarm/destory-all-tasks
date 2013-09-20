@@ -1,4 +1,7 @@
-.counter= "#{pluralize(@counter.count, "task")} destroyed!"
+.counter
+  = "#{pluralize(@counter.count, "task")} destroyed!"
+  &nbsp; &nbsp;
+  = link_to "punts (#{@punt_count})", punted_tasks_path
 .summary.tasks
   .l-primary-content
     = render 'form'
