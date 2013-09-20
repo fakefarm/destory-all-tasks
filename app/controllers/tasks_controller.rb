@@ -1,6 +1,5 @@
 class TasksController < ApplicationController
 
-
   def index
     @tasks = Task.find(:all, order: 'position')
     @task = Task.new
@@ -36,7 +35,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update_attributes(params[:task])
-      redirect_to root_path, notice: 'Task was successfully updated.'
+      redirect_to root_path
     else
       render action: "edit"
     end

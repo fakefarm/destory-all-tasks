@@ -5,8 +5,11 @@
 ## If you can't destroy it, don't add it.
 This is not the place to store memories. Write down what you need to do. Do it. Destroy it.
 
+## Sort by sliding
+Lists are sorted by dragging and dropping.
+
 ## Tags
-Your list is sorted alphabetically, by tags.
+Tags are little ear marks for your mind.
 
 ### Examples of tags;
 
@@ -16,9 +19,11 @@ Your list is sorted alphabetically, by tags.
 - Meeting
 - Wednesday, 1pm
 
-### Highlighter
+### Highlighters
 Add an "@" to a tag, like `Lunch @ noon` to highlight the line.
 ![](app/assets/images/highlight.png)
+
+_Other highlighters include '**!**', and '**zzz**'_
 
 ## Task Page
 Click a task to see it's page to add notes. These notes are temporary references to help you accomplish the quest of destroying the larger task.

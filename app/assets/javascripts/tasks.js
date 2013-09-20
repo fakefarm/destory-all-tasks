@@ -11,9 +11,12 @@ $(document).ready(function() {
 
   $( "td:contains('@')" ).parent().addClass("highlight");
   $( "td:contains('zzz')" ).parent().addClass("snooze");
-  $( "td:contains('!')" ).parent().addClass("urgent");
+  $('#punt').click(function(){
+    $(this).parent().addClass("urgent").fadeOut();
+  });
 
   var $selector = $("[data-behavior='sortable']");
+
   $selector.sortable({
     helper: fixHelperModified,
     axis:   'y',
@@ -32,5 +35,4 @@ $(document).ready(function() {
       });
     }
   }).disableSelection();
-
 });

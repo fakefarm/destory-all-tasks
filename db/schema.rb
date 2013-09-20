@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130917133423) do
+ActiveRecord::Schema.define(:version => 20130920012732) do
 
   create_table "comments", :force => true do |t|
     t.text     "entry"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130917133423) do
     t.string   "tags"
     t.boolean  "deleted"
     t.integer  "position"
+    t.datetime "due_date"
   end
 
 end

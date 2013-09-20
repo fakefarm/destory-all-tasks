@@ -1,3 +1,15 @@
+.punt{
+  text-align: right;
+}
+.punt-form{
+  form{
+    margin: 0;
+  }
+  button{
+    background: none;
+    border: none;
+  }
+}
 .highlight{
   background: $yellow;
 }
@@ -12,7 +24,9 @@
     color: black;
   }
 }
-
+.destroy{
+  width: 10%;
+}
 .home-button{
   @include btn($grey, red);
   &.destroy{
