@@ -2,9 +2,6 @@
   = f.hidden_field :task_id, value: @task.id
   .field
     = f.label :entry
-    = f.text_area :entry, rows: "5"
-  .field
-    = f.label :tags
-    = f.text_field :tags
+    .comment-field= f.text_area :entry, rows: "5", autofocus: true
   .actions
     = f.submit 'Save'

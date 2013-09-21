@@ -11,6 +11,5 @@
   - @comments.each do |comment|
     %article
       .entry= markdown(comment.entry)
-      .tags= markdown(comment.tags)
       .destroy=link_to 'destroy', comment, method: :delete
 
