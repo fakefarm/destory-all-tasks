@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature Comment do
   before(:each) do
-    visit root_path
+    visit tasks_path
     fill_in 'Task', with: 'Clean my room'
     click_button 'Save'
     click_link 'Clean my room'

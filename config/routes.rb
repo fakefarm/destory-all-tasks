@@ -1,6 +1,6 @@
 DestroyAllTasks::Application.routes.draw do
 
-root :to => 'tasks#index'
+root :to => 'pages#index'
 
 match 'auth/:provider/callback', to: 'sessions#create'
 match 'auth/failure', to: redirect('/')

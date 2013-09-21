@@ -33,7 +33,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(params[:task])
     if @task.save
-      redirect_to root_path, notice: 'Task was successfully created.'
+      redirect_to tasks_path
     else
       render action: "new"
     end
@@ -42,7 +42,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update_attributes(params[:task])
-      redirect_to root_path
+      redirect_to tasks_path
     else
       render action: "edit"
     end
@@ -52,7 +52,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
     TaskCounter.create(quantity: 1)
-    redirect_to root_path
+    redirect_to tasks_path
   end
 
   def sort
