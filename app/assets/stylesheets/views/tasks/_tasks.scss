@@ -2,6 +2,7 @@
 .punt{
   text-align: right;
 }
+
 .punt-form{
   form{
     margin: 0;
@@ -43,6 +44,10 @@
     float: right;
     a{ color: white;}
   }
+}
+
+.punt-button{
+  @include btn(white, red);
 }
 
 .feature{
