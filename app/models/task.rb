@@ -11,6 +11,6 @@ class Task < ActiveRecord::Base
 private
 
   def add_due_date
-    self.due_date = Time.now.in_time_zone("Mountain Time (US & Canada)")
+    self.due_date = Time.now
   end
 end
