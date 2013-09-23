@@ -1,13 +1,15 @@
 DestroyAllTasks::Application.routes.draw do
 
+match 'signup', to: 'users#new', as: 'signup'
+match 'login', to: 'sessions#new', as: 'login'
+match 'logout', to: 'sessions#destroy', as: 'logout'
+
 root :to => 'pages#index'
 
-match 'auth/:provider/callback', to: 'sessions#create'
-match 'auth/failure', to: redirect('/')
-match 'signout', to: 'sessions#destroy', as: 'signout'
-
-
+resources :sessions
+resources :users
 resources :comments
+
 resources :tasks do
   collection { post :sort }
   collection { get :punted }

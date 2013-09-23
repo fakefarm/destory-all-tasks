@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+
+  before_filter :authorize
+
   def index
     @comments = Comment.all
   end

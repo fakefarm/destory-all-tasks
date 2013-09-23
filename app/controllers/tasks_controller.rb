@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
 
+  before_filter :authorize
+
   def index
     @tasks = Task.find(:all, order: 'position')
     @punts = Task.where('due_date > ?', Time.now)
