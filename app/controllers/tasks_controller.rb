@@ -34,7 +34,9 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
+
     if @task.save
+      Admin.new
       redirect_to tasks_path
     else
       render action: "new"
@@ -58,10 +60,11 @@ class TasksController < ApplicationController
   end
 
   def sort
-    # require 'pry'; binding.pry
     params[:task].each_with_index do |id, index|
       Task.update_all({position: index + 1}, {id: id})
     end
     render nothing: true
   end
+
+
 end
