@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'Get ready to destroy some tasks!'
+      redirect_to tasks_url, notice: 'Get ready to destroy some tasks!'
     else
       render 'new'
     end
