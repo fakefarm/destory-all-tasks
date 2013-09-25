@@ -1,38 +1,44 @@
-// load the document
+function check_timer(){
+   if($('#timer').hasClass('start')){
+    $('#counterSec').fadeOut(500).html(0).fadeIn(500);
+    $('#counterMin').fadeOut(500).html(0).fadeIn(500);
+    $('#counterHour').fadeOut(500).html(0).fadeIn(500);
+    $('#timer').val("Stop Timer");
+    timer = setInterval ( "increaseCounter()", 1000 );
+    $('#timer').removeClass('start');
+   }
+   else{
+    if(typeof timer != "undefined"){
+     clearInterval(timer);
+    }
+    $('#timer').val("Start Timer");
+    $('#timer').addClass('start');
+   }
+  }
+
+  function increaseCounter(){
+   var secVal ;
+   var minVal ;
+   secVal = parseInt($('#counterSec').html(),10);
+   minVal = parseInt($('#counterMin').html(),10);
+   if(secVal != 59)
+   $('#counterSec').html((secVal+1));
+   else{
+    if(minVal != 59){
+     $('#counterMin').html((minVal+1));
+    }
+    else{
+     $('#counterHour').html((parseInt($('#counterHour').html(),10)+1));
+     $('#counterMin').html(0);
+    }
+    $('#counterSec').html(0);
+   }
+  }
+
 $(function(){
-
-// Set the variables
-  var time = 0
-  , $element = $('[data-timer]') // note instead of referencing ids, use data attributes instead
-  , timer
-  , $holder = $('[data-log]');
-
-
-// DOM manipulation functions
-  function setTime(t){
-    $element.text(t);
-  }
-
-  function totalTime(t){
-    $holder.text(t);
-  }
-
-// Event based functions
-  $(document).click('click', "[data-behavior='start']", function(event) {
-    event.preventDefault();
-    timer = setInterval(function(){
-      time = time + 1;
-      setTime(time);
-    }, 1000);
-  });
-
-  $('[data-behavior="stop"]').click(function(event){
-    event.preventDefault();
-    clearInterval(timer);
-  });
-
-  $('[data-behavior="record"]').click(function(event){
-    event.preventDefault();
-    totalTime(time);
+  $('#timer').click(function(event){
+    event.preventDefault;
+    check_timer();
   });
 });
+

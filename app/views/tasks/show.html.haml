@@ -1,16 +1,18 @@
 .summary
   %h1= @task.item
-  .timer
-    %p{data:{timer:'time-tracker'}}
-    %p{data:{log:'time-record'}}
-    %button{data:{behavior: "start"}} start
-    %button{data:{behavior: "stop"}} stop
-    %button{data:{behavior: "record"}} record
 
   %hr
   .home-button= link_to 'all tasks', tasks_path
   .home-button= link_to 'edit', edit_task_path(@task)
   .punt-button= render 'layouts/shared/punt', task: @task
+  .home-button{ type: 'button', id: 'timer', class: 'start', value: 'Start Timer'} Track time
+  %span.counter
+    %span#counterHour 0
+    %span :
+    %span#counterMin 0
+    %span :
+    %span#counterSec 0
+
   .home-button.destroy= link_to 'destroy', @task, method: :delete
 
   = render 'comments/form'

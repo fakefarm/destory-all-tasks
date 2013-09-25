@@ -1,5 +1,9 @@
-#start, #stop{
-  cursor: pointer;
+.counter {
+    font-size: 2em;
+    padding: 0 2%;
+    position: relative;
+    top: 5px;
+    font-weight: bold;
 }
 
 .punt{
@@ -41,7 +45,7 @@
   margin-top: 1.5%;
 }
 .home-button{
-  @include btn($grey, red);
+  @include btn($grey);
   &.destroy{
     background: $burnt;
     float: right;
@@ -91,3 +95,16 @@ td span.task-edit a{
 .tasks.summary td.destroy a{
   color: $pink;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
