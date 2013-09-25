@@ -36,7 +36,6 @@ class TasksController < ApplicationController
     @task = Task.new(params[:task])
 
     if @task.save
-      Admin.new
       redirect_to tasks_path
     else
       render action: "new"
