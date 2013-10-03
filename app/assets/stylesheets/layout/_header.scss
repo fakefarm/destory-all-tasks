@@ -2,7 +2,6 @@
 
 #l-header{
   @include outer-container();
-  @include shift(3.2);
 
   h1{
     @include text-tag;

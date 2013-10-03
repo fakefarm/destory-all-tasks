@@ -7,6 +7,7 @@ class Task < ActiveRecord::Base
   attr_accessible :completed, :item, :tags, :feature, :position, :due_date
 
   has_many :comments
+  belongs_to :user
 
 private
 
