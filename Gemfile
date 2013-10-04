@@ -10,6 +10,8 @@ gem 'redcarpet', '1.17.2'
 gem 'omniauth-facebook'
 gem 'jquery-ui-rails'
 gem 'simple_position'
+gem 'newrelic_rpm'
+
 
 group :development, :test do
   gem 'sqlite3'
