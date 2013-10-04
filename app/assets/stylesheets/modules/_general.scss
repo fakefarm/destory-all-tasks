@@ -32,7 +32,12 @@
   }
 }
 
+.action-row{
+  @include row;
+}
+
 .features {
+  @include span-columns(6);
   h3 {
     font-weight: bold;
     margin-top: 2em;
@@ -43,5 +48,25 @@
     font-weight: normal;
     line-height: 40px;
     list-style: disc;
+  }
+}
+
+.button{
+  @include span-columns(5);
+  @include shift(1);
+  margin-top: 55px;
+  padding: 3%;
+  // margin-right: 5%;
+  // @include shift(5);
+  // float: right;
+  background: $money;
+  text-align: center;
+  &:hover{ background: $green; }
+  a{
+    font-size: 3em;
+    font-weight: bold;
+    &:hover{
+      text-decoration: none;
+    }
   }
 }
