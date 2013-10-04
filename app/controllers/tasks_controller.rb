@@ -9,7 +9,8 @@ class TasksController < ApplicationController
 
     @task = Task.new
     @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
-    @counter = TaskCounter.all
+    @user = User.find(current_user.id)
+    @counter = @user.task_counter.quantity
   end
 
   def punted
@@ -63,7 +64,10 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    TaskCounter.create(quantity: 1)
+    @counter = current_user.task_counter
+    qty = current_user.task_counter.quantity + 1
+    @counter.update_attributes(quantity: qty)
+
     redirect_to tasks_path
   end
 

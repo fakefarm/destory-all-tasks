@@ -1,5 +1,5 @@
 .counter
-  = "#{pluralize(@counter.count, "task")} destroyed!"
+  = "#{pluralize(@counter, "task")} destroyed!"
   &nbsp; &nbsp;
   = link_to "punts (#{@punt_count})", punted_tasks_path
 .summary.tasks
