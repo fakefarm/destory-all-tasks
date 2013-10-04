@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.where(user_id: current_user.id).order('position')
-    @punts = Task.where('due_date > ?', Time.now)
+    @punts = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)
     @punt_count = @punts.count
 
     @task = Task.new
@@ -13,7 +13,7 @@ class TasksController < ApplicationController
   end
 
   def punted
-    @tasks = Task.where('due_date > ?', Time.now)
+    @tasks = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)
   end
 
   def show
