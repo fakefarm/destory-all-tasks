@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_filter :authorize
 
   def index
-    @tasks = Task.find(:all, order: 'position')
+    @tasks = Task.where(user_id: current_user.id).order('position')
     @punts = Task.where('due_date > ?', Time.now)
     @punt_count = @punts.count
 
@@ -17,10 +17,19 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task       = Task.find(params[:id])
-    @comment    = Comment.new
-    @comments   = Comment.where(task_id: @task).order("created_at DESC")
-    @page_title = @task.item
+    begin
+      @task       = Task.find(params[:id])
+
+      if current_user.id != @task.user_id
+        redirect_to tasks_path, notice: "Not your task to destroy."
+      end
+
+      @comment    = Comment.new
+      @comments   = Comment.where(task_id: @task).order("created_at DESC")
+      @page_title = @task.item
+    rescue
+      redirect_to tasks_path, notice: "Not your task to destroy."
+    end
   end
 
   def new

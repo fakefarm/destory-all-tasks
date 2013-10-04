@@ -6,9 +6,12 @@
         - @task.errors.full_messages.each do |msg|
           %li= msg
 
+  = f.hidden_field :user_id, value: current_user.id
+
   .field
     = f.text_field :item, placeholder: 'Task', autofocus: true
   .field
     = f.text_field :tags, placeholder: "tags (add an @ to highlight row)"
   .actions
     = f.submit 'Save'
+

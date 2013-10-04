@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130923132046) do
+ActiveRecord::Schema.define(:version => 20131003235543) do
 
   create_table "comments", :force => true do |t|
     t.text     "entry"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(:version => 20130923132046) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "task_id"
+    t.integer  "user_id"
   end
+
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "task_counters", :force => true do |t|
     t.integer  "quantity"
@@ -37,7 +40,10 @@ ActiveRecord::Schema.define(:version => 20130923132046) do
     t.boolean  "deleted"
     t.integer  "position"
     t.datetime "due_date"
+    t.integer  "user_id"
   end
+
+  add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
