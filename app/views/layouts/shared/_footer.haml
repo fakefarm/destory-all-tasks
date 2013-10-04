@@ -5,6 +5,7 @@
 .footer
   = link_to 'Home', root_path
   = link_to 'Tasks', tasks_path
+  = mail_to 'dave@hireDave.me', 'Ideas?'
   |
   - if current_user
     = link_to "Log out", logout_path
