@@ -45,11 +45,11 @@
   margin-top: 1.5%;
 }
 .home-button{
-  @include btn($grey);
+  @include btn($stone);
   &.destroy{
     background: $burnt;
     float: right;
-    a{ color: white;}
+    a{ color: $black;}
   }
 }
 

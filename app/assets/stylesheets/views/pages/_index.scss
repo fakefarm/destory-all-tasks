@@ -1,3 +1,251 @@
-body{
-  color: red;
+// Fonts
+
+#welcome{
+  @include media($breakpoint-ipad) {
+    h1{
+      font-size: 2.5em;
+      color: $black;
+    }
+    h2{
+      font-size: 2.2em;
+      margin: 5% 0 -2% 0;
+    }
+    p{
+      font-size: 1.5em;
+      padding: 0;
+      margin: 1% 0;
+    }
+  }
+
+  @include media($breakpoint-large-screen) {
+    h1{font-size: 4em; }
+    h2{
+      font-size: 3.2em;
+      margin: 5% 0 -2% 0;
+    }
+    p{
+      font-size: 1.5em;
+      padding: 0;
+      margin: 1% 0;
+    }
+  }
 }
+
+body{
+  background: $stone;
+  position: relative;
+}
+
+.nav-bar{
+  background: rgba(0,0,0,.3);
+  overflow: auto;
+  z-index: 10;
+  position: relative;
+  padding: 0 0 1% 0;
+  a{
+    color: white;
+    // margin-right: 23%;
+  }
+}
+
+.nav-text{
+  @include outer-container;
+}
+
+.nav-logo{
+  padding: 0;
+  h1, h2 { color: white; }
+  h1{
+  }
+  h2{
+    font-style: italic;
+    font-weight: 100;
+    float: left;
+  }
+}
+
+.nav-links{
+  float: right;
+  margin-top: -2%;
+  ul{
+  }
+  li{
+    display: inline-block;
+    font-size: 1em;
+  }
+}
+
+.hero-image{
+  z-index: -10;
+  position: relative;
+  @include media($breakpoint-ipad) {
+    height: 447px;
+    overflow: hidden;
+    margin-top: -80px;
+  }
+  @include media($breakpoint-large-screen) {
+    height: 537px;
+    overflow: hidden;
+    margin-top: -90px;
+  }
+  img{
+    width: 100%;
+  }
+}
+
+
+.hero-caption{
+  @include outer-container();
+  h1{
+    @include media($breakpoint-ipad) {
+      font-size: 5em !important;
+      color: rgba(255,255,255,.7) !important;
+      text-align: right;
+      margin-top: -33%;
+      margin-bottom: 10%;
+    }
+  }
+}
+
+.headline{
+  text-align: center;
+}
+
+
+.overview{
+  @include row;
+  margin-top: 3%;
+  .mac-tasks-image{
+    @include media($breakpoint-ipad) {
+      @include shift(-1);
+      @include span-columns(6);
+     }
+
+    @include media($breakpoint-large-screen) {
+      @include shift(1);
+      @include span-columns(5);
+    }
+  }
+  .overview-copy{
+    @include media($breakpoint-ipad) {
+      @include shift(1);
+      @include span-columns(4);
+      margin-top: 5%;
+    }
+
+    @include media($breakpoint-large-screen) {
+      @include shift(0);
+      @include span-columns(4);
+    }
+  }
+}
+
+.features{
+  @include row;
+  width: 100%;
+  background: white;
+  padding: 2% 0;
+  margin: 2% 0;
+  h1{text-align: center;}
+  .feature-set-a{
+    @include media($breakpoint-ipad) {
+      @include shift(1);
+      @include span-columns(4);
+     }
+
+    @include media($breakpoint-large-screen) {
+      @include span-columns(3);
+    }
+  }
+  .feature-set-b{
+    @include media($breakpoint-ipad) {
+      @include shift(1);
+      @include span-columns(4);
+      margin-top: 5%;
+    }
+
+    @include media($breakpoint-large-screen) {
+      @include span-columns(3);
+    }
+  }
+}
+
+.show-page{
+  @include row;
+  margin-top: 3%;
+  .show-task-image{
+    @include media($breakpoint-ipad) {
+      @include shift(1);
+      @include span-columns(5);
+     }
+
+    @include media($breakpoint-large-screen) {
+      @include shift(0);
+      @include span-columns(5.5);
+    }
+  }
+  .show-copy{
+    @include media($breakpoint-ipad) {
+      @include shift(1);
+      @include span-columns(4.2);
+      margin-top: 5%;
+    }
+
+    @include media($breakpoint-large-screen) {
+      @include shift(2);
+      @include span-columns(4);
+    }
+  }
+}
+
+
+.signup{
+  @include row;
+  width: 100%;
+  background: white;
+  padding: 3% 0 10%;
+  margin: 2% 0 0 0;
+
+  .signup-button{
+    @include media($breakpoint-ipad) {
+     }
+
+    @include media($breakpoint-large-screen) {
+      @include outer-container;
+      @include span-columns(6);
+      margin-left: 5%;
+    }
+  }
+  .signup-copy{
+    @include media($breakpoint-ipad) {
+      @include shift(.5);
+      @include span-columns(5.5);
+      margin-top: 4%;
+    }
+
+    @include media($breakpoint-large-screen) {
+      @include shift(0);
+      @include outer-container;
+      @include span-columns(6);
+    }
+  }
+}
+
+#welcome{
+  .button{
+    background: $stone;
+    cursor: pointer;
+    &:hover{
+      background: white;
+    }
+  }
+}
+ a{
+    color: $black;
+}
+
+#welcome .footer{
+  text-align: right;
+  padding: 1%;
+}
+

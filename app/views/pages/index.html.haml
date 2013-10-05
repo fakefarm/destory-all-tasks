@@ -1,73 +1,80 @@
-%section.logo
-  %h1 Destroy All Tasks
-  %h2 Inbox Zero for Tasks
+#welcome
+  %section.hero-caption
+    %h1
+      What do you do
+      %br
+      when your to do list
+      %br
+      is done?
 
-%section.navigation
-  %ul
-    %li=link_to 'log in'
-    %li=link_to 'sign up'
+  %section.headline
+    %h1 Finish each day with a sense of accomplishment
+    %p Does your 'list system' help you focus and feel good at the end of each day?
+    %p Discover the freedom of living from a single list that has a daily finish line.
 
-%section.hero
-  .hero-image
-    =image_tag 'hero.gif'
-  %h1 This is what I do when my list is zero.
+  %section.overview
+    .mac-tasks-image
+      =image_tag "mac_overview.gif"
+    .overview-copy
+      %h1 One list to rule them all
+      %p How many lists do you have? Don't start a new list simply to have a clean mental slate to work from. Discover the freedom of living from a single list that has an ending each day.
 
-%section.headline
-  %h1 Finish each day with a sense of accomplishment
-  %p Does your 'list system' help you focus and feel good at the end of each day?
-  %p Discover the freedom of living from a single list that has a daily finish line.
+  %section.features
+    %h1 Don't just make a list, do something
+    .feature-set-a
+      %h2 Punt tasks
+      %p Can't complete a task today? Punt it! Punted tasks patiently sit for 3 days before returning to your list. Or, manually return a task too.
 
-%section.overview
-  .mac-tasks-image
-    =image_tag "mac_overview.gif"
-  .overview-copy
-    %h1 One list to rule them all
-    %p How many lists do you have? Don't start a new list simply to have a clean mental slate to work from. Discover the freedom of living from a single list that has an ending each day.
+      %h2 Sort tasks
+      %p Sort your list by clicking and dragging
 
-%section.features
-  %h1 Don't just make a list, do something
-  .feature-set-a
-    %h2 Punt tasks
-    %p Can't complete a task today? Punt it! Punted tasks patiently sit for 3 days before returning to your list. Or, manually return a task too.
+      %h2 Tag tasks
+      %p Tags are anything to help you sort your list. They also have some magic powers. For example, add an '@' ("@3pm"), or 'zzz' ('read zzz') to highlight the task.
+    .feature-set-b
+      %h2 Jot notes
+      %p Click on a task to see a page dedicated to the task. Take notes, and keep that page open to remind you what you're _really_ supposed to be doing.
+      %h2 Track time
+      %p Each task has a timer to keep track of the amount of time you're actually spending _during_ the task time.
 
-    %h2 Sort tasks
-    %p Sort your list by clicking and dragging
+  %section.show-page
+    .show-copy
+      %h1 Focus on the task at hand
+      %p
+        Click on any task to get it's own page. There, you can track time, add notes, to help you get the task done. Notes are
+        %span=link_to "Markdown", "http://daringfireball.net/projects/markdown/basics"
+        friendly.
+    .show-task-image
+      =image_tag "mac_show.gif"
 
-    %h2 Tag tasks
-    %p Tags are anything to help you sort your list. They also have some magic powers. For example, add an '@' ("@3pm"), or 'zzz' ('read zzz') to highlight the task.
-  .feature-set-b
-    %h2 Jot notes
-    %p Click on a task to see a page dedicated to the task. Take notes, and keep that page open to remind you what you're _really_ supposed to be doing.
-    %h2 Track time
-    %p Each task has a timer to keep track of the amount of time you're actually spending _during_ the task time.
+  %section.signup
+    .signup-button
+      .button=link_to "Join for Free", signup_path
+    .signup-copy
+      %h1 Sign up for freedom
+      %p Start learning what it means to manage your list instead of letting your list manage you.
 
-%section.show-page
-  .show-task-image
-    =image_tag "mac_show.gif"
-  .show-copy
-    %h1 Focus on the task at hand
-    %p
-      Click on any task to get it's own page. There, you can track time, add notes, to help you get the task done. Notes are
-      %span=link_to "Markdown", "http://daringfireball.net/projects/markdown/basics"
-      friendly.
+  / .summary
+  /   %h1 Inbox zero for tasks
+  /   %h2 By Destroy all Tasks
+  /   .action-row
+  /     .features
+  /       %h3 Features
+  /       %ul
+  /         %li One list to rule them all.
+  /         %li Sort your list by priority.
+  /         %li If you can't complete the task today, then 'punt' it.
+  /         %li Add 'zzz' or '@' to a tag for highlighting.
+  /         %li Click on a task to add comments.
 
-%section.signup
-  .signup-button
-    .button=link_to "Join for Free", signup_path
-  .signup-copy
-    %h1 Sign up for freedom
-    %p Start learning what it means to manage your list instead of letting your list manage you.
 
-/ .summary
-/   %h1 Inbox zero for tasks
-/   %h2 By Destroy all Tasks
-/   .action-row
-/     .features
-/       %h3 Features
-/       %ul
-/         %li One list to rule them all.
-/         %li Sort your list by priority.
-/         %li If you can't complete the task today, then 'punt' it.
-/         %li Add 'zzz' or '@' to a tag for highlighting.
-/         %li Click on a task to add comments.
-
+  .footer
+    = link_to 'Home', root_path
+    |
+    = link_to 'Tasks', tasks_path
+    |
+    = link_to 'made by Dave', "http://www.hireDave.me"
+    |
+    - if current_user
+      = link_to "Log out", logout_path
+    - else
+      =link_to "Log In", login_path

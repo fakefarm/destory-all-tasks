@@ -1,4 +1,4 @@
-@mixin btn($bg, $color: white) {
+@mixin btn($bg, $color: $black) {
   display: inline-block;
   padding: 0.65em 1.25em;
   margin: 0;
