@@ -1,7 +1,7 @@
 DestroyAllTasks::Application.routes.draw do
 
 match 'signup', to: 'users#new', as: 'signup'
-match 'users', to: 'users#index', as: 'destroyers'
+match 'destroyers', to: 'users#index', as: 'destroyers'
 match 'login', to: 'sessions#new', as: 'login'
 match 'logout', to: 'sessions#destroy', as: 'logout'
 

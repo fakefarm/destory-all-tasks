@@ -1,5 +1,5 @@
 // Breakpoints
-$breakpoint-iphone: 480px;
-$breakpoint-ipad: 600px;
-$breakpoint-desktop: 1080px;
-$breakpoint-large-screen: 1680px;
+// Mobile First - mobile styling up top.
+$breakpoint-ipad: 512px; // This is to style vertical tablet
+$breakpoint-desktop: 1024px; // destop and ipad landscape
+$breakpoint-large-screen: 1536px; // large screen

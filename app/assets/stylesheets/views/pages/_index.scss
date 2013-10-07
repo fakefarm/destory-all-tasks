@@ -1,41 +1,24 @@
-// Fonts
-
-#welcome{
-  @include media($breakpoint-ipad) {
-    h1{
-      font-size: 2.5em;
-      color: $black;
-    }
-    h2{
-      font-size: 2.2em;
-      margin: 5% 0 -2% 0;
-    }
-    p{
-      font-size: 1.5em;
-      padding: 0;
-      margin: 1% 0;
-    }
-  }
-
-  @include media($breakpoint-large-screen) {
-    h1{font-size: 4em; }
-    h2{
-      font-size: 3.2em;
-      margin: 5% 0 -2% 0;
-    }
-    p{
-      font-size: 1.5em;
-      padding: 0;
-      margin: 1% 0;
-    }
-  }
-}
-
 body{
   background: $stone;
   position: relative;
 }
+h1, h2, h3, p{
+  padding: 0 2%;
+}
 
+.full-line-break{
+  display: none;
+  @include media($breakpoint-ipad) {
+    width: 70%;
+    display: block;
+    border-bottom: 1px solid $light-stone;
+    border-top: 1px solid $light-grey;
+    margin: 1% auto 1%;
+  }
+  @include media($breakpoint-large-screen) {
+    width: 40%;
+  }
+}
 .nav-bar{
   background: rgba(0,0,0,.3);
   overflow: auto;
@@ -49,44 +32,67 @@ body{
 }
 
 .nav-text{
-  @include outer-container;
+  @include media($breakpoint-ipad) {
+    @include outer-container;
+   }
 }
 
 .nav-logo{
-  padding: 0;
   h1, h2 { color: white; }
-  h1{
+  h1 {
+    font-family: $cond !important;
+    font-weight: 800;
   }
   h2{
     font-style: italic;
     font-weight: 100;
-    float: left;
+  }
+  text-align: center;
+  @include media($breakpoint-ipad) {
+    padding: 1% 0 0 1%;
+    text-align: left;
+    h2{ float: left; }
   }
 }
 
 .nav-links{
-  float: right;
-  margin-top: -2%;
-  ul{
+  a{
+    padding: 2%;
+    margin: 3% 1%;
+    text-align: center;
+    background: $grey;
+    display: block;
   }
-  li{
-    display: inline-block;
-    font-size: 1em;
+  @include media($breakpoint-ipad) {
+    float: right;
+    margin-top: -2%;
+
+    li{
+      display: inline-block;
+      font-size: 1.2em;
+      margin-right: 10px;
+    }
+    a{
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      background: none;
+      display: block;
+    }
   }
 }
 
 .hero-image{
   z-index: -10;
   position: relative;
+  overflow: hidden;
   @include media($breakpoint-ipad) {
     height: 447px;
-    overflow: hidden;
     margin-top: -80px;
   }
   @include media($breakpoint-large-screen) {
     height: 537px;
-    overflow: hidden;
-    margin-top: -90px;
+    margin-top: -100px;
   }
   img{
     width: 100%;
@@ -96,46 +102,127 @@ body{
 
 .hero-caption{
   @include outer-container();
+
   h1{
+    margin-top: -33%;
+    margin-right: 2%;
+    color: rgba(255,255,255,.7) !important;
+    text-align: right;
+    font-family: $cond !important;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 2%;
+
     @include media($breakpoint-ipad) {
+      margin-top: -48%;
+      font-size: 3.8em !important;
+      font-weight: 700;
+      line-height: 58px;
+    }
+
+    @include media($breakpoint-desktop) {
+      margin-right: 0;
       font-size: 5em !important;
-      color: rgba(255,255,255,.7) !important;
-      text-align: right;
-      margin-top: -33%;
-      margin-bottom: 10%;
+      font-weight: 800;
+      margin-top: -30%;
+      line-height: 86px;
     }
   }
 }
 
 .headline{
-  text-align: center;
+  @include media($breakpoint-ipad) {
+    margin-top: -16%;
+    text-align: center;
+  }
+  @include media($breakpoint-desktop) { margin-top: 2%; }
+
+  h1{
+    font-size: 1.6em;
+    @include media($breakpoint-ipad) {
+      font-size: 2.5em;
+      font-family: $cond;
+    }
+    @include media($breakpoint-desktop) {
+      font-family: $sans;
+      font-size: 3em;
+    }
+  }
+  p{
+    @include media($breakpoint-ipad) {
+      line-height: 10px;
+      font-size: 1.2em;
+    }
+
+    @include media($breakpoint-large-screen) {
+      font-size: 1.7em;
+    }
+  }
 }
 
 
 .overview{
   @include row;
   margin-top: 3%;
+
   .mac-tasks-image{
     @include media($breakpoint-ipad) {
-      @include shift(-1);
-      @include span-columns(6);
-     }
+      @include shift(-2);
+      @include span-columns(5);
+    }
 
     @include media($breakpoint-large-screen) {
       @include shift(1);
       @include span-columns(5);
     }
   }
+
+  img{
+    width: 100%;
+    @include media($breakpoint-ipad) {
+      width: 180%;
+    }
+    @include media($breakpoint-large-screen) {
+      width: 130%;
+    }
+  }
   .overview-copy{
     @include media($breakpoint-ipad) {
-      @include shift(1);
+      @include shift(3);
+      @include span-columns(6);
+    }
+    @include media($breakpoint-large-screen) {
+      @include shift(.5);
       @include span-columns(4);
-      margin-top: 5%;
     }
 
-    @include media($breakpoint-large-screen) {
-      @include shift(0);
-      @include span-columns(4);
+    h1{
+      font-size: 2em;
+      text-align: center;
+      font-family: $cond;
+      font-weight: 800;
+      margin: 0;
+
+      @include media($breakpoint-ipad) {
+        margin-top: 3%;
+        text-align: left;
+        font-size: 2.3em;
+      }
+
+      @include media($breakpoint-desktop) { font-size: 3.3em; }
+      @include media($breakpoint-large-screen) { font-size: 4em; }
+    }
+  }
+
+  p{
+    @include media($breakpoint-ipad) {
+      margin: 0 0 2% 0;
+      line-height: 22px;
+      width: 80%;
+    }
+    @include media($breakpoint-desktop) {
+      font-size: 1.2em;
+      line-height: 25px;
     }
   }
 }
@@ -144,16 +231,38 @@ body{
   @include row;
   width: 100%;
   background: white;
-  padding: 2% 0;
+  padding: 5% 0 10% 0;
   margin: 2% 0;
-  h1{text-align: center;}
+  @include media($breakpoint-desktop) { padding: 4% 0;}
+  @include media($breakpoint-large-screen) { padding: 2% 0;}
+
+  h1{
+    text-align: center;
+    font-size: 2.4em;
+    font-family: $cond;
+    line-height: 40px;
+    margin-bottom: 2%;
+
+    @include media($breakpoint-desktop) {font-size: 3em;
+      font-family: $sans;
+    }
+    @include media($breakpoint-large-screen) {font-size: 4em; }
+  }
+  h2{
+    font-size: 2em;
+    margin-top: 4%;
+  }
+  p{
+    margin: 0;
+  }
   .feature-set-a{
     @include media($breakpoint-ipad) {
-      @include shift(1);
+      @include shift(2);
       @include span-columns(4);
      }
 
     @include media($breakpoint-large-screen) {
+      @include shift(3);
       @include span-columns(3);
     }
   }
@@ -161,7 +270,6 @@ body{
     @include media($breakpoint-ipad) {
       @include shift(1);
       @include span-columns(4);
-      margin-top: 5%;
     }
 
     @include media($breakpoint-large-screen) {
@@ -172,80 +280,161 @@ body{
 
 .show-page{
   @include row;
-  margin-top: 3%;
-  .show-task-image{
-    @include media($breakpoint-ipad) {
-      @include shift(1);
-      @include span-columns(5);
-     }
-
-    @include media($breakpoint-large-screen) {
-      @include shift(0);
-      @include span-columns(5.5);
-    }
-  }
   .show-copy{
     @include media($breakpoint-ipad) {
       @include shift(1);
-      @include span-columns(4.2);
-      margin-top: 5%;
+      @include span-columns(5.5);
+      margin-top: 15%;
     }
 
     @include media($breakpoint-large-screen) {
       @include shift(2);
-      @include span-columns(4);
+      @include span-columns(3);
+      margin-top: 8%;
+    }
+    h1{
+      font-size: 2em;
+      text-align: center;
+      margin: 5% 0 0 0;
+      font-family: $cond;
+      @include media( $breakpoint-ipad) { text-align: left; }
+      @include media($breakpoint-desktop) { font-size: 3em; }
+      @include media($breakpoint-large-screen) { font-size: 4em; }
+    }
+    p{
+      margin: 0 0 3% 0;
+      padding: 0 2%;
+      @include media($breakpoint-desktop) { font-size: 1.2em; }
+    }
+    a{
+      color: $red;
+    }
+  }
+  .show-task-image{
+    @include media($breakpoint-ipad) {
+      @include shift(0);
+      @include span-columns(5.5);
+      overflow: hidden;
+      margin-top: 5%;
+     }
+
+    @include media($breakpoint-ipad) { margin-top: 2% }
+
+    @include media($breakpoint-large-screen) {
+      @include shift(1);
+      @include span-columns(5);
+      overflow: auto;
+    }
+    img{
+      width: 100%;
+      @include media($breakpoint-ipad) {width: 200%; }
+      @include media($breakpoint-desktop) {width: 180%; }
+      @include media($breakpoint-large-screen) {width: 100%; }
     }
   }
 }
-
-
 .signup{
-  @include row;
-  width: 100%;
+  margin-top: 10%;
   background: white;
-  padding: 3% 0 10%;
-  margin: 2% 0 0 0;
+  padding: 5%;
+  @include row;
 
-  .signup-button{
-    @include media($breakpoint-ipad) {
-     }
-
-    @include media($breakpoint-large-screen) {
-      @include outer-container;
-      @include span-columns(6);
-      margin-left: 5%;
-    }
-  }
   .signup-copy{
     @include media($breakpoint-ipad) {
       @include shift(.5);
-      @include span-columns(5.5);
-      margin-top: 4%;
+      @include span-columns(5);
     }
-
+    @include media($breakpoint-desktop) { margin-top: 2%; }
     @include media($breakpoint-large-screen) {
-      @include shift(0);
-      @include outer-container;
-      @include span-columns(6);
+      @include shift(-2);
+      @include span-columns(4);
+      margin-top: 1%;
+    }
+
+    h1{
+      font-size: 1.5em;
+      margin-top: 2%;
+      font-family: $cond;
+      text-align: center;
+      @include media($breakpoint-ipad) {
+        font-size: 2em;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+      }
+      @include media($breakpoint-desktop) {
+        font-size: 3em;
+      }
+    }
+    p{
+      font-size: .8em;
+      padding: 0 4%;
+      text-align: center;
+      margin-top: 0;
+      @include media($breakpoint-ipad) {
+        text-align: left;
+        padding: 0;
+        font-size: 1.2em;
+      }
+      @include media($breakpoint-desktop) {
+        line-height: 25px;
+      }
     }
   }
 }
+.signup-button{
+  @include media($breakpoint-ipad) { @include span-columns(5); }
+}
+.signup-button-section{
+  @include media($breakpoint-large-screen) {
+    @include shift(1.5);
+    @include span-columns(5);
+  }
+}
+a.signup-button{
+  display: block;
+  background: $green;
+  color: white;
+  padding: 5%;
+  margin: 0 5%;
+  text-align: center;
+  font-family: $serif;
+  font-size: 2em;
+  font-weight: bold;
+  @include media($breakpoint-desktop) {
+    font-size: 3em;
+    padding: 4%;
+  }
+}
 
-#welcome{
-  .button{
-    background: $stone;
-    cursor: pointer;
-    &:hover{
-      background: white;
+.footer{
+  ul{
+    @include media($breakpoint-ipad) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  a{
+    display: block;
+    background: $grey;
+    color: white;
+    padding: 2%;
+    margin: 0 5%;
+    text-align: center;
+    font-family: $serif;
+    font-size: .8em;
+    @include media($breakpoint-ipad) {
+      padding: 0 3%;
+      margin: 0 5%;
+      color: $grey;
+      background: none;
+      font-weight: 400;
+      width: 220px;
+    }
+  }
+  li{
+    @include media($breakpoint-ipad) {
+      display: inline-block;
     }
   }
 }
- a{
-    color: $black;
-}
-
-#welcome .footer{
-  text-align: right;
-  padding: 1%;
-}
-
