@@ -1,16 +1,31 @@
-body{
-  background: $grey;
+* {
+  -webkit-font-smoothing: antialiased !important;
   font-family: $sans;
 }
 
-
-body#printers{
- background: url("grey_wash.png");
+html body {
+  padding-left: 0; // IE
+  padding-right: 0; // IE
 }
 
-h1, h2, h3, h4, h5{
-  margin: 0;
+body {
+  background: $stone;
   color: $steele;
+  font-family: $sans;
+  font-size: 100%;
+  text-shadow: 1px 1px 1px transparent;
+}
+
+body#printers {
+  background: url("grey_wash.png");
+}
+
+p, a, h1, h2, h3, h4, h5, label {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
 }
 
 h1 {}
@@ -20,17 +35,17 @@ h3 {
   font-weight: 300;
 }
 
-h4, li {
+h4 {
+  font-family: $cond;
   font-size: 2em;
   font-weight: 300;
-  font-family: $serif;
 }
 
 li{
   list-style: none;
 }
 
-header{
+header {
 
 }
 
@@ -38,66 +53,15 @@ table{
   width: 95%;
 }
 
-
-a{
+a {
   color: white;
   text-decoration: none;
-  font-family: $serif;
-  &:hover{
-    text-decoration: underline;
-  }
-}
-
-
-// Basic Elements
-
-* {
-  -webkit-font-smoothing: antialiased !important;
-  font-size: 100%;
-  font-family: $sans;
-  color: $steele;
-
-}
-
-html body {
-  padding-left: 0; // IE
-  padding-right: 0; // IE
-}
-
-
-body {
-  font-family: $typeface-sans;
-  text-shadow: 1px 1px 1px transparent;
-}
-
-a {
+  font-family: $cond;
+  &:hover{ text-decoration: underline; }
   @include transition(all 0.2s ease-in-out);
 }
 
-p, a, h1, h2, h3, h4, h5, label {
-  font-family: inherit;
-}
-
-h1 {}
-
-h2 {}
-
-h3 {}
-
-h4 {}
-
-h5 {}
-
-h6 {}
-
-p {}
-
-hr {}
-
 hr {
-  border: solid #ddd;
-  border-width: 1px 0 0;
-  clear: both;
-  margin: 1em 0;
-  height: 0;
-}
+  border-bottom: 1px solid $light-stone;
+  border-top: 1px solid $light-grey;
+} // hr
