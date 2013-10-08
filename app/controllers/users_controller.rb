@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorize
+  before_filter :authorize, except: 'new'
 
   def index
     @users = User.all
