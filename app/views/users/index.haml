@@ -4,8 +4,12 @@
       %th User
       %th Number of tasks
       %th Last Task
+      %th Item
+      %th Tag
     - @users.each do |user|
       %tr
         %td= user.email
         %td= user.tasks.count
         %td= user.tasks.last.created_at.to_formatted_s(:short) unless user.tasks.last.nil?
+        %td=user.tasks.last.item unless user.tasks.last.nil?
+        %td=user.tasks.last.tags unless user.tasks.last.nil?
