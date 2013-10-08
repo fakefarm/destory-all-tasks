@@ -54,7 +54,7 @@ table{
 }
 
 a {
-  color: white;
+  color: $grey;
   text-decoration: none;
   font-family: $cond;
   &:hover{ text-decoration: underline; }

@@ -390,8 +390,6 @@ a.signup-button{
   }
   a{
     display: block;
-    background: $grey;
-    color: white;
     text-align: center;
     font-family: $cond;
     @include media($breakpoint-ipad) {
