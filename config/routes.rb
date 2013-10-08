@@ -5,6 +5,9 @@ match 'destroyers', to: 'users#index', as: 'destroyers'
 match 'login', to: 'sessions#new', as: 'login'
 match 'logout', to: 'sessions#destroy', as: 'logout'
 
+match 'overview', to: 'pages#overview', as: 'overview'
+match 'style-guide', to: 'pages#style_guide', as: 'style_guide'
+
 root :to => 'pages#index'
 
 resources :sessions

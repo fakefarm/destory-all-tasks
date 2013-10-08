@@ -8,6 +8,7 @@
 
     %section.nav-links
       %ul
+        / %li= link_to "Overview", overview_path
         %li
           - if current_user
             = link_to "Log out", logout_path

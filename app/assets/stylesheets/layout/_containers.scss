@@ -3,6 +3,7 @@
 .l-constrained {
   @include outer-container();
   padding: 0 $page-gutter;
+  margin: $page-gutter;
 }
 
 #l-printer-wrapper { @include outer-container(); }

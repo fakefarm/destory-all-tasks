@@ -54,18 +54,3 @@
     %h1 Sign up for freedom
     %p
       Start learning what it means to manage your list instead of letting your list manage you.
-
-
-.footer
-  %ul
-    - if current_user
-      %li
-        %a{href: "#{}"} Tasks
-      %li
-        %a{href: "#{logout_path}"} Log out
-    - else
-      %li
-        %a{href: "#{login_path}"} Log In
-    %li
-      %a{href: "http://www.hireDave.me"} made by Dave
-
