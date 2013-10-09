@@ -1,6 +1,7 @@
 .summary
-  %h1= @task.item
-
+  %h1
+    = @task.item
+    %span= link_to "#{@task.tags}", tags_path(@task.tags)
   %hr
   .home-button= link_to 'all tasks', tasks_path
   .home-button= link_to 'edit', edit_task_path(@task)
