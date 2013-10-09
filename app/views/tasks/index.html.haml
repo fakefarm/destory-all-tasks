@@ -17,10 +17,8 @@
               %tr{ id: dom_id(task), data: { behavior: 'sortable-item' } }
                 %td
                   %span.task-name= link_to task.item, task_path(task)
-                  %span.task-edit= task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)', edit_task_path(task))
+                  %span#task-tag= link_to "#{task.tags}", tags_path(task.tags)
 
                 %td.punt= render 'layouts/shared/punt', task: task
-                %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
-                %td#task-tag= link_to "#{task.tags}", tags_path(task.tags)
-
+                %td.destroy= destroy_path(task)
 

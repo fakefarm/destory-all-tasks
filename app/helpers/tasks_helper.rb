@@ -13,4 +13,12 @@ module TasksHelper
       MESSAGES[rand(0..MESSAGES.count)]
     end
   end
+
+  def destroy_path(task)
+    if task.comments.count > 0
+     link_to "#{pluralize(task.comments.count, 'note')}", task_path(task)
+   else
+     link_to 'Destroy', task, :method => :delete
+   end
+ end
 end
