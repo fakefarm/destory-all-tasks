@@ -21,12 +21,13 @@
     %table{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
       %tbody
         - @tasks.each do |task|
-          %tr{ id: dom_id(task), data: { behavior: 'sortable-item' } }
-            %td
-              %span.task-name= link_to task.item, task_path(task)
-              %span.task-edit= task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)',  edit_task_path(task))
+          - if task.due_date >= Time.now
+            %tr{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+              %td
+                %span.task-name= link_to task.item, task_path(task)
+                %span.task-edit= task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)',  edit_task_path(task))
 
-            %td.punt= render 'layouts/shared/punt_return', task: task
-            %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
-            %td.return-time= distance_of_time_in_words_to_now(task.due_date)
+              %td.punt= render 'layouts/shared/punt_return', task: task
+              %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
+              %td.return-time= distance_of_time_in_words_to_now(task.due_date)
 
