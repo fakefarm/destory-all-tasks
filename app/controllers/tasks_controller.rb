@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_filter :authorize
 
   def tags
-    @tasks = Task.where(tags: params[:tags])
+    @tasks = Task.where(tags: params[:tags], user_id: current_user.id)
     @title = params[:tags]
   end
 
