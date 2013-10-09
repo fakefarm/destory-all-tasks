@@ -2,6 +2,11 @@ class TasksController < ApplicationController
 
   before_filter :authorize
 
+  def tags
+    @tasks = Task.where(tags: params[:tags])
+    @title = params[:tags]
+  end
+
   def index
     @tasks = Task.where(user_id: current_user.id).order('position')
     @punts = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)

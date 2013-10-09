@@ -8,6 +8,8 @@ match 'logout', to: 'sessions#destroy', as: 'logout'
 match 'overview', to: 'pages#overview', as: 'overview'
 match 'style-guide', to: 'pages#style_guide', as: 'style_guide'
 
+match 'tasks/:tags' => 'tasks#tags', as: 'tags'
+
 root :to => 'pages#index'
 
 resources :sessions

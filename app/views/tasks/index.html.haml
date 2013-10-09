@@ -21,5 +21,6 @@
 
                 %td.punt= render 'layouts/shared/punt', task: task
                 %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
-                %td#task-tag= task.tags
+                %td#task-tag= link_to "#{task.tags}", tags_path(task.tags)
+
 
