@@ -1,4 +1,6 @@
 .summary {
+  padding: 0;
+  margin: 0;
   @include span-columns(12);
   @include white-round-box;
   h1{ @include text-head; }

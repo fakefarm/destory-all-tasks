@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :task_counter_id
 
-  validates_uniqueness_of :email
+  validates_uniqueness_of :email, :case_sensitive => false
 
   before_create { generate_token(:auth_token) }
 

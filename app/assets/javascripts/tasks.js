@@ -18,6 +18,7 @@ $(document).ready(function() {
     axis:   'y',
     cursor: 'move',
     items:  '[data-behavior="sortable-item"]',
+    handle: ".handle",
 
     update: function() {
       var formData = $selector.sortable('serialize');

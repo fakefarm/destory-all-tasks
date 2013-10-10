@@ -10,15 +10,13 @@
     - if @tasks.count == 0
       %h1= message
     - else
-      %table{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
-        %tbody
-          - @tasks.each do |task|
-            - if task.due_date <= Time.now
-              %tr{ id: dom_id(task), data: { behavior: 'sortable-item' } }
-                %td
-                  %span.task-name= link_to task.item, task_path(task)
-                  %span#task-tag= link_to "#{task.tags}", tags_path(task.tags)
-
-                %td.punt= render 'layouts/shared/punt', task: task
-                %td.destroy= destroy_path(task)
+      .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+        - @tasks.each do |task|
+          - if task.due_date <= Time.now
+            %section.task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+              .handle= image_tag('grip.svg')
+              %h1.task-item= link_to task.item, task_path(task)
+              %h2= link_to "#{task.tags}", tags_path(task.tags)
+              %h3.punt= render 'layouts/shared/punt', task: task
+              %h3.destroy= destroy_path(task)
 
