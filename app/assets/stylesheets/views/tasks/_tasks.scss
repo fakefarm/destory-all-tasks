@@ -1,121 +1,64 @@
-.task-wrapper{
-  background: white;
-  @include clearfix;
+.task-item {
+  @include media($breakpoint-ipad) { @include span-columns(6); }
+}
+
+.task-wrapper {
   margin: 15% 0 0 0;
-  @include media($breakpoint-ipad) {
-    margin: 2% 0 0 0;
-  }
-  &:first-child{
-    margin: 0;
-  }
-  .handle{
-   cursor: pointer;
 
-  }
-  h1 a {
-    font-size: .5em;
+  @include media($breakpoint-ipad) { margin: 2% 0 0 0; }
+
+  &:first-child { margin: 0; }
+
+  .handle {
+    cursor: pointer;
+    padding: 3% 0;
+    width: 20%;
+
     @include media($breakpoint-ipad) {
-    font-size: 1em;
+      float: left;
+      padding: 0;
+      width: 2%;
     }
   }
-  h1{
-    line-height: 0.4em;
-    @include media($breakpoint-ipad) {
-      line-height: 2em;
-    }
-  }
-  h2 a {
-    width: 100%;
-    padding: 2% 0;
-    margin: 2% 0;
-    display: block
-  }
-  h3.punt button {
-    background: $light-grey;
-    width: 50%;
-    float: left;
-    padding: 3% 0;
-  }
-  h3.destroy a {
-    background: $red;
-    color: white;
-    width: 45%;
-    text-align: center;
-    padding: 3% 0;
-  }
-}
-
-.ui-sortable-helper{
-  box-shadow: 0px 0px 2px $stone;
-  background: $light-stone;
 }
 
 
+.punt { text-align: right; }
+.punt-button { @include btn(white, red); }
+.highlight { background: $yellow; }
+.snooze { background: $light-grey; }
+.urgent { background: $warning; }
+td span.task-edit a { color: $grey !important; }
+td span.task-name a { font-size: 1.6em; }
+.tasks.summary td.destroy a { color: $pink; }
+.feature { color: $burnt; }
 
-.counter {
-    font-size: 2em;
-    padding: 0 2%;
-    position: relative;
-    top: 5px;
-    font-weight: bold;
-}
-
-.punt{
-  text-align: right;
-}
-
-.punt-form{
-  form{
-    margin: 0;
-  }
-  button{
+.punt-form {
+  form { margin: 0; }
+  button {
     background: none;
     border: none;
   }
 }
 
-.return-time{
-    font-style: italic;
-    font-family: $serif;
+.return-time {
+  font-style: italic;
+  font-family: $serif;
 }
 
-.highlight{
-  background: $yellow;
-}
-.snooze{
-  background: $light-grey;
-}
-.urgent{
-  background: $warning;
-}
 
-.destroy{
+.destroy {
   text-align: right;
   width: 100%;
 }
-.home-button{
+
+.home-button {
   @include btn($stone);
-  &.destroy{
+  &.destroy {
     background: $burnt;
     float: right;
-    a{ color: $black;}
+    a { color: $black; }
   }
-}
-
-.punt-button{
-  @include btn(white, red);
-}
-
-.feature{
-  color: $burnt;
-}
-
-td span.task-name a{
-  font-size: 1.6em;
-}
-
-td span.task-edit a{
-  color: $grey !important;
 }
 
 #task_item{
@@ -123,36 +66,6 @@ td span.task-edit a{
   font-size: 3em;
   width: 100%;
   margin-bottom: 2%;
+  font-family: $cond;
 }
-
-.actions{
-  input{
-    @include btn($burnt, black);
-  }
-}
-
-.counter, .task-list-link{
-  text-align: right;
-  margin-top: 2%;
-}
-
-.highlight {
-  background: $yellow;
-}
-
-.tasks.summary td.destroy a{
-  color: $pink;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 

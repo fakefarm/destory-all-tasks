@@ -9,17 +9,17 @@
 }
 
 @mixin text-tag{
-  font-size: 1.3em;
-  font-weight: 800;
-  color: $grey;
-  font-family: $sans;
-  font-weight: 300;
-  a {
-    color: $blue !important;
-  }
-  @include media($breakpoint-ipad){
-    font-size: 2em;
-  }
+  // font-size: 1.3em;
+  // font-weight: 800;
+  // color: $grey;
+  // font-family: $sans;
+  // font-weight: 300;
+  // a {
+  //   color: $blue !important;
+  // }
+  // @include media($breakpoint-ipad){
+  //   font-size: 2em;
+  // }
 }
 
 @mixin text-catch{}

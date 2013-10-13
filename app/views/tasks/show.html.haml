@@ -1,12 +1,19 @@
 .summary
-  %h1
+  %h1.task-item
     = @task.item
     %span= link_to "#{@task.tags}", tags_path(@task.tags)
-  %hr
-  .home-button= link_to 'all tasks', tasks_path
-  .home-button= link_to 'edit', edit_task_path(@task)
-  .punt-button= render 'layouts/shared/punt', task: @task
-  .home-button{ type: 'button', id: 'timer', class: 'start', value: 'Start Timer'} Start timer
+
+  .button-row
+    .two-buttons
+      %h3.punt-btn= render 'layouts/shared/punt', task: @task
+      %h3
+        %a{href: "#{destroy_path(@task)}", class: 'destroy-btn'} destroy
+
+
+  .button-row
+    .two-buttons
+      %h3.edit-btn= link_to 'edit', edit_task_path(@task)
+      %h3{ type: 'button', id: 'timer', class: 'timer-btn', value: 'Start Timer'} Start timer
   %span.counter
     %span#counterHour 0
     %span :
@@ -14,12 +21,15 @@
     %span :
     %span#counterSec 0
 
-  .home-button.destroy= link_to 'destroy', @task, method: :delete
 
   = render 'comments/form'
 
   - @comments.each do |comment|
     %article
       .entry= markdown(comment.entry)
-      .destroy=link_to 'destroy', comment, method: :delete
+      .destroy-btn=link_to 'destroy', comment, method: :delete
+
+
+
+
 

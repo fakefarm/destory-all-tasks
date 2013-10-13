@@ -1,10 +1,8 @@
 #header {}
 
-#l-header{
+.l-header{
   @include outer-container();
-
-  h1{
-    @include text-tag;
-    font-size: 1em;
-  }
+  @include counter;
+  text-align: right;
+  margin-top: 1em;
 }

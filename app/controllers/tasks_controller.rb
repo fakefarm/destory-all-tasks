@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
   before_filter :authorize
+  before_filter :get_punts
 
   def tags
     @tasks = Task.where(tags: params[:tags], user_id: current_user.id)
@@ -9,9 +10,6 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.where(user_id: current_user.id).order('position')
-    @punts = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)
-    @punt_count = @punts.count
-
     @task = Task.new
     @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
     @user = User.find(current_user.id)
@@ -83,5 +81,10 @@ class TasksController < ApplicationController
     render nothing: true
   end
 
+private
 
+  def get_punts
+    @punts = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)
+    @punt_count = @punts.count
+  end
 end

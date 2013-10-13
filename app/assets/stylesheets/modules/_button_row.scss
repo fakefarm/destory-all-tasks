@@ -1,0 +1,19 @@
+.button-row { @include row; }
+
+.two-buttons {
+  @include clearfix;
+  @include media($breakpoint-ipad) {
+  @include shift(8);
+  }
+}
+.two-buttons h3 {
+  @include span-columns(6);
+  font-size: 0.7em;
+  @include media($breakpoint-ipad) {
+    @include span-columns(4);
+  }
+}
+
+h3.two-buttons a{
+  background: red;
+}

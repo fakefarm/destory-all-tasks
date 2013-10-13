@@ -22,10 +22,10 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-  %body#application{ class: @body_class }
-
+  %body.application{ class: @body_class }
     #l-constrained
-      %header#l-header
+      %header
+        = render 'layouts/shared/header'
       .l-main
         = yield
 

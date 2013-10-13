@@ -17,7 +17,7 @@ module TasksHelper
   def destroy_path(task)
     if task.comments.count > 0
      link_to "#{pluralize(task.comments.count, 'note')}", task_path(task)
-   else
+    else
      link_to 'Destroy', task, :method => :delete
    end
  end

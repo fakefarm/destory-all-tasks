@@ -1,22 +1,18 @@
-.counter
-  / = "#{pluralize(@counter, "task")} destroyed!" # TODO - fix me.
-  / &nbsp; &nbsp;
-  = link_to "view punts (#{@punt_count})", punted_tasks_path
-.summary.tasks
+.summary.task-page
   .l-primary-content
     = render 'form'
 
-  .l-sidebar
-    - if @tasks.count == 0
-      %h1= message
-    - else
-      .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
-        - @tasks.each do |task|
-          - if task.due_date <= Time.now
-            %section.task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
-              .handle= image_tag('grip.svg')
-              %h1.task-item= link_to task.item, task_path(task)
-              %h2= link_to "#{task.tags}", tags_path(task.tags)
-              %h3.punt= render 'layouts/shared/punt', task: task
-              %h3.destroy= destroy_path(task)
+    .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+      - @tasks.each do |task|
+        - if task.due_date <= Time.now
+          %section.task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+            .handle= image_tag('grip.svg')
+            %h1.task-item
+              %a{href: "#{task_path(task)}"}= "#{task.item}"
+            %h2
+              %a{href: "#{tags_path(task.tags)}", class: 'btn'}= "#{task.tags}"
+              .button-row
+                .two-buttons
+                  %h3.punt-btn= render 'layouts/shared/punt', task: task
+                  %h3.destroy-btn= destroy_path(task)
 

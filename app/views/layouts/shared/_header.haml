@@ -1,0 +1,9 @@
+.l-header
+  %ul
+    %li
+      - if params[:action] == 'index'
+        - if @punt_count > 0
+          %a{ href: "#{punted_tasks_path}" }="view #{pluralize(@punt_count, 'punt')}"
+        - else
+      - else
+        %a{ href: "#{tasks_path}"} all tasks
