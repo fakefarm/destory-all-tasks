@@ -1,0 +1,18 @@
+.summary.task-page
+  .l-primary-content
+    = render 'form'
+
+    .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+      - @tasks.each do |task|
+        - if task.due_date <= Time.now
+          %section.task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+            .handle= image_tag('grip.svg')
+            %h1.task-item
+              %a{href: "#{task_path(task)}"}= "#{task.item}"
+            %h2
+              %a{href: "#{tags_path(task.tags)}", class: 'btn'}= "#{task.tags}"
+              .button-row
+                .two-buttons
+                  %h3.punt-btn= render 'layouts/shared/punt', task: task
+                  %h3.destroy-btn= flex_destroy_path(task)
+

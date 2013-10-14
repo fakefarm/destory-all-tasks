@@ -6,6 +6,7 @@
   @include shift(8);
   }
 }
+
 .two-buttons h3 {
   @include span-columns(6);
   font-size: 0.7em;
@@ -14,6 +15,37 @@
   }
 }
 
-h3.two-buttons a{
-  background: red;
+.three-buttons {
+  @include clearfix;
+  @include media($breakpoint-ipad) {
+  @include shift(4);
+  }
+}
+
+.three-buttons h3 {
+  @include span-columns(4);
+  font-size: 1em;
+  @include media($breakpoint-ipad) {
+    @include span-columns(2);
+  }
+}
+
+.timer-row { @include clearfix; }
+
+.timer-row h3 {
+  @include span-columns(12);
+  padding: 1em;
+  margin: 0.5em 0;
+  font-size: 1.2em;
+  color: white;
+  @include media($breakpoint-ipad) {
+    @include span-columns(3);
+  }
+}
+
+.timer-row h4{
+  float: left;
+  font-size: 3em;
+  font-weight: bold;
+  font-family: $sans;
 }

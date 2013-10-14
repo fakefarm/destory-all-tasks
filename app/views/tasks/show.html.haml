@@ -4,22 +4,37 @@
     %span= link_to "#{@task.tags}", tags_path(@task.tags)
 
   .button-row
-    .two-buttons
+    .three-buttons
       %h3.punt-btn= render 'layouts/shared/punt', task: @task
-      %h3
-        %a{href: "#{destroy_path(@task)}", class: 'destroy-btn'} destroy
-
+      %h3.edit-btn= link_to 'edit', edit_task_path(@task)
+      %h3.destroy-btn= link_to "Destroy", task_path(@task), method: :delete
 
   .button-row
-    .two-buttons
-      %h3.edit-btn= link_to 'edit', edit_task_path(@task)
+    .timer-row
       %h3{ type: 'button', id: 'timer', class: 'timer-btn', value: 'Start Timer'} Start timer
-  %span.counter
-    %span#counterHour 0
-    %span :
-    %span#counterMin 0
-    %span :
-    %span#counterSec 0
+
+      .counter
+        %h4
+          %h4#counterHour 0
+          %h4 :
+          %h4#counterMin 0
+          %h4 :
+          %h4#counterSec 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   = render 'comments/form'

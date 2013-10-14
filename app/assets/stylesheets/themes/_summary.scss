@@ -3,7 +3,6 @@
   margin: 0;
   @include span-columns(12);
   @include white-round-box;
-  h1{ @include text-head; }
   h2{ @include text-tag; }
   p{
     font-size: 2em;

@@ -9,8 +9,8 @@ var fixHelperModified = function(e, tr) {
 
 $(document).ready(function() {
 
-  $( "td:contains('@')" ).parent().addClass("highlight");
-  $( "td:contains('zzz')" ).parent().addClass("snooze");
+  $( "h2 a:contains('@')" ).parent().parent().addClass("highlight");
+  $( "h2 a:contains('zzz')" ).parent().parent().addClass("snooze");
   var $selector = $("[data-behavior='sortable']");
 
   $selector.sortable({

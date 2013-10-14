@@ -1,10 +1,23 @@
 .task-item {
-  @include media($breakpoint-ipad) { @include span-columns(6); }
+  @include media($breakpoint-ipad) {
+    @include span-columns(6);
+  }
+}
+
+h1.task-item { line-height: 1em; }
+
+h1.task-item a {
+  font-size: 0.8em;
+  line-height: 0.5em;
+  @include media($breakpoint-ipad) {
+    font-size: 1.2em;
+  line-height: 0.9em;
+  }
 }
 
 .task-wrapper {
   margin: 15% 0 0 0;
-
+  padding: 0.5%;
   @include media($breakpoint-ipad) { margin: 2% 0 0 0; }
 
   &:first-child { margin: 0; }

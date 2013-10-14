@@ -14,7 +14,7 @@ module TasksHelper
     end
   end
 
-  def destroy_path(task)
+  def flex_destroy_path(task)
     if task.comments.count > 0
      link_to "#{pluralize(task.comments.count, 'note')}", task_path(task)
     else
