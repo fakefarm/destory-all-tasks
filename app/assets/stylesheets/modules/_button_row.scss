@@ -38,7 +38,13 @@
   }
 }
 
-.timer-row { @include clearfix; }
+.timer-row {
+  display: none;
+  @include media($breakpoint-ipad) {
+    @include clearfix;
+    display: block;
+  }
+}
 
 .timer-row h3 {
   @include span-columns(12);

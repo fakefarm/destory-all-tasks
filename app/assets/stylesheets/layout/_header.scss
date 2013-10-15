@@ -2,7 +2,6 @@
 
 .l-header {
   @include outer-container();
-  @include counter;
   text-align: right;
 
   li { display: inline-block; }

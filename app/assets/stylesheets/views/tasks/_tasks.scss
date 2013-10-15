@@ -10,7 +10,6 @@ h1.task-item a {
   font-size: 0.8em;
   line-height: 0.5em;
   @include media($breakpoint-ipad) {
-    font-size: 1.2em;
   line-height: 0.9em;
   }
 }

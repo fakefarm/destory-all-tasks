@@ -39,7 +39,7 @@ h1 a {
 h1{
   line-height: 0.4em;
   @include media($breakpoint-ipad) {
-    font-size: 3em;
+    font-size: 2em;
     line-height: 0.45em;
   }
 }
