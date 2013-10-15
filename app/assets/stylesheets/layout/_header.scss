@@ -1,8 +1,21 @@
 #header {}
 
-.l-header{
+.l-header {
   @include outer-container();
   @include counter;
   text-align: right;
-  margin-top: 1em;
+
+  li { display: inline-block; }
+
+  a {
+    display: inline-block;
+
+    @include media($breakpoint-ipad) {
+      margin: 0 0.5em;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }

@@ -23,6 +23,7 @@
     = csrf_meta_tags
 
   %body.application{ class: @body_class }
+    = # debug(params) if Rails.env.development?
     #l-constrained
       %header
         = render 'layouts/shared/header'
@@ -31,5 +32,4 @@
 
       %footer#l-footer
         = render 'layouts/shared/footer'
-    = debug(params) if Rails.env.development?
     = render 'layouts/shared/analytics'

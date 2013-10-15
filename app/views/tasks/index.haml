@@ -11,8 +11,7 @@
               %a{href: "#{task_path(task)}"}= "#{task.item}"
             %h2
               %a{href: "#{tags_path(task.tags)}", class: 'btn'}= "#{task.tags}"
-              .button-row
-                .two-buttons
-                  %h3.punt-btn= render 'layouts/shared/punt', task: task
-                  %h3.destroy-btn= flex_destroy_path(task)
-
+            .button-row
+              .two-buttons
+                %h3.punt-btn= render 'layouts/shared/punt', task: task
+                %h3.destroy-btn= flex_destroy_path(task)

@@ -1,5 +1,13 @@
 .button-row { @include row; }
 
+.button-row h1 {
+  line-height: 1em;
+  @include media($breakpoint-ipad) {
+    float: left;
+    width: 80%;
+  }
+ }
+
 .two-buttons {
   @include clearfix;
   @include media($breakpoint-ipad) {
@@ -48,4 +56,20 @@
   font-size: 3em;
   font-weight: bold;
   font-family: $sans;
+}
+
+
+.four-buttons {
+  @include clearfix;
+  @include media($breakpoint-ipad) {
+  @include shift(4);
+  }
+}
+
+.four-buttons h3 {
+  @include span-columns(3);
+  font-size: 0.7em;
+  @include media($breakpoint-ipad) {
+    @include span-columns(2);
+  }
 }

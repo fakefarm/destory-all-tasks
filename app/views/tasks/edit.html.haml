@@ -1,9 +1,8 @@
 .summary
-  .home-button= link_to 'List', tasks_path
-  .home-button= link_to 'Back', task_path(@task)
+  .button-row
+    %h1= @task.item
+    .two-buttons
+      .all-btn= link_to 'List', tasks_path
+      .all-btn= link_to 'Back', task_path(@task)
 
-  %h1= @task.item
-
-  = render 'form'
-
-
+    = render 'form'

@@ -21,30 +21,9 @@
           %h4 :
           %h4#counterSec 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   = render 'comments/form'
 
   - @comments.each do |comment|
     %article
       .entry= markdown(comment.entry)
       .destroy-btn=link_to 'destroy', comment, method: :delete
-
-
-
-
-
