@@ -1,6 +1,6 @@
 .l-header
   %ul
-    - if params[:action] == 'index'
+    - if params[:action] == 'index' && params[:controller] == 'tasks'
       - if @punt_count > 0
         %li
           %a{ href: "#{punted_tasks_path}" }="view #{pluralize(@punt_count, 'punt')}"

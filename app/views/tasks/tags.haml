@@ -1,33 +1,30 @@
-.counter
-  = link_to "all tasks", tasks_path
-  |
-  = link_to "view punts", punted_tasks_path
-.summary
-  %h1= @title
+.summary.task-page
+  .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+    - @tasks.each do |task|
+      - if task.due_date <= Time.now
+        %section.task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+          .handle= image_tag('grip.svg')
+          %h1.task-item
+            %a{href: "#{task_path(task)}"}= "#{task.item}"
+          %h2
+            %a{href: "#{tags_path(task.tags)}", class: 'btn'}= "#{task.tags}"
+          .button-row
+            .two-buttons
+              %h3.punt-btn= render 'layouts/shared/punt', task: task
+              %h3.destroy-btn= flex_destroy_path(task)
 
-  .l-sidebar
-    %table{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
-      %tbody
-        - @tasks.each do |task|
-          - if task.due_date <= Time.now
-            %tr{ id: dom_id(task), data: { behavior: 'sortable-item' } }
-              %td
-                %span.task-name= link_to task.item, task_path(task)
-                %span.task-edit= task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)', edit_task_path(task))
-              %td.punt= render 'layouts/shared/punt', task: task
-              %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
     %hr
     %h2 Punted
-    %table{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
-      %tbody
-        - @tasks.each do |task|
-          - if task.due_date >= Time.now
-            %tr{ id: dom_id(task), data: { behavior: 'sortable-item' } }
-              %td
-                %span.task-name= link_to task.item, task_path(task)
-                %span.task-edit= task.comments.count > 0 ? "#{task.comments.count} notes" : (link_to '(edit)',  edit_task_path(task))
-
-              %td.punt= render 'layouts/shared/punt_return', task: task
-              %td.destroy= link_to 'Destroy', task, :method => :delete if task.comments.count < 1
-              %td.return-time= distance_of_time_in_words_to_now(task.due_date)
-
+    .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+      - @tasks.each do |task|
+        - if task.due_date >= Time.now
+          %section.task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+            .handle= image_tag('grip.svg')
+            %h1.task-item
+              %a{href: "#{task_path(task)}"}= "#{task.item}"
+            %h2
+              %a{href: "#{tags_path(task.tags)}", class: 'btn'}= "#{task.tags}"
+            .button-row
+              .two-buttons
+                %h3.punt-btn= render 'layouts/shared/punt_return', task: task
+                %h3.destroy-btn= flex_destroy_path(task)
