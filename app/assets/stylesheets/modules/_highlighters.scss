@@ -1,0 +1,15 @@
+
+// highlight
+@mixin highlight {
+  background: $yellow !important;
+}
+.highlight-task {
+  @include highlight;
+  padding: 1%;
+}
+
+
+.snooze { background: $light-grey; }
+.urgent { background: $warning; }
+.feature { color: $burnt; }
+
