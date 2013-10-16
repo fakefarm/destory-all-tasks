@@ -1,4 +1,17 @@
-.summary.task-page
+.summary.tag-page
+  %h1.tag-title= params[:tags]
+
+  .l-primary-content
+    = form_for @task do |f|
+      = f.hidden_field :user_id, value: current_user.id
+      = f.hidden_field :tags, value: params[:tags]
+
+      .field
+        = f.text_field :item, placeholder: 'Category Task', autofocus: true
+
+      .actions.save-btn
+        = f.submit 'Save'
+
   .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
     - @tasks.each do |task|
       - if task.due_date <= Time.now

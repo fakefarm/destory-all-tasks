@@ -4,6 +4,7 @@ class TasksController < ApplicationController
   before_filter :get_punts
 
   def tags
+    @task = Task.new
     @tasks = Task.where(tags: params[:tags], user_id: current_user.id)
     @title = params[:tags]
   end
@@ -49,7 +50,11 @@ class TasksController < ApplicationController
     @task = Task.new(params[:task])
 
     if @task.save
-      redirect_to tasks_path
+      if request.referrer.include?('tags')
+        redirect_to tags_path(@task.tags)
+      else
+        redirect_to tasks_path
+      end
     else
       render action: "new"
     end
@@ -58,7 +63,11 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update_attributes(params[:task])
-      redirect_to tasks_path
+      if request.referrer.include?('tags')
+        redirect_to tags_path(@task.tags)
+      else
+        redirect_to tasks_path
+      end
     else
       render action: "edit"
     end
@@ -70,8 +79,11 @@ class TasksController < ApplicationController
     # @counter = current_user.task_counter
     # qty = current_user.task_counter.quantity + 1
     # @counter.update_attributes(quantity: qty)
-
-    redirect_to tasks_path
+    if request.referrer.include?('tags')
+      redirect_to tags_path(@task.tags)
+    else
+      redirect_to tasks_path
+    end
   end
 
   def sort
