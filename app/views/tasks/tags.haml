@@ -7,7 +7,7 @@
       = f.hidden_field :tags, value: params[:tags]
 
       .field
-        = f.text_field :item, placeholder: 'Category Task', autofocus: true
+        = f.text_field :item, placeholder: "Add to #{params[:tags]}", autofocus: true
 
       .actions.save-btn
         = f.submit 'Save'
