@@ -37,19 +37,27 @@ $(document).ready(function() {
   var mytime = 0;
   var item, entry;
   var items = [];
+  var budget = 0;
 
   for (var i = 0; i < tags.length; i ++) {
-    item = parseInt(tags[i].text);
-    if ( isNaN(item) ){
-      console.log(item);
-      items.push(item)
-    } else {
-        entry = tags[i].text;
-      if(entry.indexOf('m') > 0){
-        mytime += item;
+
+    item = (tags[i].text);
+    if (item.indexOf('$') >= 0) {
+      budget += parseInt(item.slice(1));
+    }
+    else{
+      item = parseInt(tags[i].text);
+      if ( isNaN(item) ){
+        console.log(item);
+        items.push(item)
       }
-      else if (entry.indexOf('h') > 0){
-          mytime += (item * 60);
+      else {
+        entry = tags[i].text;
+        if (entry.indexOf('m') >= 0) {
+          mytime += item;
+        } else if (entry.indexOf('h') >= 0) {
+            mytime += (item * 60);
+        }
       }
     }
   };
@@ -59,7 +67,7 @@ $(document).ready(function() {
   var reader;
 
   if (mytime == 0) {
-    reader = "new feature: add time tags (ex: '10m' or '2h') ";
+    reader = "new features";
   } else if (mytime < 0.26 ) {
     reader = "about 15 minutes";
   } else if (mytime < 0.51) {
@@ -72,5 +80,13 @@ $(document).ready(function() {
     reader = "about " + mytime + " hours";
   }
 
+  if (budget == 0){
+    budget = '';
+  }
+  else {
+    budget = '$' + budget;
+  }
+
   $('.time-total').append(reader);
+  $('.budget-total').append(budget);
 });
