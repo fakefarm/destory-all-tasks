@@ -5,7 +5,8 @@ class TasksController < ApplicationController
 
   def tags
     @task = Task.new
-    @tasks = Task.where(tags: params[:tags], user_id: current_user.id)
+    tag = "%#{params[:tags]}%"
+    @tasks = Task.where("tags like ?", tag).where(user_id: current_user.id)
     @title = params[:tags]
   end
 
