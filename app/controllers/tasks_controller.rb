@@ -48,7 +48,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
-
+    @task.tags = @task.tags.gsub(' ', '')
     if @task.save
       if request.referrer.include?('tags')
         redirect_to tags_path(@task.tags)

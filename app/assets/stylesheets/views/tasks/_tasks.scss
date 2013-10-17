@@ -3,7 +3,12 @@
     @include span-columns(6);
   }
 }
-
+.time-total{
+  font-style: italic;
+  border-top: 1px solid $light-grey;
+  padding: 0.5em 0 0 0;
+  margin: 0.5em 0 0 0;
+}
 h1.tag-title { margin: 1em 0; }
 
 h1.task-item { line-height: 1em; }
@@ -83,4 +88,8 @@ h2.punted-tag-item a {
   width: 100%;
   margin-bottom: 2%;
   font-family: $cond;
+}
+
+.tag-link{
+  margin: 0 0.3em;
 }
