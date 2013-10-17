@@ -67,7 +67,7 @@ $(document).ready(function() {
   var reader;
 
   if (mytime == 0) {
-    reader = "new features";
+    reader = "";
   } else if (mytime < 0.26 ) {
     reader = "about 15 minutes";
   } else if (mytime < 0.51) {
