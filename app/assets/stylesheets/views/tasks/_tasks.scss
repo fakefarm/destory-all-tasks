@@ -26,6 +26,16 @@ h2.punted-tag-item a {
   background: red;
 }
 
+.punts {
+  background: white;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  a {
+    font-size: 1.2em;
+  }
+}
+
 .task-wrapper {
   margin: 15% 0 0 0;
   padding: 0.5%;

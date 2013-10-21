@@ -3,8 +3,23 @@
 .l-header {
   @include outer-container();
   text-align: right;
-
-  li { display: inline-block; }
+  ul {
+    background: white;
+    padding: 1em;
+    text-align: center;
+    margin: 0 0 0.3em 0;
+    @include media($breakpoint-ipad) {
+      background: none;
+      text-align: right;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  li {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0 1em;
+  }
 
   a {
     display: inline-block;
