@@ -101,12 +101,18 @@ private
     @punt_count = @punts.count
   end
 
-  def tag_cloud
-    @task_tags = Task.where(user_id: current_user.id).order('position')
-    @tags = @task_tags.map do |task|
+  def tag_cloud # Refactor - shouldn't this go into Model? How?
+    @task_tags = Task.where(user_id: current_user.id)
+    @unique_tags = []
+    @tags = @task_tags.each do |task|
       task.tags.split(',').each do |tag|
-        tag
+        unless tag.include?('$') || tag.include?('@') || !!tag.match(/[0-9]+(h|m)/)
+          @unique_tags << tag
+        end
       end
-    end.compact.uniq - ['']
+    end
+    @tags = @unique_tags.compact.uniq - ['']
+    @tags
   end
 end
+
