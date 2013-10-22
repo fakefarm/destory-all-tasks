@@ -3,6 +3,16 @@
     @include span-columns(6);
   }
 }
+.punted-item {
+  @include media($breakpoint-ipad) {
+    @include span-columns(6);
+  }
+  h1 {
+    @include media($breakpoint-ipad) {
+      line-height: 1em;
+    }
+  }
+}
 .calculations{
   font-style: italic;
   font-family: $cond;
