@@ -18,3 +18,8 @@
     .calculations
       .time-total
       .budget-total
+
+- @tags.each do |tag|
+  - tag.each do |tag|
+    - unless tag.include?('$') || tag.include?('@')
+      %a{href: "#{tags_path(tag)}", class: 'btn tag-link tag-bar'}= "#{tag.gsub(',','')}"

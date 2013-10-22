@@ -15,7 +15,12 @@ class TasksController < ApplicationController
     @task = Task.new
     @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
     @user = User.find(current_user.id)
-    # @counter = @user.task_counter.quantity
+    @tags = @tasks.map do |task|
+      task.tags.split(',').each do |tag|
+        tag
+      end
+    end.compact.uniq - ['']
+    # @tags = split_tags(@tasks) - Says undefined method... how do i meve to model, then?
   end
 
   def punted
