@@ -9,8 +9,6 @@
     background: white;
   }
   li{
-    @include text-head;
-    color: white;
     @include media($breakpoint-ipad) {
       padding: 0;
       margin: 0;
