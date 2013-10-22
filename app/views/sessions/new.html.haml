@@ -1,4 +1,9 @@
 .summary
+
+  - flash.each do |key, value|
+    .alert{class: "alert-#{key}"}
+      = value
+
   %h1 Log In
   = form_tag sessions_path do
 
