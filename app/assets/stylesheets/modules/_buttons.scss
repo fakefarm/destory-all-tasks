@@ -29,7 +29,7 @@
 }
 
 .timer-btn{
-  @include btn($white, $grey, $light-grey);
+  @include btn($black, $stone, $light-grey);
 }
 
 .save-btn input{

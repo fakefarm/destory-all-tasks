@@ -34,7 +34,7 @@
   @include span-columns(4);
   font-size: 1em;
   @include media($breakpoint-ipad) {
-    @include span-columns(2);
+    @include span-columns(4);
   }
 }
 
@@ -42,24 +42,25 @@
   display: none;
   @include media($breakpoint-ipad) {
     @include clearfix;
+    @include shift(4);
     display: block;
   }
 }
 
 .timer-row h3 {
-  @include span-columns(12);
-  padding: 1em;
-  margin: 0.5em 0;
-  font-size: 1.2em;
-  color: white;
   @include media($breakpoint-ipad) {
-    @include span-columns(3);
+    cursor: pointer;
+    padding: 0.2em 0;
+    margin: 0.3em 0;
+    font-family: $cond;
+    font-size: 2em;
+    @include span-columns(6);
   }
 }
 
 .timer-row h4{
   float: left;
-  font-size: 3em;
+  font-size: 4em;
   font-weight: bold;
   font-family: $sans;
 }

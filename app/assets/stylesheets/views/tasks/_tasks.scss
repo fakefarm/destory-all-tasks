@@ -13,6 +13,36 @@
     }
   }
 }
+
+.task-show-item {
+  @include media($breakpoint-ipad) {
+    font-size: 3.4em;
+    line-height: 1em;
+  }
+}
+
+.button-tags a{
+  @include media($breakpoint-ipad) {
+    width: 100%;
+    font-size: 1.2em;
+    text-align: right;
+  }
+}
+.show-row{
+  @include row;
+  .task-item, .button-show-row {
+    @include media($breakpoint-ipad) {
+      @include span-columns(6);
+    }
+  }
+}
+
+.button-show-row {
+  @include media($breakpoint-ipad) {
+    border-left: 1px dashed $grey;
+    padding: 0 0 0 1em;
+  }
+}
 .calculations{
   font-style: italic;
   font-family: $cond;

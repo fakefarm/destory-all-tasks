@@ -1,25 +1,26 @@
 .summary
-  %h1.task-item
-    = @task.item
-    %span= link_to "#{@task.tags}", tags_path(@task.tags)
+  .show-row
+    .task-item
+      %h1.task-show-item= @task.item
 
-  .button-row
-    .three-buttons
-      %h3.punt-btn= render 'layouts/shared/punt', task: @task
-      %h3.edit-btn= link_to 'edit', edit_task_path(@task)
-      %h3.destroy-btn= link_to "Destroy", task_path(@task), method: :delete
+    .button-show-row
+      %h2.button-tags= link_to "#{@task.tags}", tags_path(@task.tags)
+      .three-buttons
+        %h3.punt-btn= render 'layouts/shared/punt', task: @task
+        %h3.edit-btn= link_to 'edit', edit_task_path(@task)
+        %h3.destroy-btn= link_to "Destroy", task_path(@task), method: :delete
 
-  .button-row
-    .timer-row
-      %h3{ type: 'button', id: 'timer', class: 'timer-btn', value: 'Start Timer'} Start timer
+      .timer-row
+        %h3{ type: 'button', id: 'timer', class: 'timer-btn', value: 'Start Timer'} Start timer
 
-      .counter
-        %h4
-          %h4#counterHour 0
-          %h4 :
-          %h4#counterMin 0
-          %h4 :
-          %h4#counterSec 0
+        .counter
+          %h4
+            %h4#counterHour 0
+            %h4 :
+            %h4#counterMin 0
+            %h4 :
+            %h4#counterSec 0
+
 
   = render 'comments/form'
 
