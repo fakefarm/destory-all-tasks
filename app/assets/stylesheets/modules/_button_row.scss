@@ -26,7 +26,7 @@
 .three-buttons {
   @include clearfix;
   @include media($breakpoint-ipad) {
-  @include shift(4);
+  @include shift(2);
   }
 }
 
@@ -42,7 +42,7 @@
   display: none;
   @include media($breakpoint-ipad) {
     @include clearfix;
-    @include shift(4);
+    @include shift(2);
     display: block;
   }
 }
@@ -60,7 +60,7 @@
 
 .timer-row h4{
   float: left;
-  font-size: 4em;
+  font-size: 3em;
   font-weight: bold;
   font-family: $sans;
 }
