@@ -66,6 +66,8 @@ class TasksController < ApplicationController
     if @task.update_attributes(params[:task])
       if request.referrer.include?('tags')
         redirect_to tags_path(@task.tags)
+      elsif request.referrer.include?('punted')
+        redirect_to punted_tasks_path
       else
         redirect_to tasks_path
       end
