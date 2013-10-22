@@ -29,6 +29,8 @@
         = render 'layouts/shared/header'
       .l-main
         = yield
+        - unless params[:controller] == 'sessions' || params[:controller] == 'users'
+          = render 'layouts/shared/tag_cloud'
 
       %footer#l-footer
         = render 'layouts/shared/footer'

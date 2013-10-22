@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
 
-  before_filter :authorize
-  before_filter :get_punts
+  before_filter :authorize, :get_punts, :tag_cloud
 
   def tags
     @task = Task.new
@@ -15,12 +14,6 @@ class TasksController < ApplicationController
     @task = Task.new
     @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
     @user = User.find(current_user.id)
-    @tags = @tasks.map do |task|
-      task.tags.split(',').each do |tag|
-        tag
-      end
-    end.compact.uniq - ['']
-    # @tags = split_tags(@tasks) - Says undefined method... how do i meve to model, then?
   end
 
   def punted
@@ -106,5 +99,14 @@ private
   def get_punts
     @punts = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)
     @punt_count = @punts.count
+  end
+
+  def tag_cloud
+    @task_tags = Task.where(user_id: current_user.id).order('position')
+    @tags = @task_tags.map do |task|
+      task.tags.split(',').each do |tag|
+        tag
+      end
+    end.compact.uniq - ['']
   end
 end
