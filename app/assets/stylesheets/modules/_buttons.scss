@@ -1,4 +1,4 @@
-@mixin btn($font-color: $black, $bg-color:$yellow){
+@mixin btn($font-color: $black, $bg-color:$yellow, $bg-hover:$green){
   display: inline-block;
   padding: 4%;
   font-size: 1em;
@@ -6,7 +6,8 @@
   color: $font-color;
   text-align: center;
   &:hover{
-    background: darken($font-color, 30%);
+    background: $bg-hover;
+    @include transition (all 100ms ease-in-out);
   }
   @include media($breakpoint-ipad) {
     padding: 2%;
@@ -14,21 +15,21 @@
 }
 
 .destroy-btn{
-  @include btn($stone, $pink);
+  @include btn($stone, $pink, $red);
 }
 .punt-btn{
-  @include btn($white, $stone);
+  @include btn($white, $stone, $light-stone);
   padding: 4%;
 }
 .all-btn{
-  @include btn($black, $stone);
+  @include btn($black, $stone, $light-stone);
 }
 .edit-btn{
-  @include btn($white, $black);
+  @include btn($white, $grey, $light-grey);
 }
 
 .timer-btn{
-  @include btn($white, $black);
+  @include btn($white, $grey, $light-grey);
 }
 
 .save-btn input{
