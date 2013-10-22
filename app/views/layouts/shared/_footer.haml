@@ -1,21 +1,17 @@
-- flash.each do |key, value|
-  .alert{class: "alert-#{key}"}
-    = value
-
 .footer
   %ul
     %li
       %a{href: "#{root_path}"} Home
     - if current_user
       %li
-        %a{href: "#{}"} Tasks
+        %a{href: "#{tasks_path}"} Tasks
       %li
         %a{href: "#{logout_path}"} Log out
     - else
       %li
         %a{href: "#{login_path}"} Log In
     %li
-      %a{href: "http://www.hireDave.me"} made by hireDave
+      %a{href: "http://www.hireDave.me"} made by Dave
     / %li
     /   %a{href: "#{style_guide_path}"} Style Guide
     / %li
