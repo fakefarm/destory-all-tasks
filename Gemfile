@@ -16,6 +16,7 @@ gem 'newrelic_rpm'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.13.0'
+  gem 'guard-rspec', '1.2.1'
   gem 'factory_girl_rails', '~> 4.2.1'
 end
 
@@ -27,6 +28,9 @@ group :development do
   gem 'pry'
   gem 'binding_of_caller'
   gem 'xray-rails'
+  gem 'guard-spork', :github => 'guard/guard-spork'
+  gem 'childprocess'
+  gem 'spork', '0.9.2'
 end
 
 group :test do
@@ -35,6 +39,8 @@ group :test do
   gem 'capybara', '~> 2.0.2'
   gem 'database_cleaner', '~> 0.9.1'
   gem 'launchy', '~> 2.2.0'
+  gem 'rb-fsevent', '0.9.1', :require => false
+  gem 'growl', '1.0.3'
 end
 
 # Gems used only for assets and not required
