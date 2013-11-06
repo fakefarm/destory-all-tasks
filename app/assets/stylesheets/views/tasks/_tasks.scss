@@ -1,3 +1,19 @@
+.task-action-bar{
+  @include media($breakpoint-ipad) {
+    @include row();
+    .field{
+      @include span-columns(6);
+    }
+    input[type='submit']{
+      @include shift(2);
+      @include span-columns(2.7);
+      font-size: 2em;
+      margin-top: 0;
+      padding: 0.5em;
+    }
+  }
+}
+
 .task-item {
   @include media($breakpoint-ipad) {
     @include span-columns(6);
