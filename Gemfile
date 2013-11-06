@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'neat'
-gem "rails-erd"
 gem 'pg'
 gem "haml-rails"
 gem 'meta-tags', :require => 'meta_tags'
@@ -15,6 +14,7 @@ gem 'newrelic_rpm'
 
 
 group :development, :test do
+  gem "rails-erd"
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.13.0'
   gem 'guard-rspec', '1.2.1'
