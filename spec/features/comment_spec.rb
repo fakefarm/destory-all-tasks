@@ -2,9 +2,14 @@ require 'spec_helper'
 
 feature Comment do
   before(:each) do
+    create(:user)
+    visit login_path
+    fill_in 'Email', with: 'dave@volcom.com'
+    fill_in 'Password', with: 'letmein'
+    click_button 'Log In'
     visit tasks_path
-    fill_in 'Task', with: 'Clean my room'
-    click_button 'Save'
+    fill_in 'task', with: 'Clean my room'
+    click_button 'Hike'
     click_link 'Clean my room'
     fill_in 'Entry', with: "Don't forget to make the bed"
     click_button 'Save'
