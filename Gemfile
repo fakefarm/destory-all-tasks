@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'neat'
+gem "rails-erd"
 gem 'pg'
 gem "haml-rails"
 gem 'meta-tags', :require => 'meta_tags'
