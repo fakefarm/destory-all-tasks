@@ -9,9 +9,10 @@
   = f.hidden_field :user_id, value: current_user.id
 
   .field
-    = f.text_field :item, placeholder: 'Task'
-  .field
-    = f.text_field :tags, placeholder: "power-ups: 10m, $3, zzz, @"
-  .actions.save-btn
-    = f.submit 'Save'
+    = f.text_field :item, placeholder: 'Task', id: 'task'
+  .task-action-bar
+    .field
+      = f.text_field :tags, placeholder: "power-ups: 10m, $3, zzz, @"
+    .actions.save-btn
+      = f.submit 'Hike'
 

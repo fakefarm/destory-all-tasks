@@ -1,7 +1,9 @@
 .summary.tag-page
-  %h1.tag-title= params[:tags]
+  .tag-title
+    %h1.tag-title= params[:tags]
+    %h2= render 'layouts/shared/punt_all'
 
-  .l-primary-content
+  .l-primary-content.task-action-bar
     = form_for @task do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :tags, value: params[:tags]
