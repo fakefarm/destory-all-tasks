@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorize, except: [ :new, :create]
+
 
   def index
     @users = User.all
@@ -12,8 +12,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to tasks_url, notice: 'Get ready to destroy some tasks!'
+        cookies[:auth_token] = @user.auth_token
+        redirect_to tasks_path, notice: "Destroy some!"
     else
       render 'new'
     end
