@@ -22,8 +22,8 @@ class TasksController < ApplicationController
 
   def punt_all
     tag = params[:task][:tags]
-    @Tasks = Task.where(tags: tag)
-    @Tasks.each do |task|
+    @to_punt = Task.where(tags: tag)
+    @to_punt.each do |task|
       task.update_attributes(due_date: 3.days.from_now )
     end
     redirect_to tasks_path
