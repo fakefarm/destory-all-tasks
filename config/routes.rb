@@ -19,7 +19,7 @@ resources :comments
 resources :tasks do
   collection { post :sort }
   collection { get :punted }
-  collection { put :punt_all }
+  collection { post :punt_all }
 end
 
 

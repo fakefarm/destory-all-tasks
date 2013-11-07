@@ -1,7 +1,7 @@
 .summary.tag-page
   .tag-title
     %h1.tag-title= params[:tags]
-    %h2= render 'layouts/shared/punt_all'
+    / %h2= render 'layouts/shared/punt_all_tasks'
 
   .l-primary-content.task-action-bar
     = form_for @task do |f|
@@ -12,7 +12,7 @@
         = f.text_field :item, placeholder: "Add to #{params[:tags]}"
 
       .actions.save-btn
-        = f.submit 'Save'
+        = f.submit 'Hike!'
 
   .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
     - @tasks.each do |task|
