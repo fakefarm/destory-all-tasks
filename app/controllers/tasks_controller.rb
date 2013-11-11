@@ -22,10 +22,7 @@ class TasksController < ApplicationController
 
   def punt_all
     tag = request.referrer.split('/').last
-    @to_punt = Task.where(tags: tag)
-    @to_punt.each do |task|
-      task.update_attributes(due_date: 3.days.from_now )
-    end
+    PuntAllWorker.perform_async(tag)
     redirect_to tasks_path
   end
 
