@@ -11,7 +11,7 @@ gem 'omniauth-facebook'
 gem 'jquery-ui-rails'
 gem 'simple_position'
 gem 'newrelic_rpm'
-
+gem 'sidekiq'
 
 group :development, :test do
   gem "rails-erd"
