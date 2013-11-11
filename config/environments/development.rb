@@ -1,5 +1,8 @@
 DestroyAllTasks::Application.configure do
 
+ENV["REDISTOGO_URL"] = 'redis://redistogo:19e89caf4c2ca97c158d69ca2bd3f150@koi.redistogo.com:10216/'
+
+
   # Letter Opener gem
   config.action_mailer.delivery_method = :letter_opener
 
