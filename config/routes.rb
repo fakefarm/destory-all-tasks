@@ -1,9 +1,12 @@
+require 'sidekiq/web'
+
 DestroyAllTasks::Application.routes.draw do
 
 match 'signup', to: 'users#new', as: 'signup'
 match 'destroyers', to: 'users#index', as: 'destroyers'
 match 'login', to: 'sessions#new', as: 'login'
 match 'logout', to: 'sessions#destroy', as: 'logout'
+mount Sidekiq::Web, at: 'sidekiq'
 
 match 'overview', to: 'pages#overview', as: 'overview'
 match 'style-guide', to: 'pages#style_guide', as: 'style_guide'

@@ -12,6 +12,8 @@ gem 'jquery-ui-rails'
 gem 'simple_position'
 gem 'newrelic_rpm'
 gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 group :development, :test do
   gem "rails-erd"
