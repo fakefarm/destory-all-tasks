@@ -21,7 +21,7 @@ class TasksController < ApplicationController
   end
 
   def punt_all
-    tag = params[:task][:tags]
+    tag = request.referrer.split('/').last
     @to_punt = Task.where(tags: tag)
     @to_punt.each do |task|
       task.update_attributes(due_date: 3.days.from_now )
