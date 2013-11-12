@@ -1,4 +1,4 @@
-module PuntAll
+module PuntAllService
   class << self
     def call(tag)
       to_punt = Task.where(tags: tag)

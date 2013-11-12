@@ -4,8 +4,8 @@ class TasksController < ApplicationController
 
   def tags
     @task = Task.new
-    tag = "%#{params[:tags]}%"
-    @tasks = Task.where("tags like ?", tag).where(user_id: current_user.id)
+    tag_param = "%#{params[:tags]}%"
+    @tasks = Task.tag(tag_param, current_user.id )
     @title = params[:tags]
   end
 
@@ -22,7 +22,7 @@ class TasksController < ApplicationController
 
   def punt_all
     tag = request.referrer.split('/').last
-    PuntAll.call(tag)
+    PuntAllService.call(tag)
     redirect_to tasks_path, notice: "You punted all #{tag} tags. (Give it a sec if you punted a lot.)"
   end
 
