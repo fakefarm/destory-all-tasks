@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
   before_create :add_due_date
-  scope :tag, ->(tag, id) { where("tags like ?", tag).where("user_id = ?", id) }
+  scope :tag, ->(tag) { where("tags like ?", tag) }
+  scope :current_user_id, ->(id){ where("user_id = ?", id) }
 
   include SimplePosition
   default_scope order(:position)

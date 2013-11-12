@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   def tags
     @task = Task.new
     tag_param = "%#{params[:tags]}%"
-    @tasks = Task.tag(tag_param, current_user.id )
+    @tasks = Task.tag(tag_param).current_user_id(current_user.id)
     @title = params[:tags]
   end
 
