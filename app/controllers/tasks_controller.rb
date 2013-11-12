@@ -22,7 +22,7 @@ class TasksController < ApplicationController
 
   def punt_all
     tag = request.referrer.split('/').last
-    PuntAllWorker.perform_async(tag)
+    PuntAll.call(tag)
     redirect_to tasks_path, notice: "You punted all #{tag} tags. (Give it a sec if you punted a lot.)"
   end
 
