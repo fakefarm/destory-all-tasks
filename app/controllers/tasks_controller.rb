@@ -10,20 +10,21 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.where(user_id: current_user.id).order('position')
     @task = Task.new
+    @tasks = Task.where(user_id: current_user.id).order('position')
     @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
     @user = User.find(current_user.id)
   end
 
   def punted
-    @tasks = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)
+    @tasks = Task.current_user_id(current_user.id).punted
   end
 
   def punt_all
     tag = request.referrer.split('/').last
     PuntAllService.call(tag)
-    redirect_to tasks_path, notice: "You punted all #{tag} tags. (Give it a sec if you punted a lot.)"
+    redirect_to tasks_path,
+      notice: "You punted all #{tag} tags. (Give it a sec if you punted a lot.)"
   end
 
   def show
