@@ -1,35 +1,24 @@
-#l-footer{
-  width: 100%;
-  padding: 5%;
+.l-footer{
+  padding: 0 2%;
+  li{
+    @include span-columns(12);
+    margin-top: 0.5em;
 
-  @include media($breakpoint-ipad){
-    padding: 0;
-    text-align: right;
-  }
-
-  @include media($breakpoint-large-screen) {
-    height: 200px;
-  }
-
-  ul{
-    @include media($breakpoint-ipad){
-      @include outer-container();
+    @include media($breakpoint-ipad) {
+      @include span-columns(4);
     }
   }
-
-  li{
-    font-size: 1.5em;
-    padding: 0 1%;
-    @include media($breakpoint-ipad){
-      font-size: 1em;
-      display: inline-block;
-     }
-  }
   a{
-    text-decoration: none;
-  }
-  a:hover{
-    color: $red;
+    @include span-columns(12);
+    font-size: 2em;
+    background: $burnt;
+    color: $tung;
+    padding: 0.5em 0;
+    text-align: center;
+    &:hover{
+      background: $tung;
+      color: $burnt;
+      text-decoration: none;
+    }
   }
 }
-

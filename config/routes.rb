@@ -2,6 +2,8 @@ require 'sidekiq/web'
 
 DestroyAllTasks::Application.routes.draw do
 
+resources :profiles, only: [:show, :edit, :update]
+
 match 'signup', to: 'users#new', as: 'signup'
 match 'destroyers', to: 'users#index', as: 'destroyers'
 match 'login', to: 'sessions#new', as: 'login'

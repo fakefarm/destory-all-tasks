@@ -1,0 +1,7 @@
+.l-header
+  .navbar
+    ul
+      - if current_user
+        = render 'layouts/shared/header/logged_in'
+      - else
+        = render 'layouts/shared/header/logged_out'

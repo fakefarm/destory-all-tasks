@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  attr_accessible :email, :password, :password_confirmation, :task_counter_id
+  attr_accessible :email, :password, :password_confirmation, :task_counter_id, :profile_id
 
   validates_uniqueness_of :email, :case_sensitive => false
 
@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :tasks
   has_many :comments, through: :tasks
   belongs_to :task_counter
+  belongs_to :profile
+
+private
 
   def generate_token(column)
     begin
