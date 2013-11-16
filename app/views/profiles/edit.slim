@@ -1,0 +1,11 @@
+.summary
+  h1 Edit your profile
+  = form_for @profile do |profile|
+    = profile.label :name
+    = profile.text_field :name
+    = profile.fields_for @users do |user|
+      = user.label :email
+      = user.text_field :email
+      = user.label :password, 'Update password'
+      = user.password_field :password, placeholder: 'Add new password (optional)'
+    = profile.submit

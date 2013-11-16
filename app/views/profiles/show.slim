@@ -1,0 +1,6 @@
+.summary
+  h1= "#{@profile.name}'s Stats"
+  - @profile.users.each do |user|
+    p= user.email
+
+  .destroy-btn= link_to "edit", edit_profile_path(@profile)

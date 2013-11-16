@@ -379,27 +379,3 @@ a.signup-button{
     padding: 4%;
   }
 }
-
-.footer{
-  ul{
-    @include media($breakpoint-ipad) {
-      width: 100%;
-      font-size: 120%;
-      text-align: center;
-    }
-  }
-  a{
-    display: block;
-    text-align: center;
-    font-family: $cond;
-    @include media($breakpoint-ipad) {
-      background: none;
-      font-weight: 400;
-    }
-  }
-  li{
-    @include media($breakpoint-ipad) {
-      display: inline-block;
-    }
-  }
-}

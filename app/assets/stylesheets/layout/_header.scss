@@ -1,32 +1,33 @@
 #header {}
 
 .l-header {
-  @include outer-container();
-  text-align: right;
+  background: $burnt;
+  padding: 0.3em 0;
+  .navbar{
+    @include outer-container();
+  }
   ul {
-    background: white;
-    padding: 1em;
-    text-align: center;
-    margin: 0 0 0.3em 0;
     @include media($breakpoint-ipad) {
-      background: none;
-      text-align: right;
-      margin: 0;
-      padding: 0;
+      @include clearfix();
+      @include shift(9);
     }
   }
   li {
-    display: inline-block;
-    font-size: 1.5em;
-    margin: 0 1em;
+    @include span-columns(3);
+    font-size: 1.2em;
+    @include media($breakpoint-ipad) {
+      @include span-columns(2.5);
+    }
   }
 
   a {
-    display: inline-block;
+    display: block;
+    color: $tung;
+    text-align: center;
+    background: white;
 
     @include media($breakpoint-ipad) {
-      margin: 0 0.5em;
-
+      background: none;
       &:last-child {
         margin-right: 0;
       }
