@@ -107,19 +107,5 @@ private
     @punts = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)
     @punt_count = @punts.count
   end
-
-  def tag_cloud # Refactor - shouldn't this go into Model? How?
-    @task_tags = Task.where(user_id: current_user.id)
-    @unique_tags = []
-    @tags = @task_tags.each do |task|
-      task.tags.split(',').each do |tag|
-        unless tag.include?('$') || tag.include?('@') || !!tag.match(/[0-9]+(h|m)/) || tag.empty?
-          @unique_tags << tag.strip
-        end
-      end
-    end
-    @tags = @unique_tags.compact.uniq.sort
-    @tags
-  end
 end
 

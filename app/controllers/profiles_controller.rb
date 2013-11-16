@@ -4,7 +4,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    # require 'pry'; binding.pry
     @profile = Profile.find(current_user.profile_id)
     @users = @profile.users
   end
