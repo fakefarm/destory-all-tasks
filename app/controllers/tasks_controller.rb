@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 
-  before_filter :authorize, :get_punts, :tag_cloud
+  before_filter :authorize, :get_punts
 
   def tags
     @task = Task.new
