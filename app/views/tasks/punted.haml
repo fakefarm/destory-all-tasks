@@ -12,7 +12,7 @@
                 %a{href: "#{tags_path(tag)}", class: 'btn tag-link tag-bar'}= "#{tag.gsub(',','')}"
           .button-row
             .four-buttons
-              %h3.punt-btn= render 'layouts/shared/punt_return', task: task
+              %h3.punt-btn= render 'tasks/punt/punt_return', task: task
               %h3.edit-btn= link_to "edit", edit_task_path(task)
               %h3.destroy-btn= flex_destroy_path(task)
               %h3.return-time= distance_of_time_in_words_to_now(task.due_date)

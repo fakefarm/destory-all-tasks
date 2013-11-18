@@ -1,7 +1,7 @@
 .summary.tag-page
   .tag-title
     %h1.tag-title= params[:tags]
-    %h2= render 'layouts/shared/punt_all_tagged_tasks'
+    %h2= render 'tasks/punt/punt_all_tagged_tasks'
 
   .l-primary-content.task-action-bar
     = form_for @task do |f|
@@ -26,7 +26,7 @@
               %a{href: "#{tags_path(tag)}", class: 'btn tag-link tag-bar'}= "#{tag.gsub(',','')}"
           .button-row
             .two-buttons
-              %h3.punt-btn= render 'layouts/shared/punt', task: task
+              %h3.punt-btn= render 'tasks/punt/punt', task: task
               %h3.destroy-btn= flex_destroy_path(task)
 
     %hr
@@ -42,5 +42,5 @@
               %a{href: "#{tags_path(task.tags)}", class: 'btn'}= "#{task.tags}"
             .button-row
               .two-buttons
-                %h3.punt-btn= render 'layouts/shared/punt_return', task: task
+                %h3.punt-btn= render 'tasks/punt/punt_return', task: task
                 %h3.destroy-btn= flex_destroy_path(task)

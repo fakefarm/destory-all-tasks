@@ -6,7 +6,7 @@
     .button-show-row
       %h2.button-tags= link_to "#{@task.tags}", tags_path(@task.tags)
       .three-buttons
-        %h3.punt-btn= render 'layouts/shared/punt', task: @task
+        %h3.punt-btn= render 'tasks/punt/punt', task: @task
         %h3.edit-btn= link_to 'edit', edit_task_path(@task)
         %h3.destroy-btn= link_to "Destroy", task_path(@task), method: :delete
 
