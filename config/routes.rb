@@ -24,7 +24,8 @@ resources :comments
 resources :tasks do
   collection { post :sort }
   collection { get :punted }
-  collection { post :punt_all }
+  collection { post :punt_all_tagged_tasks }
+  collection { post :punt_all_tasks }
 end
 
 

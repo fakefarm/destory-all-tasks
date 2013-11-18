@@ -1,7 +1,7 @@
 .summary.tag-page
   .tag-title
     %h1.tag-title= params[:tags]
-    %h2= render 'layouts/shared/punt_all_tasks'
+    %h2= render 'layouts/shared/punt_all_tagged_tasks'
 
   .l-primary-content.task-action-bar
     = form_for @task do |f|

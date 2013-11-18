@@ -20,9 +20,17 @@ class TasksController < ApplicationController
     @tasks = Task.current_user_id(current_user.id).punted
   end
 
-  def punt_all
+  def punt_all_tasks
+    to_punt = Task.all
+    to_punt.each do |task|
+      task.update_attributes(due_date: 3.days.from_now )
+    end
+    redirect_to tasks_path
+  end
+
+  def punt_all_tagged_tasks
     tag = request.referrer.split('/').last
-    PuntAllService.call(tag)
+    PuntAllTaggedTasksService.call(tag)
     redirect_to tasks_path,
       notice: "You punted all #{tag} tags. (Give it a sec if you punted a lot.)"
   end
