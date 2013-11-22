@@ -21,7 +21,7 @@ class TasksController < ApplicationController
   end
 
   def punt_all_tasks
-    to_punt = Task.all
+    to_punt = Task.where('due_date <= ?', Time.now)
     to_punt.each do |task|
       task.update_attributes(due_date: 3.days.from_now )
     end
