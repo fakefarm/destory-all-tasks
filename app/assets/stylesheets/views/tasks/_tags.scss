@@ -1,5 +1,15 @@
+.tag-header {
+  @include row();
+  h1.tag-title { @include span-columns(8); }
+  .tag-actions {
+    @include row();
+    .punt, .destroy{
+      @include span-columns(1);
+    }
+  }
+}
 
-.tag-title{
+.tag-actions{
   input[type='submit']{
     border: none;
     color: $grey;
@@ -8,13 +18,5 @@
     font-size: 0.8em;
     font-family: $cond;
     @include media($breakpoint-ipad) { margin-top: 1.5em; }
-  }
-}
-
-.tag-title{
-  @include media($breakpoint-ipad) {
-    @include row();
-    h1{ @include span-columns(2); }
-    h2{ @include span-columns(6); }
   }
 }

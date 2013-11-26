@@ -26,6 +26,7 @@ resources :tasks do
   collection { get :punted }
   collection { post :punt_all_tagged_tasks }
   collection { post :punt_all_tasks }
+  collection { post :delete_all_tagged_tasks }
 end
 
 

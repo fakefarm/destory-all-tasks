@@ -1,7 +1,9 @@
 .summary.tag-page
-  .tag-title
+  .tag-header
     %h1.tag-title= params[:tags]
-    %h2= render 'tasks/punt/punt_all_tagged_tasks'
+    .tag-actions
+      %h2.punt= render 'tasks/punt/punt_all_tagged_tasks'
+      %h2.destroy= render 'tasks/punt/destroy_all_tagged_tasks'
 
   .l-primary-content.task-action-bar
     = form_for @task do |f|

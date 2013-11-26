@@ -32,8 +32,16 @@ class TasksController < ApplicationController
     tag = request.referrer.split('/').last
     PuntAllTaggedTasksService.call(tag)
     redirect_to tasks_path,
-      notice: "You punted all #{tag} tags. (Give it a sec if you punted a lot.)"
+      notice: "You punted all #{tag} tags."
   end
+
+  def delete_all_tagged_tasks
+    tag = request.referrer.split('/').last
+    DeleteAllTaggedTasksService.call(tag)
+    redirect_to tasks_path,
+      notice: "You deleted all #{tag} tags."
+  end
+
 
   def show
     begin
