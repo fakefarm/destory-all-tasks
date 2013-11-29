@@ -28,4 +28,11 @@ private
       @tags
     end
   end
+
+  def require_admin
+    unless current_user.role == 'admin'
+      redirect_to tasks_path
+      flash[:notice] = 'Sorry, not authorized.'
+    end
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131116150208) do
+ActiveRecord::Schema.define(:version => 20131129231341) do
 
   create_table "comments", :force => true do |t|
     t.text     "entry"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20131116150208) do
     t.integer  "task_counter_id"
     t.string   "auth_token"
     t.integer  "profile_id"
+    t.string   "role"
   end
 
 end
