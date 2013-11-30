@@ -11,9 +11,14 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @tasks = Task.where(user_id: current_user.id).order('position')
+    @tasks = Task.where(user_id: current_user.id).where( 'due_date <= ? ', Time.now ).order('position')
     @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
     @user = User.find(current_user.id)
+
+    respond_to do |format|
+      format.html
+      format.json{ render json: @tasks}
+    end
   end
 
   def punted
@@ -23,7 +28,7 @@ class TasksController < ApplicationController
   def punt_all_tasks
     to_punt = Task.where('due_date <= ?', Time.now)
     to_punt.each do |task|
-      task.update_attributes(due_date: 3.days.from_now )
+      task.update_attributes(due_date: punt_time )
     end
     redirect_to tasks_path
   end
@@ -75,7 +80,7 @@ class TasksController < ApplicationController
       if request.referrer.include?('tags')
         redirect_to tags_path(@task.tags)
       else
-        redirect_to tasks_path
+         redirect_to tasks_path
       end
     else
       render action: "new"

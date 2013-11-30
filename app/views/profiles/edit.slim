@@ -3,9 +3,14 @@
   = form_for @profile do |profile|
     = profile.label :name
     = profile.text_field :name
+    = profile.label :punt_default
+    = select( :profile, :punt_default, [['1 day', '1'], ['2 days', '2'], ['3 days', '3'], ['5 days', '5'], ['2 weeks', '14'], ['1 month', '30']] )
+    = profile.label :time_zone
+    = profile.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones
     = profile.fields_for @users do |user|
       = user.label :email
       = user.text_field :email
       = user.label :password, 'Update password'
       = user.password_field :password, placeholder: 'Add new password (optional)'
     = profile.submit
+

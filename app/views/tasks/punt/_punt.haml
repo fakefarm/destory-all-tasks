@@ -1,6 +1,6 @@
 .punt-form
   = form_for task do |t|
-    = t.hidden_field :due_date, { value: "#{3.days.from_now}"}
+    = t.hidden_field :due_date, { value: punt_time }
     = t.button 'punt'
 
 

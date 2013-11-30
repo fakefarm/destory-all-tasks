@@ -1,5 +1,8 @@
 .summary
-  h1= "#{@profile.name}'s Stats"
+  h1= "#{@profile.name}'s stats"
+  h2= "Time Zone: #{@profile.time_zone}"
+  h3= "The time is #{display_clock(current_user.profile.time_zone)}"
+  h3= "Punt time is: #{current_user.profile.punt_default}"
   - @profile.users.each do |user|
     p= user.email
 
