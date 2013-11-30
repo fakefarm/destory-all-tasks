@@ -21,4 +21,12 @@ module TasksHelper
       link_to 'Destroy', task, method: :delete
     end
   end
+
+  def flex_punt_path(task)
+    if task.due_date <= Time.now
+      render 'tasks/punt/punt', task: @task
+    else
+      render 'tasks/punt/punt_return', task: task
+    end
+  end
 end
