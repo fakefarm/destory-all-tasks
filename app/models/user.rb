@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  before_save :sanitize_user
 
   attr_accessible :email, :password, :password_confirmation, :task_counter_id, :profile_id
 
@@ -18,5 +19,9 @@ private
     begin
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
+  end
+
+  def sanitize_user
+    self.email = self.email.downcase.strip
   end
 end
