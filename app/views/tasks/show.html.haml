@@ -2,6 +2,7 @@
   .show-row
     .task-item
       %h1.task-show-item= @task.item
+      %p.return-time= "Returns in #{distance_of_time_in_words_to_now(@task.due_date)}"
 
     .button-show-row
       %h2.button-tags= link_to "#{@task.tags}", tags_path(@task.tags)
