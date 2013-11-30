@@ -12,15 +12,17 @@
     %meta{name: "viewport", content: "initial-scale=1.0, user-scalable=no, maximum-scale=1.0"}
     %meta{name: "apple-mobile-web-app-capable", content: "yes"}
     %meta{name: "apple-mobile-web-app-status-bar-style", content:"black"}
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "application", :media => "all"
+    = csrf_meta_tags
+
 
 
     %script{:src => "http://use.typekit.net/iyd5ccb.js", :type => "text/javascript"}
     :javascript
       try{Typekit.load();}catch(e){}
 
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
 
   %body.application{ class: @body_class }
     #l-constrained
@@ -30,6 +32,6 @@
         = yield
 
       %footer
-        = render 'layouts/footer/footer'
+        = render 'layouts/shared/footer/footer'
     = render 'layouts/shared/analytics'
     = debug([params]) if Rails.env.development?

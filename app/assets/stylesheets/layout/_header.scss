@@ -4,19 +4,18 @@
   background: $burnt;
   padding: 0.3em 0;
   .navbar{
-    @include outer-container();
+    @include row;
   }
   ul {
     @include media($breakpoint-ipad) {
-      @include clearfix();
-      @include shift(9);
+      @include shift(2);
     }
   }
   li {
     @include span-columns(3);
     font-size: 1.2em;
     @include media($breakpoint-ipad) {
-      @include span-columns(2.5);
+      @include span-columns(2);
     }
   }
 
