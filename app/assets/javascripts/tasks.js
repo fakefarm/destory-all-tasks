@@ -8,7 +8,6 @@ var fixHelperModified = function(e, tr) {
 };
 
 $(document).ready(function() {
-  $('a').click( function() { location.href = $( this ).attr( "href" ); return false; });
   $( "h2 a:contains('@')" ).parent().parent().addClass("highlight");
   $( "h2 a:contains('zzz')" ).parent().parent().addClass("snooze");
   var $selector = $("[data-behavior='sortable']");
