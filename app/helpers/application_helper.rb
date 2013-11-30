@@ -7,7 +7,9 @@ module ApplicationHelper
   end
 
   def display_clock(dt)
-    unless current_user.profile.time_zone.blank?
+    if dt.nil?
+      dt = Time.now
+    else
       dt = Time.now.in_time_zone(current_user.profile.time_zone)
     end
 
