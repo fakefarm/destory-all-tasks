@@ -105,12 +105,9 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    if request.referrer.include?('tags')
-      redirect_to tags_path(@task.tags)
-    else
-      respond_to do |format|
-        format.js { render layout: false }
-      end
+
+    respond_to do |format|
+      format.js { render layout: false }
     end
   end
 
