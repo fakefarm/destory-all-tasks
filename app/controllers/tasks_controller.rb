@@ -105,13 +105,12 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    # @counter = current_user.task_counter
-    # qty = current_user.task_counter.quantity + 1
-    # @counter.update_attributes(quantity: qty)
     if request.referrer.include?('tags')
       redirect_to tags_path(@task.tags)
     else
-      redirect_to tasks_path
+      respond_to do |format|
+        format.js { render layout: false }
+      end
     end
   end
 
