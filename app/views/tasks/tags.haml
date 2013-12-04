@@ -6,37 +6,25 @@
       %h2.destroy= render 'tasks/punt/destroy_all_tagged_tasks'
 
   .l-primary-content.task-action-bar
-    = form_for @task do |f|
-      = f.hidden_field :user_id, value: current_user.id
-      = f.hidden_field :tags, value: params[:tags]
+    .new-task-form
+      = form_for @task do |f|
+        = f.hidden_field :user_id, value: current_user.id
+        = f.hidden_field :tags, value: params[:tags]
 
-      .field
-        = f.text_field :item, placeholder: "Add to #{params[:tags]}"
+        .field
+          = f.text_field :item, placeholder: "Add to #{params[:tags]}"
 
-      .actions.save-btn
-        = f.submit 'Save'
+        .actions.save-btn
+          = f.submit 'Save'
 
-  .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
-    - @tasks.each do |task|
-      - if task.due_date <= Time.now
-        %section.task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
-          .handle= image_tag('grip.svg')
-          %h1.task-item
-            %a{href: "#{task_path(task)}"}= "#{task.item}"
-          %h2
-            - task.tags.split(',').each do |tag|
-              %a{href: "#{tags_path(tag)}", class: 'btn tag-link tag-bar'}= "#{tag.gsub(',','')}"
-          .button-row
-            .two-buttons
-              %h3.punt-btn= render 'tasks/punt/punt', task: task
-              %h3.destroy-btn= flex_destroy_path(task)
+    = render partial: 'task_list'
 
     %hr
     %h2 Punted
     .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
       - @tasks.each do |task|
         - if task.due_date >= Time.now
-          %section.task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+          %section.task-wrapper#task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
             .handle= image_tag('grip.svg')
             %h1.task-item
               %a{href: "#{task_path(task)}"}= "#{task.item}"
