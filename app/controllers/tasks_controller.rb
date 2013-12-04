@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-
+  include ApplicationHelper
   before_filter :authorize, :get_punts
 
   def tags
@@ -105,9 +105,14 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-
-    respond_to do |format|
-      format.js { render layout: false }
+    if request.referrer.include?('tags')
+      respond_to do |format|
+        format.js { render layout: false }
+      end
+    else
+      respond_to do |format|
+        format.js { render layout: false }
+      end
     end
   end
 
