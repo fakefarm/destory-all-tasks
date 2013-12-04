@@ -90,12 +90,11 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update_attributes(params[:task])
-      if request.referrer.include?('tags')
-        redirect_to tags_path(@task.tags)
-      elsif request.referrer.include?('punted')
-        redirect_to punted_tasks_path
-      else
-        redirect_to tasks_path
+      referral = request.referrer
+      case
+        when referral.include?('tags') then redirect_to tags_path(@task.tags)
+        when referral.include?('punted') then redirect_to punted_tasks_path
+        else redirect_to tasks_path
       end
     else
       render action: "edit"
@@ -105,14 +104,8 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    if request.referrer.include?('tags')
-      respond_to do |format|
-        format.js { render layout: false }
-      end
-    else
-      respond_to do |format|
-        format.js { render layout: false }
-      end
+    respond_to do |format|
+      format.js { render layout: false }
     end
   end
 
