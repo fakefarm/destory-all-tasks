@@ -30,7 +30,10 @@ class TasksController < ApplicationController
     to_punt.each do |task|
       task.update_attributes(due_date: punt_time )
     end
-    redirect_to tasks_path
+
+    respond_to do |format|
+      format.js { render layout: false}
+    end
   end
 
   def punt_all_tagged_tasks
@@ -89,16 +92,22 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    if @task.update_attributes(params[:task])
-      referral = request.referrer
-      case
-        when referral.include?('tags') then redirect_to tags_path(@task.tags)
-        when referral.include?('punted') then redirect_to punted_tasks_path
-        else redirect_to tasks_path
+    @task.update_attributes(params[:task])
+    if @task.save
+      respond_to do |format|
+        format.js { render layout: false }
       end
-    else
-      render action: "edit"
     end
+    # if @task.update_attributes(params[:task])
+    #   referral = request.referrer
+    #   case
+    #     when referral.include?('tags') then redirect_to tags_path(@task.tags)
+    #     when referral.include?('punted') then redirect_to punted_tasks_path
+    #     else redirect_to tasks_path
+    #   end
+    # else
+    #   render action: "edit"
+    # end
   end
 
   def destroy

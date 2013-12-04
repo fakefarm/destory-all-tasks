@@ -1,5 +1,5 @@
 .punt-form
-  = form_for task do |t|
+  = form_for task, remote: true do |t|
     = t.hidden_field :due_date, { value: punt_time }
     = t.button 'punt'
 
