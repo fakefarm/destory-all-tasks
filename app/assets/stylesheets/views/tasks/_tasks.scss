@@ -13,6 +13,9 @@
     }
   }
 }
+.new-task-form{
+  margin-bottom: 8em;
+}
 
 .task-item {
   @include media($breakpoint-ipad) {
