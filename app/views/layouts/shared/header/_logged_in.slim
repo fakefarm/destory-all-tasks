@@ -1,11 +1,14 @@
 li
-  a href= (tasks_path) Home
+  a href=  tasks_path Home
 li
-  a href= (punted_tasks_path) All Punts
+  a href=  punted_tasks_path All Punts
 li
-  a href= (profile_path(1)) Me
+  a href=  profile_path(current_user.profile.id) Me
 li
-  a href= (logout_path) Log out
-li= display_clock(current_user.profile.time_zone)
+  a href=  logout_path Log out
+li= display_clock current_user.profile.time_zone
 
+- if AdminPolicy.allowed? current_user # Does this make sense?
+  li
+    a href= users_path users
 
