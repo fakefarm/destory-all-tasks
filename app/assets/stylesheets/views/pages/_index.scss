@@ -99,6 +99,7 @@
 
   h1{
     font-size: 1.6em;
+    line-height: 50px;
   }
 
   @include media($breakpoint-ipad) {
