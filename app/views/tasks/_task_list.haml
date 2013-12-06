@@ -10,5 +10,8 @@
             %a{href: "#{tags_path(tag)}", class: 'btn tag-link tag-bar'}= "#{tag.gsub(',','')}"
         .button-row
           .two-buttons
-            %h3.punt-btn= render 'tasks/punt/punt', task: task
+            - if params[:action] == 'index'
+              %h3.punt-btn= render 'tasks/punt/punt', task: task
+            - else
+              %h3.punt-btn= render 'tasks/punt/punt_standard', task: task
             %h3.destroy-btn= flex_destroy_path(task)
