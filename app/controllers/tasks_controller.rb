@@ -100,6 +100,7 @@ class TasksController < ApplicationController
         redirect_to punted_tasks_path
       else
         respond_to do |format|
+          format.html { redirect_to tasks_path, notice: "punted!" }
           format.js { render layout: false }
         end
       end
@@ -113,7 +114,8 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
     respond_to do |format|
-      format.js { render layout: false }
+      format.html { redirect_to tasks_path, notice: "destroyed!" }
+      format.js   { render layout: false }
     end
   end
 
