@@ -24,7 +24,7 @@ module TasksHelper
 
   def flex_punt_path(task)
     if task.due_date <= Time.now
-      render 'tasks/punt/punt', task: @task
+      link_to 'punt', task_path(task:{ due_date: punt_time }), method: :put
     else
       render 'tasks/punt/punt_return', task: task
     end
