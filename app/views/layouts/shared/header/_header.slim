@@ -1,7 +1,13 @@
-.l-header
-  .navbar
-    ul
-      - if current_user
-        = render 'layouts/shared/header/logged_in'
-      - else
-        = render 'layouts/shared/header/logged_out'
+.m-header
+  header
+    .header-logo
+      ul.hide-on-mobile
+        li.logo-list-item
+          a.link-basic-light href="#{root_path}" Destroy All Tasks
+        li.logo-list-item.italic one list to rule them all
+    .header-nav
+      ul
+        - if current_user
+          = render 'layouts/shared/header/logged_in'
+        - else
+          = render 'layouts/shared/header/logged_out'

@@ -1,0 +1,28 @@
+@mixin header-list-stacked {
+  @include list-stacked;
+  @include mobile-helpers;
+
+  .logo-list-item {
+    background: $steele;
+    padding: $half-space 0;
+    margin: $half-space 0;
+  }
+}
+
+@mixin header-list-row {
+  @include list-row;
+  .header-logo { @include span-columns(4); }
+  .header-nav {
+    @include span-columns(8);
+    text-align: right;
+  }
+}
+
+.m-header{
+  @include media (max-width $bp-mobile) { @include header-list-stacked; }
+  @include media (min-width $bp-tablet max-width $bp-desktop) { @include header-list-stacked; }
+  @include media ($bp-desktop) {
+    @include header-list-row;
+    padding: $space 0;
+  }
+}

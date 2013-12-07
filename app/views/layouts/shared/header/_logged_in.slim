@@ -1,14 +1,13 @@
-li
-  a href=  tasks_path Home
-li
-  a href=  punted_tasks_path All Punts
-li
-  a href=  profile_path(current_user.profile.id) Me
-li
-  a href=  logout_path Log out
-li= display_clock current_user.profile.time_zone
+li.logo-list-item
+  a.link-basic-light href=  tasks_path Now
+li.logo-list-item
+  a.link-basic-light href=  punted_tasks_path Later
+li.logo-list-item.hide-on-mobile
+  a.link-basic-light href=  profile_path(current_user.profile.id) Me
+li.logo-list-item.hide-on-mobile
+  a.link-basic-light href=  logout_path Log out
 
 - if AdminPolicy.allowed? current_user # Does this make sense?
-  li
-    a href= users_path users
+  li.logo-list-item
+    a.link-basic-light href= users_path Users
 
