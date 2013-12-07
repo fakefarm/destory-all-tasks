@@ -1,0 +1,12 @@
+@mixin list-row {
+  @include row;
+  li {
+    display: inline-block;
+    margin: 0 $half-space;
+  }
+}
+
+@mixin list-stacked {
+  text-align: center;
+  font-size: $normal;
+}

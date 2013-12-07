@@ -1,0 +1,18 @@
+// Mixins
+@mixin links-common {
+  display: block;
+  margin: $half-space 0;
+}
+
+@mixin basic {
+  @include links-common;
+  text-decoration: none;
+}
+
+.link-basic-light {
+  @include basic;
+  color: $white;
+  &:hover{
+    color: $light-stone;
+  }
+}
