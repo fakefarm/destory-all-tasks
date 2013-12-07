@@ -1,0 +1,24 @@
+@mixin footer-list-grid {
+  @include list-grid;
+  .tag-list-item {
+    @include span-columns(2);
+    @include omega(6n);
+    margin-top: $space;
+    font-size: $large;
+  }
+}
+
+@mixin footer-list-stacked {
+  @include list-stacked;
+  .tag-list-item {
+    background: $steele;
+    padding: $half-space 0;
+    margin: $half-space 0;
+  }
+}
+.m-footer{
+  @include media (max-width $bp-mobile) { @include footer-list-stacked }
+  @include media (min-width $bp-tablet max-width $bp-desktop) { @include footer-list-stacked }
+  @include media ($bp-desktop) { @include footer-list-grid }
+}
+

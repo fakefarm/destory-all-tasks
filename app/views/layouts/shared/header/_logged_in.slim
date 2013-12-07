@@ -1,13 +1,13 @@
-li.logo-list-item
+li.header-list-item
   a.link-basic-light href=  tasks_path Now
-li.logo-list-item
+li.header-list-item
   a.link-basic-light href=  punted_tasks_path Later
-li.logo-list-item.hide-on-mobile
+li.header-list-item.hide-on-mobile
   a.link-basic-light href=  profile_path(current_user.profile.id) Me
-li.logo-list-item.hide-on-mobile
+li.header-list-item.hide-on-mobile
   a.link-basic-light href=  logout_path Log out
 
 - if AdminPolicy.allowed? current_user # Does this make sense?
-  li.logo-list-item
+  li.header-list-item
     a.link-basic-light href= users_path Users
 

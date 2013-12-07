@@ -1,9 +1,14 @@
-.l-backdrop{ background: $burnt }
+.l-backdrop{}
 
 .l-header {}
+.l-footer {}
 
 .l-container { @include outer-container; }
-.l-main{ background: $stone}
+.l-main{
+  background: $stone;
+  padding-top: $space;
+  padding-bottom: $double-space;
+}
 
 
 
@@ -48,34 +53,6 @@
 
 
 // _TODO - move into layout.scss
-.l-footer{
-  padding: 0 $space; // _TODO - Needs spacing
-
-  // _TODO - move this into a module.
-  ul {
-    @include row;
-   }
-  li{
-    margin-top: 1em;
-    @include span-columns(12);
-    @include media($breakpoint-ipad) {
-    @include span-columns(2);
-    @include omega(6n);
-    }
-  }
-  a{
-    @include span-columns(12);
-    font-size: 1.5em;
-    background: $burnt;
-    color: $tung;
-    padding: 0.5em 0;
-    text-align: center;
-    &:hover{
-      background: $tan;
-      text-decoration: none;
-    }
-  }
-}
 
 // .l-header {
 //   background: $burnt;

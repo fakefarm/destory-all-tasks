@@ -10,3 +10,9 @@
   text-align: center;
   font-size: $normal;
 }
+
+@mixin list-grid {
+  @include row;
+  text-align: center;
+  font-size: $normal;
+}

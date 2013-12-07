@@ -1,7 +1,7 @@
 // Mixins
 @mixin links-common {
   display: block;
-  margin: $half-space 0;
+  padding: $half-space 0;
 }
 
 @mixin basic {
