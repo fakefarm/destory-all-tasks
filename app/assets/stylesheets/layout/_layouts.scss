@@ -1,19 +1,26 @@
+.l-backdrop{ background: $burnt }
+
+.l-header {}
+
+.l-container { @include outer-container; }
+.l-main{ background: $stone}
+
+
+
+
+
 // _TODO - move elements into modules
 
 // General Containers
 
 .l-constrained {
   @include outer-container();
-  padding: 0 $page-gutter;
-  margin: $page-gutter;
+  padding: 0 $space;
+  margin: $space;
 }
 
 #l-printer-wrapper { @include outer-container(); }
 
-.l-main{
-  @include row();
-  margin: 0 2%;
-}
 
 .l-primary-content{
   @include media($breakpoint-ipad){
@@ -41,49 +48,8 @@
 
 
 // _TODO - move into layout.scss
-// _TODO - move elements into modules
-
-#header {}
-
-.l-header {
-  background: $burnt;
-  padding: 0.3em 0;
-  .navbar{
-    @include row;
-  }
-  ul {
-    @include media($breakpoint-ipad) {
-      @include shift(2);
-    }
-  }
-  li {
-    @include span-columns(3);
-    font-size: 1.2em;
-    @include media($breakpoint-ipad) {
-      @include span-columns(2);
-    }
-  }
-
-  a {
-    display: block;
-    color: $tung;
-    text-align: center;
-    background: white;
-
-    @include media($breakpoint-ipad) {
-      background: none;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-}
-
-
-
-// _TODO - move into layout.scss
 .l-footer{
-  padding: 0 $page-gutter; // _TODO - Needs spacing
+  padding: 0 $space; // _TODO - Needs spacing
 
   // _TODO - move this into a module.
   ul {
@@ -111,3 +77,36 @@
   }
 }
 
+// .l-header {
+//   background: $burnt;
+//   padding: 0.3em 0;
+//   .navbar{
+//     @include row;
+//   }
+//   ul {
+//     @include media($breakpoint-ipad) {
+//       @include shift(2);
+//     }
+//   }
+//   li {
+//     @include span-columns(3);
+//     font-size: 1.2em;
+//     @include media($breakpoint-ipad) {
+//       @include span-columns(2);
+//     }
+//   }
+
+//   a {
+//     display: block;
+//     color: $tung;
+//     text-align: center;
+//     background: white;
+
+//     @include media($breakpoint-ipad) {
+//       background: none;
+//       &:last-child {
+//         margin-right: 0;
+//       }
+//     }
+//   }
+// }

@@ -25,13 +25,15 @@
 
 
   %body.application{ class: @body_class }
-    #l-constrained
-      %header
-        = render 'layouts/shared/header/header'
+    .l-backdrop
+      .l-header
+        .l-container
+          = render 'layouts/shared/header/header'
       .l-main
-        = yield
-
-      %footer
-        = render 'layouts/shared/footer/footer'
-    = render 'layouts/shared/analytics'
-    = debug([params]) if Rails.env.development?
+        .l-container
+          = yield
+      .l-footer
+        .l-container
+          = render 'layouts/shared/footer/footer'
+      = render 'layouts/shared/analytics'
+      = debug([params]) if Rails.env.development?

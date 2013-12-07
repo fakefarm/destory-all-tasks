@@ -4,20 +4,27 @@
 @import 'base/grid-settings';
 @import 'neat-helpers';
 
+// Declarations
+@import 'declarations/colors';
+@import 'declarations/typography';
+@import 'declarations/spacing';
+@import 'declarations/breakpoints';
+@import 'declarations/font_sizes';
+
 // Base
-@import 'base/spacing';
-@import 'base/breakpoints';
-@import 'base/colors';
-@import 'base/typography';
+@import 'modules/links';
+@import 'base/base';
+@import 'modules/lists';
 @import 'base/forms';
 @import 'base/lists';
-@import 'base/normalize';
+@import 'base/reset';
 @import 'base/tables';
-@import 'base/base';
 
 
 // Modules
 @import 'modules/boxes';
+@import 'modules/mobile_helpers';
+@import 'modules/headers';
 @import 'modules/branding';
 @import 'modules/text';
 @import 'modules/buttons';
