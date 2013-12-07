@@ -20,6 +20,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.13.0'
   gem 'guard-rspec', '1.2.1'
+  gem 'selenium-webdriver'
   gem 'factory_girl_rails', '~> 4.2.1'
 end
 

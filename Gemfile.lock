@@ -304,6 +304,7 @@ DEPENDENCIES
   redcarpet (= 1.17.2)
   rspec-rails (~> 2.13.0)
   sass-rails (~> 3.2.3)
+  selenium-webdriver
   sidekiq
   simple_position
   simplecov
