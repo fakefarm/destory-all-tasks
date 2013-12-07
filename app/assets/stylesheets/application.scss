@@ -7,11 +7,9 @@
 // Base
 @import 'base/spacing';
 @import 'base/breakpoints';
-@import 'base/images';
 @import 'base/colors';
 @import 'base/typography';
 @import 'base/forms';
-@import 'base/functions';
 @import 'base/lists';
 @import 'base/normalize';
 @import 'base/tables';
@@ -30,15 +28,14 @@
 @import 'modules/utilities';
 @import 'modules/button_row';
 @import 'modules/sortable';
+@import 'modules/account_forms';
 
 // Themes
 @import 'themes/listing';
 @import 'themes/summary';
 
 // Layout
-@import 'layout/containers';
-@import 'layout/footer';
-@import 'layout/header';
+@import 'layout/layouts';
 
 
 // views

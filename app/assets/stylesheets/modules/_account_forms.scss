@@ -1,0 +1,15 @@
+.account-form {
+  @include row;
+  @include white-round-box;
+  @include span-columns(8);
+  @include shift(2);
+}
+
+.marketing {
+  @include span-columns(6);
+}
+
+.form {
+  @include span-columns(6);
+}
+
