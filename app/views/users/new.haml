@@ -1,26 +1,25 @@
-.summary
-  %h1 Sign up
+.l-form
+  .account-form
+    .form
+      %h2 Sign up
+      = form_for @user do |f|
+        - if @user.errors.any?
+          %h2 Oops...
+          - @user.errors.full_messages.each do |message|
+            %p= message
 
-  = form_for @user do |f|
-    - if @user.errors.any?
-      %h2 Oops...
-      - @user.errors.full_messages.each do |message|
-        %p= message
+        .field
+          = f.text_field :email, placeholder: 'email'
 
-    .field
-      = f.label :email
-      = f.text_field :email
+        .field
+          = f.password_field :password, placeholder: 'password'
 
-    .field
-      = f.label :password
-      = f.password_field :password
+        .field
+          = f.password_field :password_confirmation, placeholder: 'confirm password'
 
-    .field
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
+        .actions
+          .save-btn= f.submit 'Join now!'
 
-    .actions
-      = f.submit
-  or,
-  = link_to "Log in", login_path
-
+    .marketing
+      %h2 Already a member?
+      .all-btn= link_to "Log in", login_path
