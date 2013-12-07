@@ -1,26 +1,5 @@
-/ .l-footer
-/   footer
-/     ul
-/       = footer_nav
-
 .l-footer
   .m-footer
     footer
       .footer-list
-        .footer-tags
-          ul
-            - @tags.each do |tag|
-              li.tag-list-item
-                a.link-basic-light{href= "#{tags_path(tag)}"}= tag
-
-/ .l-footer
-/   footer
-/     ul
-/       li
-/         a href="#{root_path}" Home
-/       li
-/         a href="#{signup_path}" Sign Up
-/       li
-/         a href="#{login_path}" Log In
-/       li
-/         a href="http://you.should.hireDave.me" target='_blank' Made by Dave
+        = footer_nav
