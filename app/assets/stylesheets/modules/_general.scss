@@ -6,6 +6,11 @@
   margin: 2% 0;
 }
 
+.task-spacer {
+  border-top: 2px dashed $burnt;
+  margin-bottom: $space;
+}
+
 .alert{
   color: $white;
   font-style: italic;
