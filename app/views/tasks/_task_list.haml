@@ -1,17 +1,10 @@
-.tasks#task_list{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
-  - @tasks.each do |task|
-    - if task.due_date <= Time.now
-      %section.task-wrapper#task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
-        .handle= image_tag('grip.svg')
-        %h1.task-item
-          %a{href: "#{task_path(task)}"}= "#{task.item}"
-        %h2
-          - task.tags.split(',').each do |tag|
-            %a{href: "#{tags_path(tag)}", class: 'btn tag-link tag-bar'}= "#{tag.gsub(',','')}"
-        .button-row
-          .two-buttons
-            - if params[:action] == 'index'
-              %h3.punt-btn= render 'tasks/punt/punt', task: task
-            - else
-              %h3.punt-btn= render 'tasks/punt/punt_standard', task: task
-            %h3.destroy-btn= flex_destroy_path(task)
+.m-task-mgmt
+  .task-tag-punt-all
+    = render 'bulk_task_buttons'
+
+.m-task-list
+  .tasks#task_list{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+    - @tasks.each do |task|
+      - if task.due_date <= Time.now
+        %section.task-wrapper#task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+          = render 'task_2b_row', task: task

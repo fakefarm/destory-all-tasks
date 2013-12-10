@@ -1,7 +1,6 @@
 = form_for @comment do |f|
   = f.hidden_field :task_id, value: @task.id
   .field
-    = f.label :entry
-    .comment-field= f.text_area :entry, rows: "5"
+    .comment-field= f.text_area :entry, rows: "5", placeholder: "Jot some notes."
   .actions.save-btn
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'link-button-dark'

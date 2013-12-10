@@ -100,7 +100,7 @@ class TasksController < ApplicationController
         redirect_to punted_tasks_path
       else
         respond_to do |format|
-          format.html { redirect_to tasks_path, notice: "punted!" }
+          format.html { redirect_to tasks_path, notice: "Updated." }
           format.js { render layout: false }
         end
       end

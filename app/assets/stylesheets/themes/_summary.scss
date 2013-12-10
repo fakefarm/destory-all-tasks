@@ -4,10 +4,7 @@
   @include span-columns(12);
   @include white-round-box;
   h2{ @include text-tag; }
-  p{
-    font-size: 2em;
-    background: white;
-  }
+
   li{
     @include media($breakpoint-ipad) {
       padding: 0;

@@ -1,8 +1,10 @@
 .summary
   .button-row
-    %h1= @task.item
+    %h1.h1= @task.item
     .two-buttons
-      .all-btn= link_to 'List', tasks_path
-      .all-btn= link_to 'Back', task_path(@task)
+      .tb-edit-action
+        = link_to 'List', tasks_path, class: 'link-basic-dark'
+      .tb-edit-action
+        = link_to 'Back', task_path(@task), class: 'link-basic-dark'
 
-    = render 'form'
+    = render 'form_3_entry'

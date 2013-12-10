@@ -8,13 +8,6 @@
   }
  }
 
-.two-buttons {
-  @include clearfix;
-  @include media($breakpoint-ipad) {
-  @include shift(8);
-  }
-}
-
 .two-buttons h3 {
   @include span-columns(6);
   font-size: 0.7em;
@@ -58,7 +51,7 @@
   }
 }
 
-.timer-row h4{
+.timer-row h4 {
   float: left;
   font-size: 3em;
   font-weight: bold;
@@ -79,4 +72,15 @@
   @include media($breakpoint-ipad) {
     @include span-columns(2);
   }
+}
+
+.two-buttons {
+  @include row;
+  @include media($breakpoint-ipad) {
+  @include shift(8);
+  }
+}
+
+.tb-edit-action {
+  @include span-columns(2);
 }

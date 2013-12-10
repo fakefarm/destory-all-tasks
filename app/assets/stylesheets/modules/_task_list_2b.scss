@@ -1,0 +1,98 @@
+.m-task-mgmt{
+  @include row;
+  margin-bottom: $space;
+}
+
+  .task-tag-punt-all{
+    @include span-columns(12);
+    @include media($breakpoint-ipad) {
+      @include span-columns(2.6);
+      float: right;
+    }
+  }
+
+
+.task-list-item {
+  @include row;
+  margin-bottom: $space;
+}
+
+.task-handle {
+  display: none;
+  @include media($breakpoint-ipad) {
+    display: block;
+    @include span-columns(0.5);
+    cursor: move;
+  }
+}
+
+.task-text {
+  @include row();
+  @include span-columns(12);
+  @include media($breakpoint-ipad) {
+    @include span-columns(6.5);
+  }
+}
+
+  .task-item {
+    @include span-columns(12);
+    cursor: pointer;
+    font-size: $large;
+    @include media($breakpoint-ipad) {
+      @include span-columns(7);
+    }
+  }
+
+  .task-category {
+    margin-bottom: $half-space;
+    @include media($breakpoint-ipad) {
+      @include span-columns(4);
+      float: right;
+      margin-bottom: 0;
+    }
+  }
+
+.task-actions {
+  @include row();
+  @include media($breakpoint-ipad) {
+    @include span-columns(5);
+    float: right;
+  }
+}
+
+  .ta-punt {
+    @include span-columns(6);
+    @include media($breakpoint-ipad) {
+      @include shift(0.5);
+    }
+  }
+
+  .ta-destroy {
+    @include span-columns(6);
+    @include media($breakpoint-ipad) {
+      @include shift(2.5);
+      @include span-columns(3);
+    }
+  }
+
+.task-actions-4b {
+  @extend .task-actions;
+}
+
+.ta-destroy-4b,
+.ta-punt-4b,
+.ta-edit-4b,
+.ta-return-time-4b {
+  @include span-columns(3);
+}
+
+
+.task-actions-3b {
+  @extend .task-actions;
+}
+
+.ta-destroy-3b,
+.ta-punt-3b,
+.ta-edit-3b {
+  @include span-columns(3);
+}

@@ -1,27 +1,18 @@
 .summary
   .show-row
     .task-item
-      %h1.task-show-item= @task.item
+      %h1.h1= @task.item
       %p.return-time= "Returns in #{distance_of_time_in_words_to_now(@task.due_date)}"
 
     .button-show-row
-      %h2.button-tags= link_to "#{@task.tags}", tags_path(@task.tags)
-      .three-buttons
-        %h3.punt-btn= flex_punt_path(@task)
-        %h3.edit-btn= link_to 'edit', edit_task_path(@task)
-        %h3.destroy-btn= link_to "Destroy", task_path(@task), method: :delete
-
-      .timer-row
-        %h3{ type: 'button', id: 'timer', class: 'timer-btn', value: 'Start Timer'} Start timer
-
-        .counter
-          %h4
-            %h4#counterHour 0
-            %h4 :
-            %h4#counterMin 0
-            %h4 :
-            %h4#counterSec 0
-
+      %p= link_to "#{@task.tags}", tags_path(@task.tags), class: 'link-basic-dark'
+      .task-actions-3b
+        .ta-destroy-3b
+          %p= link_to "Destroy", task_path(@task), method: :delete, class: 'link-button-destroy'
+        .ta-punt-3b
+          %p= flex_punt_path(@task)
+        .ta-edit-3b
+          %p= link_to "edit", edit_task_path(@task), class: 'link-button-edit'
 
   = render 'comments/form'
 
@@ -29,3 +20,6 @@
     %article
       .entry= markdown(comment.entry)
       .destroy-btn=link_to 'destroy', comment, method: :delete
+
+
+

@@ -1,0 +1,19 @@
+.m-task-tag-form
+  = form_for @task do |f|
+    .task-tag-errors
+      - if @task.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
+          %ul
+            - @task.errors.full_messages.each do |msg|
+              %li= msg
+
+    = f.hidden_field :user_id, value: current_user.id
+
+    .task-tag-task-field
+      = f.text_field :item, placeholder: 'Task', id: 'task'
+    .task-tag-form-action-items
+      .task-tag-tag-field
+        = f.text_field :tags, placeholder: "Add a tag"
+      .task-tag-save-field
+        = f.submit 'Save', class: 'button-save-big'

@@ -1,25 +1,36 @@
-.summary
+.l-form
+  .session-form
+    .form-content
+      %h2.h2 Welcome Back!
 
-  - flash.each do |key, value|
-    .alert{class: "alert-#{key}"}
-      = value
+      - flash.each do |key, value|
+        .alert{class: "alert-#{key}"}
+          = value
 
-  %h1 Log In
-  = form_tag sessions_path do
+      = form_tag sessions_path do
 
-    .field
-      = label_tag :email
-      = text_field_tag :email, params[:email]
+        .field
+          = label_tag :email
+          = text_field_tag :email, params[:email]
 
-    .field
-      = label_tag :password
-      = password_field_tag :password
+        .field
+          = label_tag :password
+          = password_field_tag :password
 
-    .field
-      = label_tag :remember_me
-      = check_box_tag :remember_me, 1, params[:remember_me]
+        .field
+          = label_tag :remember_me
+          = check_box_tag :remember_me, 1, params[:remember_me]
 
-    .actions
-      = submit_tag "Log In"
-  or,
-  = link_to "sign up", signup_path
+        .actions
+          = submit_tag "Log In", class: 'button-save-big'
+
+    .form-content
+      .user-tip
+        %h2.h3.italic User tip
+        %h3.h3 List look daunting?
+        %h3.h3 Punt all at once!
+        %p.p Bulk punt tasks to start with a clean slate. They are not 'gone', just in the 'Later' tab.
+      .user-tip
+        %h2.h2 Not a member?
+        = link_to "Join now", signup_path, class: 'link-button-dark'
+

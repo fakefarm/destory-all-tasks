@@ -12,6 +12,10 @@ body {
   line-height:  1.6;
 }
 
+body.landing {
+  background: $stone;
+}
+
 // Pure Class Styling.
 // Inspired by: thesassway.com/advanced/modular-css-typography
 
@@ -23,7 +27,8 @@ body {
 .h3 { font-size: $xlarge; }
 .h4 { font-size: $large; }
 .h5 { font-size: $normal; }
-.a  { }
+.p, .li, .a { font-size: $normal; line-height: $double-space; font-family: $sans}
+.a  { text-decoration: none; }
 
 .italic { font-style: italic; }
 .bold { font-weight: bold; }
@@ -34,10 +39,15 @@ h3 { @extend .h3; }
 h4 { @extend .h4; }
 h5 { @extend .h5; }
 h6 { @extend .h6; }
-
+li  { @extend .li; }
+p  { @extend .p; }
 a  { @extend .a; }
 
-
+.tag-header {
+  font-size: $headline;
+  font-family: $cond;
+  margin-bottom: $space;
+}
 
 // body {
 //   color: $steele;

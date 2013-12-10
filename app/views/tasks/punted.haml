@@ -1,19 +1,6 @@
-.summary.tasks
-  .l-sidebar
-    .tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+.summary.task-page
+  .m-task-list
+    .tasks#task_list{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
       - @tasks.each do |task|
         %section.task-wrapper#task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
-          .handle= image_tag('grip.svg')
-          .punted-item
-            %h1
-              %a{href: "#{task_path(task)}"}= "#{task.item}"
-            %h2
-              - task.tags.split(',').each do |tag|
-                %a{href: "#{tags_path(tag)}", class: 'btn tag-link tag-bar'}= "#{tag.gsub(',','')}"
-          .button-row
-            .four-buttons
-              %h3.punt-btn= render 'tasks/punt/punt_return', task: task
-              %h3.edit-btn= link_to "edit", edit_task_path(task)
-              %h3.destroy-btn= flex_destroy_path(task)
-              %h3.return-time= distance_of_time_in_words_to_now(task.due_date)
-
+          = render 'task_4b_row', task: task

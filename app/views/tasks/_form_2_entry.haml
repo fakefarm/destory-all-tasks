@@ -1,0 +1,10 @@
+.new-task-form
+  = form_for @task do |f|
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :tags, value: params[:tags]
+    .short-task-form
+      .short-tag-field
+        = f.text_field :item, placeholder: "Add to #{params[:tags]}"
+
+      .short-tag-save
+        = f.submit 'Save', class: 'button-save-big'

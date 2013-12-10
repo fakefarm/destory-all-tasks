@@ -1,0 +1,14 @@
+.session-form {
+  @include row;
+  @include white-round-box;
+  @include span-columns(8);
+  @include shift(2);
+}
+
+.form-content {
+  @include span-columns(6);
+}
+
+.user-tip {
+  margin-bottom: $space;
+}

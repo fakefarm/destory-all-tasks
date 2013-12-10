@@ -16,3 +16,70 @@
     color: $light-stone;
   }
 }
+
+.link-basic-dark {
+  @include basic;
+  color: $black;
+  &:hover{
+    color: $blue;
+  }
+}
+
+.link-button-dark {
+  @include basic;
+  @include btn($white, $burnt, $stone);
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: $large;
+  margin: 0;
+  &:hover{
+    color: $light-stone;
+  }
+}
+
+.link-button-dark-small{
+  @extend .link-button-dark;
+  font-size: $small;
+  padding: $space;
+}
+
+
+.link-button-destroy {
+  @include basic;
+  @include btn($white, $pink, $red);
+  padding-left: 0;
+  padding-right: 0;
+  font-size: $normal;
+  margin: 0;
+  &:hover{
+    color: $light-stone;
+  }
+}
+
+.link-button-punt {
+  @extend .link-button-destroy;
+  @include btn($burnt, $tan, $burnt);
+  &:hover{
+    color: $white;
+  }
+}
+
+.link-category {
+  @extend .link-basic-dark;
+  padding: $space 0;
+  margin-top: $double-space;
+  color: $grey;
+
+  @include media($breakpoint-ipad) {
+    color: $black;
+    text-align: right;
+    padding: 0;
+    margin-top: 0;
+  }
+}
+
+.link-button-edit {
+  @extend .link-button-dark;
+  font-size: $normal;
+}

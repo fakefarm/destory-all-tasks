@@ -20,12 +20,12 @@ resources :sessions
 resources :users
 resources :comments
 
-resources :tasks do
+resources :tasks, except: [:new] do
   collection { post :sort }
   collection { get :punted }
   collection { post :punt_all_tagged_tasks }
   collection { post :punt_all_tasks }
-  collection { post :delete_all_tagged_tasks }
+  collection { put :delete_all_tagged_tasks }
 end
 
 

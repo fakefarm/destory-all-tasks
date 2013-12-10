@@ -16,17 +16,21 @@ module TasksHelper
 
   def flex_destroy_path(task)
     if task.comments.count > 0
-      link_to "#{pluralize(task.comments.count, 'note')}", task_path(task)
+      link_to "#{pluralize(task.comments.count, 'note')}", task_path(task), class: 'link-button-destroy'
     else
-      link_to 'Destroy', task, method: :delete, remote: true
+      link_to 'Destroy', task, method: :delete, remote: true, class: 'link-button-destroy'
     end
   end
 
   def flex_punt_path(task)
     if task.due_date <= Time.now
-      link_to 'punt', task_path(task:{ due_date: punt_time }), method: :put
+      if params[:action] == 'index'
+        link_to 'Punt', task_path(task, due_date: punt_time), remote: true, class: 'link-button-punt'
+      else
+        link_to 'Punt', task_path(task, due_date: punt_time), class: 'link-button-punt'
+      end
     else
-      render 'tasks/punt/punt_return', task: task
+      link_to 'Return', task_path(task, due_date: Time.now ), class: 'link-button-punt'
     end
   end
 end

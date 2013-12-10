@@ -1,170 +1,170 @@
-.task-action-bar{
-  @include media($breakpoint-ipad) {
-    @include row();
-    .field{
-      @include span-columns(6);
-    }
-    input[type='submit']{
-      @include shift(2);
-      @include span-columns(2.7);
-      font-size: 2em;
-      margin-top: 0;
-      padding: 0.5em;
-    }
-  }
-}
-.new-task-form{
-  margin-bottom: 8em;
-}
+// .task-action-bar{
+//   @include media($breakpoint-ipad) {
+//     @include row();
+//     .field{
+//       @include span-columns(6);
+//     }
+//     input[type='submit']{
+//       @include shift(2);
+//       @include span-columns(2.7);
+//       font-size: 2em;
+//       margin-top: 0;
+//       padding: 0.5em;
+//     }
+//   }
+// }
+// .new-task-form{
+//   margin-bottom: 8em;
+// }
 
-.task-item {
-  @include media($breakpoint-ipad) {
-    @include span-columns(6);
-  }
-}
-.punted-item {
-  @include media($breakpoint-ipad) {
-    @include span-columns(6);
-  }
-  h1 {
-    @include media($breakpoint-ipad) {
-      line-height: 1em;
-    }
-  }
-}
+// .task-item {
+//   @include media($breakpoint-ipad) {
+//     @include span-columns(6);
+//   }
+// }
+// .punted-item {
+//   @include media($breakpoint-ipad) {
+//     @include span-columns(6);
+//   }
+//   h1 {
+//     @include media($breakpoint-ipad) {
+//       line-height: 1em;
+//     }
+//   }
+// }
 
-.task-show-item {
-  @include media($breakpoint-ipad) {
-    font-size: 3.4em;
-    line-height: 1em;
-  }
-}
+// .task-show-item {
+//   @include media($breakpoint-ipad) {
+//     font-size: 3.4em;
+//     line-height: 1em;
+//   }
+// }
 
-.button-tags a{
-  @include media($breakpoint-ipad) {
-    width: 100%;
-    font-size: 1.2em;
-    text-align: right;
-  }
-}
-.show-row{
-  @include row;
-  .task-item, .button-show-row {
-    @include media($breakpoint-ipad) {
-      @include span-columns(6);
-    }
-  }
-}
+// .button-tags a{
+//   @include media($breakpoint-ipad) {
+//     width: 100%;
+//     font-size: 1.2em;
+//     text-align: right;
+//   }
+// }
+// .show-row{
+//   @include row;
+//   .task-item, .button-show-row {
+//     @include media($breakpoint-ipad) {
+//       @include span-columns(6);
+//     }
+//   }
+// }
 
-.button-show-row {
-  @include media($breakpoint-ipad) {
-    border-left: 1px dashed $grey;
-    padding: 0 0 0 1em;
-  }
-}
-.calculations{
-  font-style: italic;
-  font-family: $cond;
-  border-top: 1px solid $light-grey;
-  padding: 0.5em 0 0 0;
-  margin: 0.5em 0 0 0;
-}
-h1.tag-title { margin: 1em 0; }
+// .button-show-row {
+//   @include media($breakpoint-ipad) {
+//     border-left: 1px dashed $grey;
+//     padding: 0 0 0 1em;
+//   }
+// }
+// .calculations{
+//   font-style: italic;
+//   font-family: $cond;
+//   border-top: 1px solid $light-grey;
+//   padding: 0.5em 0 0 0;
+//   margin: 0.5em 0 0 0;
+// }
+// h1.tag-title { margin: 1em 0; }
 
-h1.task-item { line-height: 1em; }
+// h1.task-item { line-height: 1em; }
 
-h1.task-item a {
-  font-size: 0.8em;
-  line-height: 0.5em;
-  @include media($breakpoint-ipad) {
-  line-height: 0.9em;
-  }
-}
+// h1.task-item a {
+//   font-size: 0.8em;
+//   line-height: 0.5em;
+//   @include media($breakpoint-ipad) {
+//   line-height: 0.9em;
+//   }
+// }
 
-h2.punted-tag-item a {
-  background: red;
-}
+// h2.punted-tag-item a {
+//   background: red;
+// }
 
-.punts {
-  background: white;
-  width: 100%;
-  padding: 1em;
-  text-align: center;
-  a {
-    font-size: 1.2em;
-  }
-}
+// .punts {
+//   background: white;
+//   width: 100%;
+//   padding: 1em;
+//   text-align: center;
+//   a {
+//     font-size: 1.2em;
+//   }
+// }
 
-.task-wrapper {
-  margin: 15% 0 0 0;
-  padding: 0.5%;
-  @include media($breakpoint-ipad) { margin: 2% 0 0 0; }
+// .task-wrapper {
+//   margin: 15% 0 0 0;
+//   padding: 0.5%;
+//   @include media($breakpoint-ipad) { margin: 2% 0 0 0; }
 
-  &:first-child { margin: 0; }
+//   &:first-child { margin: 0; }
 
-  .handle {
-    cursor: pointer;
-    padding: 3% 0;
-    width: 20%;
+//   .handle {
+//     cursor: pointer;
+//     padding: 3% 0;
+//     width: 20%;
 
-    @include media($breakpoint-ipad) {
-      float: left;
-      padding: 0;
-      width: 2%;
-    }
-  }
-}
+//     @include media($breakpoint-ipad) {
+//       float: left;
+//       padding: 0;
+//       width: 2%;
+//     }
+//   }
+// }
 
-.punt-button { @include btn(white, red); }
-.highlight { background: $yellow; }
-.snooze { background: $light-grey; }
-.urgent { background: $warning; }
-.feature { color: $burnt; }
+// .punt-button { @include btn(white, red); }
+// .highlight { background: $yellow; }
+// .snooze { background: $light-grey; }
+// .urgent { background: $warning; }
+// .feature { color: $burnt; }
 
-.punt-form {
-  form { margin: 0; }
-  button {
-    font-size: 2em;
-    padding: 0;
-    font-family: $cond;
-    background: none;
-    border: none;
-  }
-}
+// .punt-form {
+//   form { margin: 0; }
+//   button {
+//     font-size: 2em;
+//     padding: 0;
+//     font-family: $cond;
+//     background: none;
+//     border: none;
+//   }
+// }
 
-p.return-time{
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
-}
-.return-time {
-  font-style: italic;
-  font-family: $serif;
-}
+// p.return-time{
+//   font-size: 1em;
+//   padding: 0;
+//   margin: 0;
+// }
+// .return-time {
+//   font-style: italic;
+//   font-family: $serif;
+// }
 
 
-.destroy {
-  text-align: right;
-  width: 100%;
-}
+// .destroy {
+//   text-align: right;
+//   width: 100%;
+// }
 
-.home-button {
-  @include btn($stone);
-  &.destroy {
-    background: $burnt;
-    float: right;
-    a { color: $black; }
-  }
-}
+// .home-button {
+//   @include btn($stone);
+//   &.destroy {
+//     background: $burnt;
+//     float: right;
+//     a { color: $black; }
+//   }
+// }
 
-#task_item {
-  padding: 10px;
-  font-size: 3em;
-  width: 100%;
-  margin-bottom: 2%;
-  font-family: $cond;
-}
+// #task_item {
+//   padding: 10px;
+//   font-size: 3em;
+//   width: 100%;
+//   margin-bottom: 2%;
+//   font-family: $cond;
+// }
 
-.tag-link{
-  margin: 0 0.3em;
-}
+// .tag-link{
+//   margin: 0 0.3em;
+// }

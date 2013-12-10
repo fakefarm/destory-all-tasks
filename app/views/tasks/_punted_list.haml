@@ -1,0 +1,7 @@
+%hr
+%h2 Punted
+.tasks{ data: { update_url: sort_tasks_url, behavior: 'sortable' } }
+  - @tasks.each do |task|
+    - if task.due_date >= Time.now
+      %section.task-wrapper#task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
+        = render 'task_2b_row', task: task

@@ -1,10 +1,10 @@
 .l-form
-  .account-form
-    .form
-      %h2 Sign up
+  .session-form
+    .form-content
+      %h2.h2 Sign up
       = form_for @user do |f|
         - if @user.errors.any?
-          %h2 Oops...
+          %h2.h2 Oops...
           - @user.errors.full_messages.each do |message|
             %p= message
 
@@ -18,8 +18,13 @@
           = f.password_field :password_confirmation, placeholder: 'confirm password'
 
         .actions
-          .save-btn= f.submit 'Join now!'
+          = f.submit 'Join now!', class: 'button-save-big'
 
-    .marketing
-      %h2 Already a member?
-      .all-btn= link_to "Log in", login_path
+    .form-content
+      .user-tip
+        %h2.h3.italic User tip
+        %h3.h3 Out of time? Punt it!
+        %p.p If you can't finish a task today, punt it and it will return in 3 days. (Or, whatever time you want to set.)
+      .user-tip
+        %h2.h2 Already a member?
+        = link_to "Log in", login_path, class: 'link-button-dark'

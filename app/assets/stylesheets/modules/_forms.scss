@@ -1,0 +1,48 @@
+.m-task-tag-form{
+  @include clearfix;
+}
+
+.task-tag-tag-field{
+  @include span-columns(12);
+  @include media($breakpoint-ipad) {
+    @include span-columns(9.4);
+    &:last-child{
+      margin-right: 1%;
+    }
+  }
+}
+
+.task-tag-save-field{
+  @include span-columns(12);
+  margin-bottom: 1em;
+  @include media($breakpoint-ipad) {
+    @include span-columns(2.6);
+    margin-bottom: 0;
+  }
+}
+
+// for single entry forms
+
+.new-task-form{
+  margin-bottom: $space;
+  @include media($breakpoint-ipad) {
+    margin-bottom: 0;
+  }
+}
+
+.short-task-form {
+  @include row;
+}
+
+.short-tag-field {
+  @include media($breakpoint-ipad) {
+    @include span-columns(8);
+
+  }
+}
+
+.short-tag-save {
+  @include media($breakpoint-ipad) {
+    @include span-columns(4);
+  }
+}

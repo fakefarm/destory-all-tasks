@@ -1,0 +1,7 @@
+%a{ href: punt_all_tasks_tasks_path(due_date: Time.now), class: 'link-button-dark-small', remote: true, method: :post} Punt All Tasks
+
+/ - if params[:action] != 'index'
+/   = link_to "Destroy All", delete_all_tagged_tasks, controller: 'tasks', method: :put, class: 'link-button-dark-small'
+
+/ ToDO - destroy all tasks!
+/ %a{ href: delete_all_tagged_tasks_path, class: 'link-button-dark-small', remote: true, method: :post} Destroy All Tasks

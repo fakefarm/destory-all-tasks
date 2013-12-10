@@ -4,7 +4,9 @@ class Task < ActiveRecord::Base
   scope :current_user_id, ->(id){ where("user_id = ?", id) }
   scope :punted, ->{ where('due_date > ?', Time.now) }
 
-  validates :item, presence: true
+  # TODO
+  # style first, then add validations
+  # validates :item, presence: true
 
   include SimplePosition
   default_scope order(:position)

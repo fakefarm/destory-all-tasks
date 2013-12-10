@@ -1,0 +1,15 @@
+.task-list-item
+  .task-handle= image_tag('grip.svg')
+  .task-text
+    .task-item
+      %p
+        %a{href: "#{task_path(task)}", class: 'link-basic-dark'}= "#{task.item}"
+    .task-category
+      %p
+        - task.tags.split(',').each do |tag|
+          %a{href: "#{tags_path(tag)}", class: 'link-category'}= "#{tag.gsub(',','')}"
+  .task-actions
+    .ta-destroy
+      %p= flex_destroy_path(task)
+    .ta-punt
+      %p= flex_punt_path(task)

@@ -2,12 +2,5 @@
   .alert{class: "alert-#{key}"}
     = value
 .summary.task-page
-  .l-primary-content
-    = link_to 'Punt All Tasks', punt_all_tasks_tasks_path(due_date: Time.now), remote: true,method: :post
-    = render 'form'
-    = render 'task_list'
-    .calculations
-      .time-total
-      .budget-total
-
-
+  = render 'form_3_entry'
+  = render 'task_list'

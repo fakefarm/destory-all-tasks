@@ -1,40 +1,30 @@
-@mixin btn($font-color: $black, $bg-color:$yellow, $bg-hover:$green){
+@mixin btn($font-color: $black, $bg-color:$yellow, $bg-hover:$green) {
   display: inline-block;
+  border: none;
+  padding: $half-space;
   @include span-columns(12);
-  padding: 4%;
+  border-radius: 3px;
   font-size: 1em;
   background: $bg-color;
   color: $font-color;
+  margin-top: 0;
   text-align: center;
   &:hover{
     background: $bg-hover;
     @include transition (all 100ms ease-in-out);
   }
-  @include media($breakpoint-ipad) {
-    padding: 2%;
+}
+
+.button-save-big {
+  @include btn($dkgreen, $green, $dkgreen);
+  font-size: $xxlarge;
+  margin: 0;
+  &:hover{
+    color: $white;
   }
 }
 
-.destroy-btn{
-  @include btn($stone, $pink, $red);
-}
-.punt-btn{
-  @include btn($white, $stone, $light-stone);
-  padding: 4%;
-}
-.all-btn{
-  @include btn($black, $stone, $light-stone);
-}
-.edit-btn{
-  @include btn($white, $grey, $light-grey);
-
-}
-
-.timer-btn{
-  @include btn($black, $stone, $light-grey);
-}
-
-.save-btn input{
-  @include btn($black, $stone);
-  border: none;
+.task-punt-btn {
+  @include btn($white, $tan, $stone);
+  padding: 0.43em;
 }
