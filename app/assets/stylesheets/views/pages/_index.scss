@@ -65,6 +65,8 @@
   background-position: top left;
   -webkit-background-size: cover;
   background-size: cover;
+  height: 500px;
+  margin-top: -5em;
 }
 
 // position (z-index, position, top/left/right/bottom)
@@ -89,6 +91,7 @@
 
   @include media($breakpoint-desktop) {
     font-size: 5em;
+    margin-top: 2em;
   }
 
 } // .hero-caption
