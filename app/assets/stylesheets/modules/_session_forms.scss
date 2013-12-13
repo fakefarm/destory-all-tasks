@@ -6,9 +6,26 @@
 }
 
 .form-content {
-  @include span-columns(6);
+  @include mobile-helpers;
+  @include media($breakpoint-ipad) {
+    @include span-columns(6);
+  }
 }
 
 .user-tip {
   margin-bottom: $space;
+}
+
+.user-tips {
+  display: none;
+  @include media($breakpoint-ipad) {
+    display: block;
+  }
+}
+.signup-form {
+  @include span-columns(12);
+
+  @include media($breakpoint-ipad) {
+    @include span-columns(6);
+  }
 }

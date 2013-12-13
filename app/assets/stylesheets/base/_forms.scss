@@ -20,15 +20,13 @@ select {
   background: $light-grey;
   padding: $quarter-space $half-space;
   font-family: $cond;
-  font-size: $headline;
   color: $grey;
   width: 100%;
   max-width: 100%;
   border-radius: 2px;
   margin-bottom: $quarter-space;
-  // font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  // margin: 0;
-  // display: block;
+  font-size: $large;
+  @include media($breakpoint-ipad) { font-size: $headline; }
 }
 
 

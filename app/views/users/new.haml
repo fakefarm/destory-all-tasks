@@ -1,26 +1,27 @@
 .l-form
   .session-form
     .form-content
-      %h2.h2 Sign up
-      = form_for @user do |f|
-        - if @user.errors.any?
-          %h2.h2 Oops...
-          - @user.errors.full_messages.each do |message|
-            %p= message
+      .signup-form
+        %h2.h2 Sign up
+        = form_for @user do |f|
+          - if @user.errors.any?
+            %h2.h2 Oops...
+            - @user.errors.full_messages.each do |message|
+              %p= message
 
-        .field
-          = f.text_field :email, placeholder: 'email'
+          .field
+            = f.text_field :email, placeholder: 'email'
 
-        .field
-          = f.password_field :password, placeholder: 'password'
+          .field
+            = f.password_field :password, placeholder: 'password'
 
-        .field
-          = f.password_field :password_confirmation, placeholder: 'confirm password'
+          .field
+            = f.password_field :password_confirmation, placeholder: 'confirm password'
 
-        .actions
-          = f.submit 'Join now!', class: 'button-save-big'
+          .actions
+            = f.submit 'Join now!', class: 'button-save-big'
 
-    .form-content
+    .form-content.user-tips
       .user-tip
         %h2.h3.italic User tip
         %h3.h3 Out of time? Punt it!
