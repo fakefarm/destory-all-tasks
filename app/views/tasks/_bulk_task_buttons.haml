@@ -1,4 +1,10 @@
-%a{ href: punt_all_tasks_tasks_path(due_date: Time.now), class: 'link-button-dark-small', remote: true, method: :post} Punt All Tasks
+= link_to 'Punt All Tasks', punt_all_tasks_tasks_path(due_date: Time.now), remote: true,method: :post, class: 'link-button-dark-small'
+
+/ = link_to 'Destroy All Tasks', punt_all_tasks_tasks_path(due_date: Time.now), remote: true,method: :post, class: 'link-button-dark-small'
+
+
+/ = link_to 'Destroy All tasks', '', class: 'link-button-dark-small'
+
 
 / - if params[:action] != 'index'
 /   = link_to "Destroy All", delete_all_tagged_tasks, controller: 'tasks', method: :put, class: 'link-button-dark-small'

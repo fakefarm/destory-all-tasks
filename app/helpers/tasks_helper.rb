@@ -27,10 +27,13 @@ module TasksHelper
       if params[:action] == 'index'
         link_to 'Punt', task_path(task, task: { due_date: punt_time }), remote: true, class: 'link-button-punt', method: :put
       else
-        link_to 'Punt', task_path(task, due_date: punt_time), class: 'link-button-punt', method: :put
+        link_to 'Punt', task_path(task, task: { due_date: punt_time }), class: 'link-button-punt', method: :put
       end
     else
-      link_to 'Return', task_path(task, due_date: Time.now ), class: 'link-button-punt', method: :put
+      link_to 'Return', task_path(task, task: { due_date: Time.now }), class: 'link-button-punt', method: :put
     end
   end
 end
+
+
+
