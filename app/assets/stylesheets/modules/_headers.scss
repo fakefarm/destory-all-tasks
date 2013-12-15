@@ -20,6 +20,7 @@
 
 .m-header{
   @include media (max-width $bp-mobile) { @include header-list-stacked; }
+  @include media (min-width $bp-tablet max-width $bp-desktop) { @include header-list-row; }
   @include media ($bp-desktop) {
     @include header-list-row;
     padding: $space 0;

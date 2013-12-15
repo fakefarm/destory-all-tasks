@@ -28,6 +28,7 @@
 }
 
 .m-footer{
-  @include media (max-width $bp-mobile) { @include footer-list-stacked }
-  @include media ($bp-desktop) { @include footer-list }
+  @include media (max-width $bp-mobile) { @include footer-list-stacked; }
+  @include media (min-width $bp-tablet max-width $bp-desktop) { @include footer-list; }
+  @include media ($bp-desktop) { @include footer-list; }
 }
