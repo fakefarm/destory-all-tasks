@@ -26,12 +26,19 @@ class TasksController < ApplicationController
   end
 
   def punt_all_tasks
-    to_punt = Task.where('due_date <= ?', Time.now)
-    to_punt.each do |task|
-      task.update_attributes(due_date: punt_time )
+    tag = request.referrer.split('/').last
+    if tag.blank?
+      to_punt = Task.where('due_date <= ?', Time.now)
+      to_punt.each do |task|
+        task.update_attributes(due_date: punt_time )
+      end
+    else
+      tag = request.referrer.split('/').last
+      PuntAllTaggedTasksService.call(tag)
     end
 
     respond_to do |format|
+      format.html { redirect_to tasks_path, notice: "You punted all #{tag} tags." }
       format.js { render layout: false }
     end
   end
