@@ -127,7 +127,7 @@ class TasksController < ApplicationController
   end
 
   def sort
-    params[:task].each_with_index do |id, index|
+    params['task-wrapper_task'].each_with_index do |id, index|
       Task.update_all({position: index + 1}, {id: id})
     end
     render nothing: true
