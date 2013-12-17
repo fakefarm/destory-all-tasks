@@ -27,7 +27,7 @@ class TasksController < ApplicationController
 
   def punt_all_tasks
     tag = request.referrer.split('/').last
-    if tag.blank?
+    if tag == 'tasks'
       to_punt = Task.where('due_date <= ?', Time.now)
       to_punt.each do |task|
         task.update_attributes(due_date: punt_time )
