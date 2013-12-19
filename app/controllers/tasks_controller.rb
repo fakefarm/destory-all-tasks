@@ -103,8 +103,6 @@ class TasksController < ApplicationController
     if @task.save
       if request.referrer.include?('tags')
         redirect_to tags_path(@task.tags)
-      elsif request.referrer.include?('punted')
-        redirect_to punted_tasks_path
       else
         respond_to do |format|
           format.html { redirect_to tasks_path, notice: "Updated." }
