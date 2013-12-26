@@ -2,4 +2,6 @@
   ul
     - @tags.each do |tag|
       li.tag-list-item
-        a.link-basic-light{href= "#{tags_path(tag)}"}= tag
+        a.link-basic-light href= "#{tags_path(tag)}"= tag
+    li.tag-list-item
+        a.link-basic-light href= "#{untagged_path}" untagged

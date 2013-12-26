@@ -1,0 +1,7 @@
+.summary.tag-page
+  .tag-header
+    %h1 Untagged tasks
+  .l-primary-content.task-action-bar
+    = render 'form_2_entry'
+    = render partial: 'task_list'
+    = render partial: 'punted_list', tasks: @tasks

@@ -13,6 +13,7 @@ match 'overview', to: 'pages#overview', as: 'overview'
 match 'style-guide', to: 'pages#style_guide', as: 'style_guide'
 
 match 'tags/:tags' => 'tasks#tags', as: 'tags'
+match 'untagged' => 'tasks#untagged', as: 'untagged'
 
 root :to => 'pages#index'
 

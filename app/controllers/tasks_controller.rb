@@ -9,6 +9,13 @@ class TasksController < ApplicationController
     @title = params[:tags]
   end
 
+  def untagged
+    @task = Task.new
+    tag_param = ""
+    @tasks = Task.tag(tag_param).current_user_id(current_user.id)
+    @title = params[:tags]
+  end
+
   def index
     @task = Task.new
     @tasks = Task.where(user_id: current_user.id).where( 'due_date <= ? ', Time.now ).order('position')
