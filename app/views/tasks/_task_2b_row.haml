@@ -3,7 +3,7 @@
   .task-text
     .task-item
       %p
-        %a{href: "#{task_path(task)}", class: 'link-basic-dark'}= "#{task.item}"
+        %a{href: "#{task_path(task)}", class: 'link-basic-dark', data: { task: 'item'  }}= "#{task.item}"
     .task-category
       %p
         - task.tags.split(',').each do |tag|

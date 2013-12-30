@@ -88,4 +88,10 @@ $(document).ready(function() {
 
   $('.time-total').append(reader);
   $('.budget-total').append(budget);
+
+  $('[data-task=item]').click(function(e){
+    e.preventDefault();
+    $('.m-task-note').slideUp();
+    $(this).parents('.task-wrapper').children('.m-task-note').slideDown();
+  });
 });

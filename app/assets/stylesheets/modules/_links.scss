@@ -83,3 +83,28 @@
   @extend .link-button-dark;
   font-size: $normal;
 }
+
+.link-button-show-all {
+  @extend .link-button-dark;
+  font-size: $normal;
+}
+
+
+// move to another file...
+
+.bulk-actions{
+  background: red;
+  @include row;
+}
+
+
+.ba-punt-all{
+  background: green;
+  @include span-columns(3);
+
+}
+
+.ba-destroy-all {
+  background: blue;
+  @include span-columns(3);
+}

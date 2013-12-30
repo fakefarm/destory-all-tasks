@@ -1,0 +1,9 @@
+.m-task-note
+  = form_for @comment, remote: true do |f|
+    = f.hidden_field :task_id, value: task.id
+    .tn-field
+      .comment-field= f.text_area :entry, rows: "3", placeholder: "Jot some notes."
+    .tn-actions.save-btn
+      = f.submit 'Save note', class: 'link-button-dark'
+      .tn-view-all
+        = link_to 'View all notes', task_path(task), class: 'link-button-show-all'

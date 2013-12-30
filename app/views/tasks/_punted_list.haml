@@ -5,3 +5,4 @@
     - if task.due_date >= Time.now
       %section.task-wrapper#task-wrapper{ id: dom_id(task), data: { behavior: 'sortable-item' } }
         = render 'task_2b_row', task: task
+        = render 'task_notes', task: task

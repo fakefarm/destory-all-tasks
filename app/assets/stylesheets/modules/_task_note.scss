@@ -1,0 +1,16 @@
+.m-task-note{
+  @include row();
+  display: none;
+}
+
+.tn-field {
+  @include span-columns(8);
+}
+
+.tn-actions {
+  @include span-columns(4);
+}
+
+.tn-view-all .link-button-show-all{
+  margin-top: 1em;
+}

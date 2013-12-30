@@ -2,11 +2,26 @@ class TasksController < ApplicationController
   include ApplicationHelper
   before_filter :authorize, :get_punts
 
+
+  def index
+    @task = Task.new
+    @tasks = Task.where(user_id: current_user.id).where( 'due_date <= ? ', Time.now ).order('position')
+    @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
+    @user = User.find(current_user.id)
+    @comment = Comment.new
+
+    respond_to do |format|
+      format.html
+      format.json{ render json: @tasks}
+    end
+  end
+
   def tags
     @task = Task.new
     tag_param = "%#{params[:tags]}%"
     @tasks = Task.tag(tag_param).current_user_id(current_user.id)
     @title = params[:tags]
+    @comment = Comment.new
   end
 
   def untagged
@@ -14,18 +29,6 @@ class TasksController < ApplicationController
     tag_param = ""
     @tasks = Task.tag(tag_param).current_user_id(current_user.id)
     @title = params[:tags]
-  end
-
-  def index
-    @task = Task.new
-    @tasks = Task.where(user_id: current_user.id).where( 'due_date <= ? ', Time.now ).order('position')
-    @page_title = "#{@tasks.count} #{@tasks.count == 1 ? 'task' : 'tasks'} to destroy!"
-    @user = User.find(current_user.id)
-
-    respond_to do |format|
-      format.html
-      format.json{ render json: @tasks}
-    end
   end
 
   def punted

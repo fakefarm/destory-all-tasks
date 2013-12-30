@@ -23,7 +23,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @task = @comment.task_id
     if @comment.save
-      redirect_to task_path(@task), notice: 'Comment created.'
+      respond_to do |format|
+        format.html { redirect_to task_path(@task), notice: 'Comment created.' }
+        format.js { render layout: false }
+      end
     else
       render action: "new"
     end
