@@ -29,6 +29,7 @@ class TasksController < ApplicationController
     tag_param = ""
     @tasks = Task.tag(tag_param).current_user_id(current_user.id)
     @title = params[:tags]
+    @comment = Comment.new
   end
 
   def punted

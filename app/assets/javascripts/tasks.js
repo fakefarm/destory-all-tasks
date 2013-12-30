@@ -91,7 +91,10 @@ $(document).ready(function() {
 
   $('[data-task=item]').click(function(e){
     e.preventDefault();
+    var $note = $(this).parents('.task-wrapper').children('.m-task-note')
     $('.m-task-note').slideUp();
-    $(this).parents('.task-wrapper').children('.m-task-note').slideDown();
+    if ($note.is(':hidden')) {
+      $note.slideDown();
+    }
   });
 });
