@@ -6,7 +6,7 @@
   .task-tag-punt-all{
     @include span-columns(12);
     @include media($breakpoint-ipad) {
-      @include span-columns(2.6);
+      @include span-columns(3);
       float: right;
     }
   }

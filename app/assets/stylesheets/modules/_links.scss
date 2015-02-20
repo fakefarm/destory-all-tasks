@@ -93,18 +93,10 @@
 // move to another file...
 
 .bulk-actions{
-  background: red;
   @include row;
 }
 
-
 .ba-punt-all{
-  background: green;
-  @include span-columns(3);
-
-}
-
-.ba-destroy-all {
-  background: blue;
-  @include span-columns(3);
+  @include span-columns(10.3);
+  @include shift(1.7);
 }

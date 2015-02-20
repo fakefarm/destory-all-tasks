@@ -1,13 +1,3 @@
-= link_to 'Punt All Tasks', punt_all_tasks_tasks_path(due_date: Time.now), remote: true,method: :post, class: 'link-button-dark-small'
-
-/ = link_to 'Destroy All Tasks', punt_all_tasks_tasks_path(due_date: Time.now), remote: true,method: :post, class: 'link-button-dark-small'
-
-
-/ = link_to 'Destroy All tasks', '', class: 'link-button-dark-small'
-
-
-/ - if params[:action] != 'index'
-/   = link_to "Destroy All", delete_all_tagged_tasks, controller: 'tasks', method: :put, class: 'link-button-dark-small'
-
-/ ToDO - destroy all tasks!
-/ %a{ href: delete_all_tagged_tasks_path, class: 'link-button-dark-small', remote: true, method: :post} Destroy All Tasks
+.bulk-actions
+  .ba-punt-all
+    = link_to 'Punt All Tasks', punt_all_tasks_tasks_path(task: {due_date: punt_time} ), remote: true,method: :post, class: 'link-button-dark-small'
