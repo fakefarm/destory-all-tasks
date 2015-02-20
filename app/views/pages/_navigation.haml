@@ -1,14 +1,12 @@
 .nav-bar
   .l-constrained
     %section.nav-logo
-      %h1 Destroy All Tasks
+      %h1 #TODO
       %h2
-        Inbox Zero for Tasks
-        =link_to "(by Dave)", 'http://www.hireDave.me'
+        =link_to "by wwwooodall", 'http://www.wwwoodall.com'
 
     %section.nav-links
       %ul
-        / %li= link_to "Overview", overview_path
         %li
           - if current_user
             = link_to "Log out", logout_path
