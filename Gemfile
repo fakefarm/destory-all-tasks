@@ -15,13 +15,14 @@ gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
 
+
 group :development, :test do
   gem "rails-erd"
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 2.13.0'
+  gem 'rspec-rails', '~> 2.13'
   gem 'guard-rspec', '1.2.1'
   gem 'selenium-webdriver'
-  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'factory_girl_rails', '~> 4.2'
 end
 
 group :development do
@@ -39,10 +40,10 @@ end
 
 group :test do
   gem 'simplecov', :require => false, :group => :test
-  gem 'faker', '~> 1.1.2'
-  gem 'capybara', '~> 2.0.2'
-  gem 'database_cleaner', '~> 0.9.1'
-  gem 'launchy', '~> 2.2.0'
+  gem 'faker', '~> 1.1'
+  gem 'capybara', '~> 2.0'
+  gem 'database_cleaner', '~> 0.9'
+  gem 'launchy', '~> 2.2'
   gem 'rb-fsevent', '0.9.1', :require => false
   gem 'growl', '1.0.3'
 end
@@ -50,8 +51,8 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2'
+  gem 'coffee-rails', '~> 3.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -59,10 +60,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails', '~> 2.1'
+gem 'jquery-rails', '~> 2'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0'
 
 # To use debugger
 # gem 'debugger'
