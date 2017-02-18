@@ -17,8 +17,9 @@ module ApplicationHelper
   end
 
   def punt_time
-    if current_user.profile.punt_default.present?
-      current_user.profile.punt_default.to_i.days.from_now
+    if true # current_user.profile.punt_default.present?
+      '_dw string'
+      # current_user.profile.punt_default.to_i.days.from_now
     else
       3.days.from_now
     end

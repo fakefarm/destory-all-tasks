@@ -1,38 +1,29 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15'
+gem 'rails', '~> 4.2.7'
 gem 'neat'
 gem 'pg'
 gem "haml-rails"
 gem 'meta-tags', :require => 'meta_tags'
-gem 'thin'
 gem 'redcarpet', '1.17.2'
-gem 'omniauth-facebook'
 gem 'jquery-ui-rails'
 gem 'simple_position'
-gem 'newrelic_rpm'
-gem 'sidekiq'
-gem 'sinatra', require: false
 gem 'slim'
 
-
 group :development, :test do
-  gem "rails-erd"
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 2.13'
+  gem 'rspec-rails'
   gem 'guard-rspec', '1.2.1'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails', '~> 4.2'
 end
 
 group :development do
-  gem 'awesome_print', :require => 'ap'
   gem 'quiet_assets'
   gem 'better_errors'
   gem "letter_opener"
   gem 'pry'
   gem 'binding_of_caller'
-  gem 'xray-rails'
   gem 'guard-spork', :github => 'guard/guard-spork'
   gem 'childprocess'
   gem 'spork', '0.9.2'
@@ -48,22 +39,8 @@ group :test do
   gem 'growl', '1.0.3'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2'
-  gem 'coffee-rails', '~> 3.2'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
-end
-
-gem 'jquery-rails', '~> 2'
-
-# To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0'
-
-# To use debugger
-# gem 'debugger'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'uglifier', '>= 1.0.3'
+gem 'bcrypt'

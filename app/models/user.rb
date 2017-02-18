@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
   has_secure_password
   before_save :sanitize_user
 
-  attr_accessible :email, :password, :password_confirmation, :task_counter_id, :profile_id
-
   validates_uniqueness_of :email, :case_sensitive => false
 
   before_create { generate_token(:auth_token) }

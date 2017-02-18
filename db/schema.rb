@@ -9,40 +9,40 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131130183907) do
+ActiveRecord::Schema.define(version: 20131130183907) do
 
-  create_table "comments", :force => true do |t|
+  create_table "comments", force: :cascade do |t|
     t.text     "entry"
     t.string   "tags"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "task_id"
     t.integer  "user_id"
   end
 
-  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "profiles", :force => true do |t|
+  create_table "profiles", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "time_zone"
     t.string   "punt_default"
   end
 
-  create_table "task_counters", :force => true do |t|
+  create_table "task_counters", force: :cascade do |t|
     t.integer  "quantity"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "tasks", :force => true do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string   "item"
     t.boolean  "completed"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "feature"
     t.string   "tags"
     t.boolean  "deleted"
@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(:version => 20131130183907) do
     t.integer  "user_id"
   end
 
-  add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "task_counter_id"
     t.string   "auth_token"
     t.integer  "profile_id"

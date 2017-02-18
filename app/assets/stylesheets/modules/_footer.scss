@@ -8,8 +8,6 @@
 }
 
 @mixin footer-list {
-  @extend .footer-list;
-
   .footer-user{
     @include list-grid;
     .tag-list-item {

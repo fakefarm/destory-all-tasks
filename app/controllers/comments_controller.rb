@@ -48,4 +48,7 @@ class CommentsController < ApplicationController
 
     redirect_to task_path(@task)
   end
+
+  # _dw strong params
+  # :entry, :tags, :task_id, :user_id
 end

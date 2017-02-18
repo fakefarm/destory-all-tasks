@@ -95,7 +95,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(params[:task])
+    @task = Task.new(task_params)
     @task.tags = @task.tags.gsub(' ', '')
     if @task.save
       if request.referrer.include?('tags')
@@ -148,5 +148,9 @@ private
     @punts = Task.where('due_date > ?', Time.now).where(user_id: current_user.id)
     @punt_count = @punts.count
   end
-end
 
+  def task_params
+    params.require(:task).permit(:completed, :item, :tags, :feature, :position, :due_date, :user_id)
+  end
+
+end

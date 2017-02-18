@@ -1,9 +1,4 @@
 DestroyAllTasks::Application.configure do
-
-
-  # Redis Action
-  ENV["REDISTOGO_URL"] = 'redis://redistogo:19e89caf4c2ca97c158d69ca2bd3f150@koi.redistogo.com:10216/'
-
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -68,5 +63,4 @@ DestroyAllTasks::Application.configure do
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
-  # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
