@@ -21,4 +21,7 @@ class ProfilesController < ApplicationController
       render :edit
     end
   end
+
+  # _dw strong params
+  #  :name, :time_zone, :punt_default
 end
